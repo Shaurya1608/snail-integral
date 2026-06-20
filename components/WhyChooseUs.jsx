@@ -1,3 +1,5 @@
+import AnimatedText from './AnimatedText';
+
 export default function WhyChooseUs() {
   const points = [
     {
@@ -39,23 +41,29 @@ export default function WhyChooseUs() {
       <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20 mb-20 md:mb-32">
         {/* Left Side: Heading & Intro */}
         <div className="flex flex-col gap-6 lg:sticky lg:top-32 self-start">
-          <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight text-gray-900 leading-tight">
-            Why Brands Choose Snail Integral
-          </h2>
-          <p className="text-lg text-gray-600 leading-relaxed">
-            We do not believe in generic solutions. Every strategy we build is grounded in research, shaped by industry understanding, and executed with creative precision.
-          </p>
+          <AnimatedText delay={0.1}>
+            <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight text-gray-900 leading-tight">
+              Why Brands Choose Snail Integral
+            </h2>
+          </AnimatedText>
+          <AnimatedText delay={0.2}>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              We do not believe in generic solutions. Every strategy we build is grounded in research, shaped by industry understanding, and executed with creative precision.
+            </p>
+          </AnimatedText>
         </div>
 
         {/* Right Side: 6 Points Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
           {points.map((point, idx) => (
-            <div key={idx} className="flex flex-col gap-3 relative pl-6 border-l-2 border-primary/20 hover:border-primary transition-colors duration-300">
-              <h3 className="text-xl font-semibold text-gray-900">{point.title}</h3>
-              <p className="text-gray-600 leading-relaxed text-sm">
-                {point.desc}
-              </p>
-            </div>
+            <AnimatedText key={idx} delay={0.1 + (idx % 2) * 0.1}>
+              <div className="flex flex-col gap-3 relative pl-6 border-l-2 border-primary/20 hover:border-primary transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-gray-900">{point.title}</h3>
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  {point.desc}
+                </p>
+              </div>
+            </AnimatedText>
           ))}
         </div>
       </div>

@@ -9,6 +9,7 @@ import InitiativesPreview from "../components/InitiativesPreview";
 import ClientLogos from "../components/ClientLogos";
 import Testimonials from "../components/Testimonials";
 import FinalCTA from "../components/FinalCTA";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -26,6 +27,8 @@ export default function Home() {
         <Testimonials />
         <FinalCTA />
       </main>
+      <Footer />
     </>
   );
 }
+

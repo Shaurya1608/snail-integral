@@ -1,53 +1,86 @@
+import Image from 'next/image';
+import AnimatedText from './AnimatedText';
+
 export default function FinalCTA() {
   return (
-    <section className="relative w-full bg-[#5b872b] py-20 md:py-32 px-6 md:px-8 min-h-[100dvh] flex flex-col justify-center items-center overflow-hidden">
-      {/* Subtle radial gradient overlay for depth */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/10 via-transparent to-black/20 pointer-events-none"></div>
-      
-      <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center w-full">
-        <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
-          Ready to Build Something <br className="md:hidden" /><span className="text-white/80 italic">That Lasts?</span>
-        </h2>
-        <p className="text-base md:text-lg text-white/90 max-w-2xl mb-10 md:mb-12 leading-relaxed">
-          Whether you are a corporate enterprise, an agriculture business, or a growing startup, Snail Integral is ready to be your strategic communication partner. Let us start a conversation.
-        </p>
+    <section className="w-full bg-white py-20 md:py-28 px-6 md:px-8 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 w-full mb-12 md:mb-16 max-w-5xl">
-          <div className="group bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 md:p-6 flex flex-col items-center justify-center gap-3 hover:bg-white text-white hover:text-[#5b872b] transition-all duration-500 cursor-pointer shadow-lg hover:shadow-2xl hover:-translate-y-1">
-             <h3 className="font-semibold text-lg text-center">For Corporate Clients</h3>
-             <span className="font-medium text-sm flex items-center gap-2 opacity-80 group-hover:opacity-100 transition-opacity">
-               Schedule a Consultation
-               <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-             </span>
-          </div>
-          <div className="group bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 md:p-6 flex flex-col items-center justify-center gap-3 hover:bg-white text-white hover:text-[#5b872b] transition-all duration-500 cursor-pointer shadow-lg hover:shadow-2xl hover:-translate-y-1">
-             <h3 className="font-semibold text-lg text-center">For Agriculture Businesses</h3>
-             <span className="font-medium text-sm flex items-center gap-2 opacity-80 group-hover:opacity-100 transition-opacity">
-               Explore Agriculture Solutions
-               <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-             </span>
-          </div>
-          <div className="group bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 md:p-6 flex flex-col items-center justify-center gap-3 hover:bg-white text-white hover:text-[#5b872b] transition-all duration-500 cursor-pointer shadow-lg hover:shadow-2xl hover:-translate-y-1">
-             <h3 className="font-semibold text-lg text-center">For Startups and SMEs</h3>
-             <span className="font-medium text-sm flex items-center gap-2 opacity-80 group-hover:opacity-100 transition-opacity">
-               Get Started Today
-               <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-             </span>
-          </div>
+        {/* Top: Centered Heading */}
+        <div className="flex flex-col items-center text-center gap-6 mb-16 md:mb-20">
+          <AnimatedText delay={0.1}>
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-gray-900 leading-[1.1]">
+              Ready to build something <span className="italic text-[#4a7c24]">remarkable</span>
+            </h2>
+          </AnimatedText>
+          <AnimatedText delay={0.2}>
+            <p className="text-base md:text-lg text-gray-700 italic max-w-xl">
+              Let&apos;s talk about your brand and what it could become
+            </p>
+          </AnimatedText>
+          <AnimatedText delay={0.3}>
+            <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+              <a
+                href="#contact"
+                className="px-7 py-3 text-sm font-semibold rounded-full bg-[#4a7c24] text-white hover:bg-[#3d6a1d] transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+              >
+                Schedule
+              </a>
+              <a
+                href="#services"
+                className="px-7 py-3 text-sm font-medium rounded-full border border-gray-400 text-gray-800 hover:border-gray-600 hover:bg-gray-50 transition-all duration-300"
+              >
+                Learn more
+              </a>
+            </div>
+          </AnimatedText>
         </div>
 
-        <div className="inline-flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 bg-black/10 backdrop-blur-sm px-8 md:px-10 py-5 md:py-4 rounded-3xl md:rounded-full border border-white/20 shadow-[0_4px_30px_rgba(0,0,0,0.1)] w-full md:w-auto">
-           <span className="text-white/90 text-[13px] md:text-sm font-medium flex items-center justify-center gap-2 w-full">
-             <svg className="w-4 h-4 opacity-70 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-             <span>Call us at <a href="tel:+918750807676" className="text-white font-bold hover:underline tracking-wide ml-1">+91 8750807676</a></span>
-           </span>
-           <div className="hidden md:block w-[1px] h-4 bg-white/30"></div>
-           <div className="md:hidden w-full h-[1px] bg-white/20"></div>
-           <span className="text-white/90 text-[13px] md:text-sm font-medium flex items-center justify-center gap-2 w-full">
-             <svg className="w-4 h-4 opacity-70 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-             <span>Write to <a href="mailto:info@snailintegral.com" className="text-white font-bold hover:underline tracking-wide ml-1 truncate max-w-[200px] inline-block align-bottom">info@snailintegral.com</a></span>
-           </span>
+        {/* Bottom: Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <AnimatedText delay={0.1}>
+            <div className="group bg-[#f9fbf7] border border-gray-200 rounded-2xl p-6 md:p-8 flex flex-col items-start gap-3 hover:bg-white hover:border-[#4a7c24]/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 cursor-pointer h-full">
+              <div className="w-10 h-10 rounded-xl bg-[#4a7c24]/10 flex items-center justify-center mb-1">
+                <svg className="w-5 h-5 text-[#4a7c24]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+              </div>
+              <h3 className="font-semibold text-lg text-gray-900">For Corporate Clients</h3>
+              <p className="text-sm text-gray-500">Enterprise-grade communication strategies for established businesses.</p>
+              <span className="font-medium text-sm flex items-center gap-2 text-[#4a7c24] mt-auto pt-2 group-hover:gap-3 transition-all">
+                Schedule a Consultation
+                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </span>
+            </div>
+          </AnimatedText>
+
+          <AnimatedText delay={0.2}>
+            <div className="group bg-[#f9fbf7] border border-gray-200 rounded-2xl p-6 md:p-8 flex flex-col items-start gap-3 hover:bg-white hover:border-[#4a7c24]/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 cursor-pointer h-full">
+              <div className="w-10 h-10 rounded-xl bg-[#4a7c24]/10 flex items-center justify-center mb-1">
+                <svg className="w-5 h-5 text-[#4a7c24]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <h3 className="font-semibold text-lg text-gray-900">For Agriculture Businesses</h3>
+              <p className="text-sm text-gray-500">Specialized solutions for agri-businesses and rural markets across India.</p>
+              <span className="font-medium text-sm flex items-center gap-2 text-[#4a7c24] mt-auto pt-2 group-hover:gap-3 transition-all">
+                Explore Agriculture Solutions
+                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </span>
+            </div>
+          </AnimatedText>
+
+          <AnimatedText delay={0.3}>
+            <div className="group bg-[#f9fbf7] border border-gray-200 rounded-2xl p-6 md:p-8 flex flex-col items-start gap-3 hover:bg-white hover:border-[#4a7c24]/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 cursor-pointer h-full">
+              <div className="w-10 h-10 rounded-xl bg-[#4a7c24]/10 flex items-center justify-center mb-1">
+                <svg className="w-5 h-5 text-[#4a7c24]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              </div>
+              <h3 className="font-semibold text-lg text-gray-900">For Startups and SMEs</h3>
+              <p className="text-sm text-gray-500">Growth-focused communication to help startups scale with purpose.</p>
+              <span className="font-medium text-sm flex items-center gap-2 text-[#4a7c24] mt-auto pt-2 group-hover:gap-3 transition-all">
+                Get Started Today
+                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </span>
+            </div>
+          </AnimatedText>
         </div>
+
       </div>
     </section>
   );
