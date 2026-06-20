@@ -1,9 +1,75 @@
+"use client";
+
+import { useState, useEffect, useCallback } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedText from './AnimatedText';
 
+const slides = [
+  {
+    image: '/LandingPage/l-image-1.jpg',
+    heading: 'Strategic brand consulting',
+    description: 'Building powerful brand narratives that resonate with your audience and drive measurable growth.',
+  },
+  {
+    image: '/LandingPage/l-image-2.jpg',
+    heading: 'Corporate communications',
+    description: 'Clear, compelling messaging for companies that want to lead their industry conversations.',
+  },
+  {
+    image: '/LandingPage/l-image-3.jpg',
+    heading: 'Digital marketing solutions',
+    description: 'Data-driven campaigns across channels, designed to generate real business outcomes.',
+  },
+  {
+    image: '/LandingPage/l-image-4.jpg',
+    heading: 'Agriculture sector expertise',
+    description: 'Specialized communication for agri-businesses, from boardroom to field level impact.',
+  },
+  {
+    image: '/LandingPage/l-image-15.jpg',
+    heading: 'Creative design & production',
+    description: 'Visually stunning content that captures attention and communicates your brand story.',
+  },
+];
+
 export default function Hero() {
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(1);
+
+  const goTo = useCallback((index) => {
+    setDirection(index > current ? 1 : -1);
+    setCurrent(index);
+  }, [current]);
+
+  const next = useCallback(() => {
+    setDirection(1);
+    setCurrent((prev) => (prev + 1) % slides.length);
+  }, []);
+
+  const prev = useCallback(() => {
+    setDirection(-1);
+    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+  }, []);
+
+  // Auto-advance
+  useEffect(() => {
+    const timer = setInterval(() => {
+      next();
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [next]);
+
+  const slideVariants = {
+    enter: (dir) => ({ x: dir > 0 ? '100%' : '-100%', opacity: 0 }),
+    center: { x: 0, opacity: 1 },
+    exit: (dir) => ({ x: dir > 0 ? '-100%' : '100%', opacity: 0 }),
+  };
+
   return (
     <div className="w-full bg-[#f9fbf7]">
-      <section className="max-w-7xl mx-auto w-full px-8 py-6 md:py-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center min-h-[100dvh] md:h-screen overflow-hidden">
+      <section className="max-w-7xl mx-auto w-full px-8 py-12 md:py-0 grid grid-cols-1 md:grid-cols-2 gap-12 items-center min-h-[100dvh] md:h-screen overflow-hidden">
+        
+        {/* Left Column — Text Content */}
         <div className="flex flex-col gap-8 pr-4 z-10 mt-0 md:-mt-32">
           <AnimatedText delay={0.1}>
             <h1 className="font-serif text-5xl md:text-7xl leading-[1.1] tracking-tight text-[#111]">
@@ -31,82 +97,95 @@ export default function Hero() {
             </div>
           </AnimatedText>
         </div>
-        
-        {/* Animated Masonry Grid */}
-        <div className="grid grid-cols-2 gap-4 h-[500px] md:h-[80vh] overflow-hidden relative" style={{ maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)' }}>
-          
-          {/* Column 1: Scrolling Down */}
-          <div className="flex flex-col gap-4 h-max animate-scroll-down relative">
-            <div className="flex flex-col gap-4 flex-1">
-              <div className="bg-[#d2d9c8] rounded-2xl h-[200px] overflow-hidden relative shadow-sm">
-                <div className="absolute inset-0 bg-[url('/LandingPage/l-image-1.jpg')] bg-cover bg-center"></div>
-              </div>
-              <div className="bg-[#e4e9dd] rounded-2xl h-[300px] overflow-hidden relative shadow-sm">
-                <div className="absolute inset-0 bg-[url('/LandingPage/l-image-2.jpg')] bg-cover bg-center"></div>
-              </div>
-              <div className="bg-[#d2d9c8] rounded-2xl h-[250px] overflow-hidden relative shadow-sm">
-                <div className="absolute inset-0 bg-[url('/LandingPage/l-image-3.jpg')] bg-cover bg-center"></div>
-              </div>
+
+        {/* Right Column — Image Carousel */}
+        <div className="flex flex-col gap-5 mt-0 md:-mt-20">
+          {/* Image Container */}
+          <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100">
+            <AnimatePresence initial={false} custom={direction} mode="wait">
+              <motion.div
+                key={current}
+                custom={direction}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
+                className="absolute inset-0"
+              >
+                <div
+                  className="w-full h-full bg-cover bg-center"
+                  style={{ backgroundImage: `url(${slides[current].image})` }}
+                />
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Caption + Controls Row */}
+          <div className="flex items-end justify-between gap-4">
+            {/* Caption */}
+            <div className="flex-1 min-w-0">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={current}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <h3 className="text-[15px] sm:text-base font-semibold text-[#111] mb-1 capitalize">
+                    {slides[current].heading}
+                  </h3>
+                  <p className="text-[13px] sm:text-sm text-gray-400 leading-snug line-clamp-2">
+                    {slides[current].description}
+                  </p>
+                </motion.div>
+              </AnimatePresence>
             </div>
-            {/* Duplicate for loop */}
-            <div className="flex flex-col gap-4 flex-1">
-              <div className="bg-[#d2d9c8] rounded-2xl h-[200px] overflow-hidden relative shadow-sm">
-                <div className="absolute inset-0 bg-[url('/LandingPage/l-image-1.jpg')] bg-cover bg-center"></div>
+
+            {/* Dots + Arrows */}
+            <div className="flex items-center gap-4 flex-shrink-0">
+              {/* Dots */}
+              <div className="flex items-center gap-1.5">
+                {slides.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => goTo(i)}
+                    className={`rounded-full transition-all duration-300 ${
+                      i === current
+                        ? 'w-2 h-2 bg-[#111]'
+                        : 'w-1.5 h-1.5 bg-gray-300 hover:bg-gray-400'
+                    }`}
+                    aria-label={`Go to slide ${i + 1}`}
+                  />
+                ))}
               </div>
-              <div className="bg-[#e4e9dd] rounded-2xl h-[300px] overflow-hidden relative shadow-sm">
-                <div className="absolute inset-0 bg-[url('/LandingPage/l-image-2.jpg')] bg-cover bg-center"></div>
-              </div>
-              <div className="bg-[#d2d9c8] rounded-2xl h-[250px] overflow-hidden relative shadow-sm">
-                <div className="absolute inset-0 bg-[url('/LandingPage/l-image-3.jpg')] bg-cover bg-center"></div>
+
+              {/* Arrow Buttons */}
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={prev}
+                  className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:text-[#111] hover:border-gray-400 transition-all duration-200"
+                  aria-label="Previous slide"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button
+                  onClick={next}
+                  className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:text-[#111] hover:border-gray-400 transition-all duration-200"
+                  aria-label="Next slide"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
               </div>
             </div>
           </div>
-
-          {/* Column 2: Scrolling Up */}
-          <div className="flex flex-col gap-4 h-max animate-scroll-up relative pt-12">
-            <div className="flex flex-col gap-4 flex-1">
-              <div className="bg-[#e4e9dd] rounded-2xl h-[250px] overflow-hidden relative shadow-sm">
-                <div className="absolute inset-0 bg-[url('/LandingPage/l-image-4.jpg')] bg-cover bg-center"></div>
-              </div>
-              <div className="bg-[#d2d9c8] rounded-2xl h-[250px] overflow-hidden relative shadow-sm">
-                 <div className="absolute inset-0 bg-[url('/LandingPage/l-image-15.jpg')] bg-cover bg-center"></div>
-              </div>
-              <div className="bg-[#e4e9dd] rounded-2xl h-[250px] overflow-hidden relative shadow-sm">
-                 <div className="absolute inset-0 bg-[url('/LandingPage/l-image-1.jpg')] bg-cover bg-center"></div>
-              </div>
-            </div>
-            {/* Duplicate for loop */}
-            <div className="flex flex-col gap-4 flex-1">
-              <div className="bg-[#e4e9dd] rounded-2xl h-[250px] overflow-hidden relative shadow-sm">
-                <div className="absolute inset-0 bg-[url('/LandingPage/l-image-4.jpg')] bg-cover bg-center"></div>
-              </div>
-              <div className="bg-[#d2d9c8] rounded-2xl h-[250px] overflow-hidden relative shadow-sm">
-                 <div className="absolute inset-0 bg-[url('/LandingPage/l-image-15.jpg')] bg-cover bg-center"></div>
-              </div>
-              <div className="bg-[#e4e9dd] rounded-2xl h-[250px] overflow-hidden relative shadow-sm">
-                 <div className="absolute inset-0 bg-[url('/LandingPage/l-image-1.jpg')] bg-cover bg-center"></div>
-              </div>
-            </div>
-          </div>
-
         </div>
 
-        <style dangerouslySetInnerHTML={{__html: `
-          @keyframes scrollDown {
-            0% { transform: translateY(calc(-50% - 8px)); }
-            100% { transform: translateY(0); }
-          }
-          @keyframes scrollUp {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(calc(-50% - 8px)); }
-          }
-          .animate-scroll-down {
-            animation: scrollDown 20s linear infinite;
-          }
-          .animate-scroll-up {
-            animation: scrollUp 20s linear infinite;
-          }
-        `}} />
       </section>
     </div>
   );
