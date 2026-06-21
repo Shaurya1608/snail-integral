@@ -1,192 +1,255 @@
 "use client";
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import AnimatedText from './AnimatedText';
+import Link from 'next/link';
 
 const slides = [
   {
     image: '/LandingPage/l-image-1.jpg',
-    heading: 'Strategic brand consulting',
-    description: 'Building powerful brand narratives that resonate with your audience and drive measurable growth.',
+    keyword: 'Brand Strategy',
+    subtitle: 'Building powerful brand narratives that resonate with your audience and drive measurable growth.',
   },
   {
     image: '/LandingPage/l-image-2.jpg',
-    heading: 'Corporate communications',
-    description: 'Clear, compelling messaging for companies that want to lead their industry conversations.',
+    keyword: 'Corporate Comms',
+    subtitle: 'Clear, compelling messaging for companies that want to lead their industry conversations.',
   },
   {
     image: '/LandingPage/l-image-3.jpg',
-    heading: 'Digital marketing solutions',
-    description: 'Data-driven campaigns across channels, designed to generate real business outcomes.',
+    keyword: 'Digital Marketing',
+    subtitle: 'Data-driven campaigns across channels, designed to generate real business outcomes.',
   },
   {
     image: '/LandingPage/l-image-4.jpg',
-    heading: 'Agriculture sector expertise',
-    description: 'Specialized communication for agri-businesses, from boardroom to field level impact.',
+    keyword: 'Agri Expertise',
+    subtitle: 'Specialized communication for agri-businesses, from boardroom to field level impact.',
   },
   {
     image: '/LandingPage/l-image-15.jpg',
-    heading: 'Creative design & production',
-    description: 'Visually stunning content that captures attention and communicates your brand story.',
+    keyword: 'Creative Design',
+    subtitle: 'Visually stunning content that captures attention and communicates your brand story.',
   },
 ];
 
+const SLIDE_DURATION = 5000;
+
 export default function Hero() {
   const [current, setCurrent] = useState(0);
-  const [direction, setDirection] = useState(1);
-
-  const goTo = useCallback((index) => {
-    setDirection(index > current ? 1 : -1);
-    setCurrent(index);
-  }, [current]);
+  const [progress, setProgress] = useState(0);
+  const progressRef = useRef(null);
+  const startTimeRef = useRef(Date.now());
 
   const next = useCallback(() => {
-    setDirection(1);
     setCurrent((prev) => (prev + 1) % slides.length);
+    setProgress(0);
+    startTimeRef.current = Date.now();
   }, []);
 
-  const prev = useCallback(() => {
-    setDirection(-1);
-    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+  const goTo = useCallback((index) => {
+    setCurrent(index);
+    setProgress(0);
+    startTimeRef.current = Date.now();
   }, []);
 
-  // Auto-advance
+  // Auto-advance with smooth progress
   useEffect(() => {
-    const timer = setInterval(() => {
-      next();
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [next]);
-
-  const slideVariants = {
-    enter: (dir) => ({ x: dir > 0 ? '100%' : '-100%', opacity: 0 }),
-    center: { x: 0, opacity: 1 },
-    exit: (dir) => ({ x: dir > 0 ? '-100%' : '100%', opacity: 0 }),
-  };
+    const animate = () => {
+      const elapsed = Date.now() - startTimeRef.current;
+      const pct = Math.min(elapsed / SLIDE_DURATION, 1);
+      setProgress(pct);
+      if (pct >= 1) {
+        next();
+      } else {
+        progressRef.current = requestAnimationFrame(animate);
+      }
+    };
+    progressRef.current = requestAnimationFrame(animate);
+    return () => {
+      if (progressRef.current) cancelAnimationFrame(progressRef.current);
+    };
+  }, [current, next]);
 
   return (
-    <div className="w-full bg-[#f9fbf7]">
-      <section className="max-w-7xl mx-auto w-full px-8 py-12 md:py-0 grid grid-cols-1 md:grid-cols-2 gap-12 items-center min-h-[100dvh] md:h-screen overflow-hidden">
-        
-        {/* Left Column — Text Content */}
-        <div className="flex flex-col gap-8 pr-4 z-10 mt-0 md:-mt-32">
-          <AnimatedText delay={0.1}>
-            <h1 className="font-serif text-5xl md:text-7xl leading-[1.1] tracking-tight text-[#111]">
-              Visibility<br />Matters
-            </h1>
-          </AnimatedText>
-          <AnimatedText delay={0.3}>
-            <p className="text-lg text-gray-800">
-              We help brands communicate with clarity, connect with the right audiences, and grow with purpose. From agriculture boardrooms to corporate strategies, Snail Integral builds communication that creates real business impact.
-            </p>
-          </AnimatedText>
-          <AnimatedText delay={0.5}>
-            <div className="flex flex-col gap-4 pt-2">
-              <div className="flex flex-wrap items-center gap-4">
-                <button className="px-8 py-3 text-sm font-medium rounded-xl bg-primary text-white hover:bg-primary-hover transition-colors shadow-sm">
-                  Explore Our Services
-                </button>
-                <button className="px-8 py-3 text-sm font-medium rounded-xl border border-gray-300 hover:border-gray-400 transition-colors bg-white/40 backdrop-blur">
-                  Schedule a Consultation
-                </button>
-              </div>
-              <p className="text-sm font-medium text-gray-600 mt-4 border-l-2 border-primary pl-3">
-                Trusted by 50+ brands across agriculture, corporate, and government sectors in India.
-              </p>
-            </div>
-          </AnimatedText>
-        </div>
+    <section className="relative w-full h-[100dvh] min-h-[600px] overflow-hidden">
 
-        {/* Right Column — Image Carousel */}
-        <div className="flex flex-col gap-5 mt-0 md:-mt-20">
-          {/* Image Container */}
-          <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100">
-            <AnimatePresence initial={false} custom={direction} mode="wait">
-              <motion.div
+      {/* === Background Image Carousel === */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={current}
+          initial={{ scale: 1.1, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 1.05, opacity: 0 }}
+          transition={{ duration: 1.2, ease: [0.25, 0.4, 0.25, 1] }}
+          className="absolute inset-0 z-0"
+        >
+          <div
+            className="w-full h-full bg-cover bg-center"
+            style={{ backgroundImage: `url(${slides[current].image})` }}
+          />
+        </motion.div>
+      </AnimatePresence>
+
+      {/* === Dark Gradient Overlay === */}
+      <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+      <div className="absolute inset-0 z-[1] bg-gradient-to-r from-black/50 via-transparent to-transparent" />
+
+      {/* === Content === */}
+      <div className="relative z-10 h-full flex flex-col justify-end pb-16 md:pb-24 px-6 md:px-12 lg:px-20 max-w-[1400px] mx-auto w-full">
+
+        {/* Main Text Block */}
+        <div className="flex flex-col gap-5 max-w-3xl">
+
+          {/* Eyebrow */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+          >
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-white/80 text-[10px] md:text-xs font-semibold uppercase tracking-widest">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#6a9a38] animate-pulse" />
+              Snail Integral — 20+ Years of Impact
+            </span>
+          </motion.div>
+
+          {/* Headline with cycling keyword */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.7 }}
+            className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] font-bold text-white leading-[1.05] tracking-tight"
+          >
+            Visibility Through
+            <br />
+            <AnimatePresence mode="wait">
+              <motion.span
                 key={current}
-                custom={direction}
-                variants={slideVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{ duration: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
-                className="absolute inset-0"
+                initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
+                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                exit={{ opacity: 0, y: -20, filter: 'blur(8px)' }}
+                transition={{ duration: 0.5, ease: 'easeInOut' }}
+                className="inline-block text-[#8ec44a]"
               >
-                <div
-                  className="w-full h-full bg-cover bg-center"
-                  style={{ backgroundImage: `url(${slides[current].image})` }}
-                />
-              </motion.div>
+                {slides[current].keyword}
+              </motion.span>
+            </AnimatePresence>
+          </motion.h1>
+
+          {/* Subtitle — changes with slide */}
+          <div className="h-14 md:h-12 mt-2">
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={current}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.4 }}
+                className="text-sm md:text-base text-white/70 leading-relaxed max-w-lg"
+              >
+                {slides[current].subtitle}
+              </motion.p>
             </AnimatePresence>
           </div>
 
-          {/* Caption + Controls Row */}
-          <div className="flex items-end justify-between gap-4">
-            {/* Caption */}
-            <div className="flex-1 min-w-0">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={current}
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <h3 className="text-[15px] sm:text-base font-semibold text-[#111] mb-1 capitalize">
-                    {slides[current].heading}
-                  </h3>
-                  <p className="text-[13px] sm:text-sm text-gray-400 leading-snug line-clamp-2">
-                    {slides[current].description}
-                  </p>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-
-            {/* Dots + Arrows */}
-            <div className="flex items-center gap-4 flex-shrink-0">
-              {/* Dots */}
-              <div className="flex items-center gap-1.5">
-                {slides.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => goTo(i)}
-                    className={`rounded-full transition-all duration-300 ${
-                      i === current
-                        ? 'w-2 h-2 bg-[#111]'
-                        : 'w-1.5 h-1.5 bg-gray-300 hover:bg-gray-400'
-                    }`}
-                    aria-label={`Go to slide ${i + 1}`}
-                  />
-                ))}
-              </div>
-
-              {/* Arrow Buttons */}
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={prev}
-                  className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:text-[#111] hover:border-gray-400 transition-all duration-200"
-                  aria-label="Previous slide"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
-                <button
-                  onClick={next}
-                  className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:text-[#111] hover:border-gray-400 transition-all duration-200"
-                  aria-label="Next slide"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.6 }}
+            className="flex flex-wrap items-center gap-4 pt-2"
+          >
+            <Link
+              href="#services"
+              className="group relative px-6 py-3 text-xs md:text-sm font-semibold rounded-full bg-[#6a9a38] text-white overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(106,154,56,0.4)] hover:-translate-y-[2px]"
+            >
+              <span className="relative z-10 flex items-center gap-2">
+                Explore Our Services
+                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+              </span>
+              <span className="absolute inset-0 bg-[#557d2a] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300" />
+            </Link>
+            <Link
+              href="#contact"
+              className="px-6 py-3 text-xs md:text-sm font-medium rounded-full border border-white/25 text-white/90 hover:bg-white/10 hover:border-white/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-[2px]"
+            >
+              Schedule a Consultation
+            </Link>
+          </motion.div>
         </div>
 
-      </section>
-    </div>
+        {/* === Bottom Bar: Progress + Slide Nav === */}
+        <div className="mt-10 md:mt-14 flex items-end justify-between gap-6">
+
+          {/* Slide Progress Bars */}
+          <div className="flex gap-2 flex-1 max-w-md">
+            {slides.map((slide, i) => (
+              <button
+                key={i}
+                onClick={() => goTo(i)}
+                className="group flex-1 flex flex-col gap-2 text-left"
+                aria-label={`Go to slide ${i + 1}: ${slide.keyword}`}
+              >
+                {/* Progress track */}
+                <div className="w-full h-[3px] rounded-full bg-white/15 overflow-hidden">
+                  <div
+                    className="h-full rounded-full transition-none"
+                    style={{
+                      width: i === current ? `${progress * 100}%` : i < current ? '100%' : '0%',
+                      background: i === current
+                        ? 'linear-gradient(90deg, #6a9a38, #8ec44a)'
+                        : i < current
+                          ? 'rgba(255,255,255,0.3)'
+                          : 'transparent',
+                    }}
+                  />
+                </div>
+                {/* Label (visible on md+) */}
+                <span className={`hidden md:block text-[11px] font-medium uppercase tracking-wider transition-colors duration-300 ${
+                  i === current ? 'text-white/90' : 'text-white/30 group-hover:text-white/50'
+                }`}>
+                  {slide.keyword}
+                </span>
+              </button>
+            ))}
+          </div>
+
+          {/* Slide Counter */}
+          <div className="hidden md:flex items-center gap-4">
+            <span className="text-white/40 text-sm font-mono">
+              <span className="text-white font-semibold">{String(current + 1).padStart(2, '0')}</span>
+              {' / '}
+              {String(slides.length).padStart(2, '0')}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* === Scroll Indicator === */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
+      >
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+          className="w-5 h-8 rounded-full border-2 border-white/30 flex items-start justify-center pt-1.5"
+        >
+          <div className="w-1 h-2 rounded-full bg-white/60" />
+        </motion.div>
+      </motion.div>
+
+      {/* === Inline Styles for animations === */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.5; }
+        }
+        .animate-pulse {
+          animation: pulse 2s ease-in-out infinite;
+        }
+      `}} />
+    </section>
   );
 }

@@ -24,10 +24,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-500 ${
+      className={`fixed top-0 z-50 w-full transition-all duration-500 ${
         scrolled
           ? "bg-white/90 backdrop-blur-xl shadow-[0_1px_0_rgba(0,0,0,0.05)]"
-          : "bg-[#f9fbf7]"
+          : "bg-transparent"
       }`}
     >
       <nav className="flex items-center justify-between px-6 lg:px-10 py-4 max-w-[1400px] mx-auto w-full">
@@ -38,18 +38,28 @@ export default function Navbar() {
             alt="Snail Integral Logo"
             width={200}
             height={60}
-            className="h-9 w-auto"
+            className={`h-9 w-auto transition-all duration-300 ${
+              scrolled ? '' : 'brightness-0 invert'
+            }`}
             priority
           />
         </Link>
 
         {/* Center Nav Links — Desktop */}
-        <div className="hidden lg:flex items-center gap-1 bg-gray-100/70 backdrop-blur-sm rounded-full px-2 py-1.5">
+        <div className={`hidden lg:flex items-center gap-1 rounded-full px-2 py-1.5 transition-all duration-300 ${
+          scrolled
+            ? 'bg-gray-100/70 backdrop-blur-sm'
+            : 'bg-white/10 backdrop-blur-md border border-white/10'
+        }`}>
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              className="relative px-5 py-2 text-[13px] font-medium text-gray-600 hover:text-gray-900 rounded-full hover:bg-white/80 transition-all duration-200"
+              className={`relative px-5 py-2 text-[13px] font-medium rounded-full transition-all duration-200 ${
+                scrolled
+                  ? 'text-gray-600 hover:text-gray-900 hover:bg-white/80'
+                  : 'text-white/80 hover:text-white hover:bg-white/15'
+              }`}
             >
               {link.label}
             </Link>
@@ -60,13 +70,21 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-3">
           <Link
             href="#contact"
-            className="px-5 py-2.5 text-[13px] font-medium text-gray-700 hover:text-gray-900 transition-colors"
+            className={`px-5 py-2.5 text-[13px] font-medium transition-colors ${
+              scrolled
+                ? 'text-gray-700 hover:text-gray-900'
+                : 'text-white/80 hover:text-white'
+            }`}
           >
             Contact
           </Link>
           <Link
             href="#contact"
-            className="px-6 py-2.5 text-[13px] font-semibold rounded-full bg-primary text-white hover:bg-primary-hover transition-all duration-200 shadow-[0_1px_3px_rgba(106,154,56,0.4)] hover:shadow-[0_4px_12px_rgba(106,154,56,0.3)] hover:-translate-y-[1px]"
+            className={`px-6 py-2.5 text-[13px] font-semibold rounded-full transition-all duration-200 hover:-translate-y-[1px] ${
+              scrolled
+                ? 'bg-primary text-white hover:bg-primary-hover shadow-[0_1px_3px_rgba(106,154,56,0.4)] hover:shadow-[0_4px_12px_rgba(106,154,56,0.3)]'
+                : 'bg-white text-gray-900 hover:bg-white/90 shadow-[0_2px_10px_rgba(0,0,0,0.15)]'
+            }`}
           >
             Get Started
           </Link>
@@ -78,9 +96,15 @@ export default function Navbar() {
           className="lg:hidden relative z-10 w-10 h-10 flex flex-col items-center justify-center gap-1.5"
           aria-label="Toggle menu"
         >
-          <span className={`block w-5 h-[1.5px] bg-gray-800 transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-[4.5px]" : ""}`}></span>
-          <span className={`block w-5 h-[1.5px] bg-gray-800 transition-all duration-300 ${mobileOpen ? "opacity-0 scale-0" : ""}`}></span>
-          <span className={`block w-5 h-[1.5px] bg-gray-800 transition-all duration-300 ${mobileOpen ? "-rotate-45 -translate-y-[4.5px]" : ""}`}></span>
+          <span className={`block w-5 h-[1.5px] transition-all duration-300 ${
+            scrolled ? 'bg-gray-800' : 'bg-white'
+          } ${mobileOpen ? "rotate-45 translate-y-[4.5px]" : ""}`}></span>
+          <span className={`block w-5 h-[1.5px] transition-all duration-300 ${
+            scrolled ? 'bg-gray-800' : 'bg-white'
+          } ${mobileOpen ? "opacity-0 scale-0" : ""}`}></span>
+          <span className={`block w-5 h-[1.5px] transition-all duration-300 ${
+            scrolled ? 'bg-gray-800' : 'bg-white'
+          } ${mobileOpen ? "-rotate-45 -translate-y-[4.5px]" : ""}`}></span>
         </button>
       </nav>
 
