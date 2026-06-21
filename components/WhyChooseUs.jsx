@@ -37,7 +37,7 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="w-full bg-white pt-20 md:pt-32">
+    <section className="w-full bg-[#f9fbf7] pt-20 md:pt-32">
       <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20 mb-20 md:mb-32">
         {/* Left Side: Heading & Intro */}
         <div className="flex flex-col gap-6 lg:sticky lg:top-32 self-start">

@@ -7,7 +7,7 @@ export default function ClientLogos() {
   const row3Logos = ["c-logo-9.jpg", "c-logo-10.jpg", "c-logo-11.jpg", "c-logo-12.jpg"];
 
   return (
-    <section className="w-full bg-white py-20 md:py-32 overflow-hidden">
+    <section className="w-full bg-[#f9fbf7] py-20 md:py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 flex flex-col items-center mb-16">
         <div className="text-center max-w-2xl">
           <AnimatedText delay={0.1}>
@@ -25,8 +25,8 @@ export default function ClientLogos() {
 
       <div className="flex flex-col gap-10 w-full max-w-[100vw] overflow-hidden relative">
         {/* Simple fade edges for desktop */}
-        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10 hidden md:block"></div>
-        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10 hidden md:block"></div>
+        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#f9fbf7] to-transparent z-10 hidden md:block"></div>
+        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#f9fbf7] to-transparent z-10 hidden md:block"></div>
 
         {/* Row 1 */}
         <div className="flex w-max animate-scroll hover:pause">
