@@ -13,7 +13,7 @@
   --color-primary: var(--primary-green);
   --color-primary-hover: var(--primary-green-hover);
   --font-sans: var(--font-inter);
-  --font-serif: var(--font-playfair);
+  --font-serif: var(--font-lora);
 }
 
 body {

@@ -2,26 +2,32 @@ import AnimatedText from '../AnimatedText';
 
 export default function OurStory() {
   return (
-    <section className="w-full bg-white py-20 md:py-28 px-6 md:px-8">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24">
+    <section className="w-full bg-[#f9fbf7] py-16 md:py-24 px-6 md:px-8">
+      <div className="max-w-5xl mx-auto w-full flex flex-col gap-10 lg:gap-12">
         
-        <div className="lg:w-1/2">
+        {/* Top Full Width Section */}
+        <div className="w-full">
           <AnimatedText delay={0.1}>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Our Story
-            </h2>
-            <p className="text-xl md:text-2xl text-[#4a7c24] font-medium mb-10 leading-snug">
-              From a focused communication agency to one of India&apos;s trusted multi-sector brand consulting firms.
+            <div className="text-center mb-8">
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Our Story
+              </h2>
+              <p className="text-lg md:text-xl text-[#4a7c24] font-medium leading-snug max-w-2xl mx-auto">
+                From a focused communication agency to one of India&apos;s trusted multi-sector brand consulting firms.
+              </p>
+            </div>
+          </AnimatedText>
+          
+          <AnimatedText delay={0.2}>
+            <p className="text-base md:text-lg text-gray-700 leading-relaxed text-left">
+              Snail Integral was founded with a clear and urgent observation. Across India&apos;s business landscape, a persistent gap existed between innovation and adoption. Breakthrough research developed in laboratories rarely reached the farmers who needed it. Corporate initiatives built with genuine intent often failed to connect with the stakeholders they were meant for. Government programs designed to transform lives struggled to reach the communities they were built to serve. The missing link in every case was the same: effective, strategic communication.
             </p>
           </AnimatedText>
+        </div>
 
-          <div className="space-y-6 text-base md:text-lg text-gray-700 leading-relaxed">
-            <AnimatedText delay={0.2}>
-              <p>
-                Snail Integral was founded with a clear and urgent observation. Across India&apos;s business landscape, a persistent gap existed between innovation and adoption. Breakthrough research developed in laboratories rarely reached the farmers who needed it. Corporate initiatives built with genuine intent often failed to connect with the stakeholders they were meant for. Government programs designed to transform lives struggled to reach the communities they were built to serve. The missing link in every case was the same: effective, strategic communication.
-              </p>
-            </AnimatedText>
-            
+        {/* Bottom Split Section */}
+        <div className="flex flex-col md:flex-row gap-10 lg:gap-14 items-start">
+          <div className="md:w-7/12 space-y-6 text-sm md:text-base text-gray-700 leading-relaxed text-left">
             <AnimatedText delay={0.3}>
               <p>
                 We started as a dedicated agricultural and rural communication agency because that gap was most visible and most consequential there. India&apos;s farming sector, responsible for the livelihoods of hundreds of millions of people, was being underserved by communication that was either too technical to be understood or too generic to be trusted. We built Snail Integral to change that. Our founding mission was straightforward: close the adoption gap through communication that is culturally relevant, strategically sound, and built on genuine industry knowledge.
@@ -40,20 +46,21 @@ export default function OurStory() {
               </p>
             </AnimatedText>
           </div>
-        </div>
 
-        <div className="lg:w-1/2 relative h-[500px] lg:h-auto min-h-[600px] rounded-3xl overflow-hidden bg-gray-100 flex items-center justify-center">
-            {/* Visual representation or timeline could go here. For now using a clean abstract brand colored visual placeholder */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#4a7c24]/10 to-[#4a7c24]/30" />
-            <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-white/40 backdrop-blur-md" />
-            <div className="absolute bottom-20 right-10 w-48 h-48 rounded-full bg-[#4a7c24]/20 backdrop-blur-md" />
-            <div className="z-10 text-center px-8">
-               <div className="w-20 h-20 bg-white rounded-full mx-auto mb-6 flex items-center justify-center shadow-lg">
-                  <svg className="w-10 h-10 text-[#4a7c24]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+          <div className="md:w-5/12 w-full relative aspect-[4/5] rounded-2xl overflow-hidden bg-gray-50 flex items-center justify-center border border-gray-100 shadow-sm mt-4 md:mt-0">
+            {/* Visual representation */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#4a7c24]/5 to-[#4a7c24]/20" />
+            <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-white/60 blur-2xl" />
+            <div className="absolute bottom-0 left-0 w-40 h-40 rounded-full bg-[#4a7c24]/10 blur-2xl" />
+            
+            <div className="z-10 text-center px-6">
+               <div className="w-16 h-16 bg-white rounded-full mx-auto mb-5 flex items-center justify-center shadow-md">
+                  <svg className="w-8 h-8 text-[#4a7c24]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
                </div>
-               <h3 className="text-3xl font-serif font-bold text-gray-900 mb-2">Bridging the Gap</h3>
-               <p className="text-gray-700 font-medium">Through strategic communication</p>
+               <h3 className="text-2xl font-serif font-bold text-gray-900 mb-2">Bridging the Gap</h3>
+               <p className="text-gray-600 text-sm font-medium">Through strategic communication</p>
             </div>
+        </div>
         </div>
       </div>
     </section>

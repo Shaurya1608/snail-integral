@@ -4,11 +4,7 @@ export default function HeroAbout() {
   return (
     <section className="relative w-full bg-[#f9fbf7] pt-32 pb-20 md:pt-40 md:pb-28 px-6 md:px-8 overflow-hidden">
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        <AnimatedText delay={0.1}>
-          <div className="text-sm md:text-base text-gray-500 mb-6 font-medium tracking-wide">
-            Home <span className="mx-2">/</span> <span className="text-[#4a7c24]">About Us</span>
-          </div>
-        </AnimatedText>
+
 
         <AnimatedText delay={0.2}>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-[1.2] mb-8">
