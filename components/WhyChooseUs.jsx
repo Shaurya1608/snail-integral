@@ -37,7 +37,7 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="w-full bg-[#f9fbf7] pt-20 md:pt-32">
+    <section className="w-full bg-[#f9fbf7] pt-10 md:pt-16">
       <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20 mb-20 md:mb-32">
         {/* Left Side: Heading & Intro */}
         <div className="flex flex-col gap-6 lg:sticky lg:top-32 self-start">
@@ -69,37 +69,25 @@ export default function WhyChooseUs() {
       </div>
 
       {/* Stats Strip */}
-      <div className="w-full bg-primary py-8 overflow-hidden relative flex">
-        <div className="flex gap-20 px-10 w-max animate-scroll-stats">
-          {stats.map((stat, idx) => (
-            <div key={`stat1-${idx}`} className="flex flex-col gap-1 items-center justify-center shrink-0 w-48">
-              <span className="font-serif text-4xl md:text-5xl font-bold text-white tracking-tight">{stat.number}</span>
-              <span className="text-white/90 text-xs font-semibold uppercase tracking-widest">{stat.label}</span>
-            </div>
-          ))}
-          {stats.map((stat, idx) => (
-            <div key={`stat2-${idx}`} className="flex flex-col gap-1 items-center justify-center shrink-0 w-48">
-              <span className="font-serif text-4xl md:text-5xl font-bold text-white tracking-tight">{stat.number}</span>
-              <span className="text-white/90 text-xs font-semibold uppercase tracking-widest">{stat.label}</span>
-            </div>
-          ))}
-          {stats.map((stat, idx) => (
-            <div key={`stat3-${idx}`} className="flex flex-col gap-1 items-center justify-center shrink-0 w-48">
-              <span className="font-serif text-4xl md:text-5xl font-bold text-white tracking-tight">{stat.number}</span>
-              <span className="text-white/90 text-xs font-semibold uppercase tracking-widest">{stat.label}</span>
-            </div>
-          ))}
+      <div className="w-full bg-primary py-8 md:py-10 mt-10 lg:mt-0 relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>
+        
+        <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 text-center">
+            {stats.map((stat, idx) => (
+              <div 
+                key={`stat-${idx}`} 
+                className={`flex flex-col gap-2 items-center justify-center p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 ${idx === 4 ? 'col-span-2 md:col-span-1' : ''}`}
+              >
+                <span className="font-serif text-4xl md:text-5xl font-bold text-white tracking-tight drop-shadow-sm">{stat.number}</span>
+                <span className="text-white/80 text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-center mt-1">{stat.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-      <style dangerouslySetInnerHTML={{__html: `
-        @keyframes scrollStats {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(calc(-33.333%)); }
-        }
-        .animate-scroll-stats {
-          animation: scrollStats 25s linear infinite;
-        }
-      `}} />
     </section>
   );
 }

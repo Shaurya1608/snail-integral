@@ -29,7 +29,7 @@ export default function IndustriesWeServe() {
   ];
 
   return (
-    <section className="w-full bg-[#f9fbf7] py-16 md:py-24 px-8">
+    <section className="w-full bg-[#f9fbf7] pt-16 md:pt-24 pb-10 md:pb-16 px-8">
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         <div className="text-center max-w-2xl mb-12">
           <AnimatedText delay={0.1}>

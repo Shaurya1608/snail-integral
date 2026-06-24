@@ -21,7 +21,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="w-full bg-[#f9fbf7] py-16 md:py-20 px-8 min-h-[100dvh] flex items-center">
+    <section className="w-full bg-[#f9fbf7] pt-10 md:pt-16 pb-10 md:pb-16 px-8 flex justify-center">
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         <div className="text-center max-w-2xl mb-10">
           <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight text-gray-900 mb-4">

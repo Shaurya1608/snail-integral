@@ -3,10 +3,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+  const isDarkHero = pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -16,7 +19,7 @@ export default function Navbar() {
 
   const navLinks = [
     { label: "Home", href: "/" },
-    { label: "About", href: "#about" },
+    { label: "About", href: "/about" },
     { label: "Services", href: "#services" },
     { label: "Industries", href: "#industries" },
     { label: "Initiatives", href: "#initiatives" },
@@ -39,7 +42,7 @@ export default function Navbar() {
             width={200}
             height={60}
             className={`h-9 w-auto transition-all duration-300 ${
-              scrolled ? '' : 'brightness-0 invert'
+              scrolled || !isDarkHero ? '' : 'brightness-0 invert'
             }`}
             priority
           />
@@ -47,7 +50,7 @@ export default function Navbar() {
 
         {/* Center Nav Links — Desktop */}
         <div className={`hidden lg:flex items-center gap-1 rounded-full px-2 py-1.5 transition-all duration-300 ${
-          scrolled
+          scrolled || !isDarkHero
             ? 'bg-gray-100/70 backdrop-blur-sm'
             : 'bg-white/10 backdrop-blur-md border border-white/10'
         }`}>
@@ -56,7 +59,7 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               className={`relative px-5 py-2 text-[13px] font-medium rounded-full transition-all duration-200 ${
-                scrolled
+                scrolled || !isDarkHero
                   ? 'text-gray-600 hover:text-gray-900 hover:bg-white/80'
                   : 'text-white/80 hover:text-white hover:bg-white/15'
               }`}
@@ -71,7 +74,7 @@ export default function Navbar() {
           <Link
             href="#contact"
             className={`px-5 py-2.5 text-[13px] font-medium transition-colors ${
-              scrolled
+              scrolled || !isDarkHero
                 ? 'text-gray-700 hover:text-gray-900'
                 : 'text-white/80 hover:text-white'
             }`}
@@ -81,7 +84,7 @@ export default function Navbar() {
           <Link
             href="#contact"
             className={`px-6 py-2.5 text-[13px] font-semibold rounded-full transition-all duration-200 hover:-translate-y-[1px] ${
-              scrolled
+              scrolled || !isDarkHero
                 ? 'bg-primary text-white hover:bg-primary-hover shadow-[0_1px_3px_rgba(106,154,56,0.4)] hover:shadow-[0_4px_12px_rgba(106,154,56,0.3)]'
                 : 'bg-white text-gray-900 hover:bg-white/90 shadow-[0_2px_10px_rgba(0,0,0,0.15)]'
             }`}
@@ -97,13 +100,13 @@ export default function Navbar() {
           aria-label="Toggle menu"
         >
           <span className={`block w-5 h-[1.5px] transition-all duration-300 ${
-            scrolled ? 'bg-gray-800' : 'bg-white'
+            scrolled || !isDarkHero ? 'bg-gray-800' : 'bg-white'
           } ${mobileOpen ? "rotate-45 translate-y-[4.5px]" : ""}`}></span>
           <span className={`block w-5 h-[1.5px] transition-all duration-300 ${
-            scrolled ? 'bg-gray-800' : 'bg-white'
+            scrolled || !isDarkHero ? 'bg-gray-800' : 'bg-white'
           } ${mobileOpen ? "opacity-0 scale-0" : ""}`}></span>
           <span className={`block w-5 h-[1.5px] transition-all duration-300 ${
-            scrolled ? 'bg-gray-800' : 'bg-white'
+            scrolled || !isDarkHero ? 'bg-gray-800' : 'bg-white'
           } ${mobileOpen ? "-rotate-45 -translate-y-[4.5px]" : ""}`}></span>
         </button>
       </nav>

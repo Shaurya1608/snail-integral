@@ -3,19 +3,19 @@ import AnimatedText from './AnimatedText';
 
 export default function FinalCTA() {
   return (
-    <section className="w-full bg-[#f9fbf7] py-20 md:py-28 px-6 md:px-8 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section className="w-full bg-[#f9fbf7] pt-10 md:pt-16 pb-10 md:pb-16 px-6 md:px-8 overflow-hidden">
+      <div className="max-w-7xl mx-auto relative z-10">
 
         {/* Top: Centered Heading */}
         <div className="flex flex-col items-center text-center gap-6 mb-16 md:mb-20">
           <AnimatedText delay={0.1}>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-gray-900 leading-[1.1]">
-              Ready to build something <span className="italic text-[#4a7c24]">remarkable</span>
+              Ready to Build Something <span className="italic text-[#4a7c24]">That Lasts</span>
             </h2>
           </AnimatedText>
           <AnimatedText delay={0.2}>
-            <p className="text-base md:text-lg text-gray-700 italic max-w-xl">
-              Let&apos;s talk about your brand and what it could become
+            <p className="text-base md:text-lg text-gray-700 max-w-2xl">
+              Whether you are a corporate enterprise, an agriculture business, or a growing startup, Snail Integral is ready to be your strategic communication partner. Let us start a conversation.
             </p>
           </AnimatedText>
           <AnimatedText delay={0.3}>

@@ -46,7 +46,7 @@ export default function ServicesOverview() {
   ];
 
   return (
-    <section id="services" className="w-full bg-[#f9fbf7] py-20 md:py-32 px-4 md:px-8 overflow-hidden">
+    <section id="services" className="w-full bg-[#f9fbf7] py-10 md:py-16 px-4 md:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         <div className="text-center max-w-2xl mb-16 px-4">
           <AnimatedText delay={0.1}>

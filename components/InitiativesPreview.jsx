@@ -18,7 +18,7 @@ export default function InitiativesPreview() {
   ];
 
   return (
-    <section id="initiatives" className="relative w-full bg-[#f9fbf7] text-gray-900 py-20 md:py-32 px-8 overflow-hidden">
+    <section id="initiatives" className="relative w-full bg-[#f9fbf7] text-gray-900 pt-10 md:pt-16 pb-10 md:pb-16 px-8 overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center">
         <div className="text-center max-w-2xl mb-10">
           <AnimatedText delay={0.1}>

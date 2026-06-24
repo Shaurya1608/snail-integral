@@ -25,7 +25,7 @@ export default function Process() {
   ];
 
   return (
-    <section className="w-full bg-[#f9fbf7] py-20 md:py-32 px-8 overflow-hidden">
+    <section className="w-full bg-[#f9fbf7] pt-20 md:pt-32 pb-10 md:pb-16 px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         <div className="text-center max-w-2xl mb-20">
           <AnimatedText delay={0.1}>

@@ -3,7 +3,7 @@ import AnimatedText from './AnimatedText';
 
 export default function AboutPreview() {
   return (
-    <section id="about" className="w-full bg-[#f9fbf7] py-16 md:py-24 px-8 overflow-hidden">
+    <section id="about" className="w-full bg-[#f9fbf7] pt-10 md:pt-16 pb-16 md:pb-24 px-8 overflow-hidden">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
         {/* Left Side: Text Content */}
         <div className="flex flex-col gap-5 relative z-10">
