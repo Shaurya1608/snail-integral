@@ -62,10 +62,10 @@ export default function Footer() {
           {/* Column 2: Services */}
           <div className="flex flex-col gap-4">
             <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-white/30 mb-1">Services</h4>
-            <Link href="#services" className="text-sm text-white/60 hover:text-white transition-colors duration-200">Brand Consulting</Link>
-            <Link href="#services" className="text-sm text-white/60 hover:text-white transition-colors duration-200">Corporate Comm</Link>
-            <Link href="#services" className="text-sm text-white/60 hover:text-white transition-colors duration-200">Public Relations</Link>
-            <Link href="#services" className="text-sm text-white/60 hover:text-white transition-colors duration-200">Digital & Social</Link>
+            <Link href="/services#strategy-consulting" className="text-sm text-white/60 hover:text-white transition-colors duration-200">Brand Consulting</Link>
+            <Link href="/services#strategy-consulting" className="text-sm text-white/60 hover:text-white transition-colors duration-200">Corporate Comm</Link>
+            <Link href="/services#communication-activations" className="text-sm text-white/60 hover:text-white transition-colors duration-200">Public Relations</Link>
+            <Link href="/services#digital-technology" className="text-sm text-white/60 hover:text-white transition-colors duration-200">Digital & Social</Link>
           </div>
 
           {/* Column 3: Industries */}

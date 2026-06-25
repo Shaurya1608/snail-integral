@@ -75,7 +75,7 @@ export default function Hero() {
             <div className="flex flex-col sm:items-center gap-4 w-full sm:w-auto">
               <div className="flex flex-col sm:flex-row items-center gap-3 w-full">
                 <Link
-                  href="#services"
+                  href="/services"
                   className="group relative px-6 py-3.5 sm:py-3 text-[13px] md:text-sm font-semibold rounded-full bg-[#6a9a38] text-white overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(106,154,56,0.4)] hover:-translate-y-[2px] w-full sm:w-auto text-center flex justify-center items-center"
                 >
                   <span className="relative z-10 flex items-center gap-2">

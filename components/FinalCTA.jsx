@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import AnimatedText from './AnimatedText';
 
 export default function FinalCTA() {
@@ -26,12 +27,12 @@ export default function FinalCTA() {
               >
                 Schedule
               </a>
-              <a
-                href="#services"
+              <Link
+                href="/services"
                 className="px-7 py-3 text-sm font-medium rounded-full border border-gray-400 text-gray-800 hover:border-gray-600 hover:bg-gray-50 transition-all duration-300"
               >
                 Learn more
-              </a>
+              </Link>
             </div>
           </AnimatedText>
         </div>
