@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
@@ -13,9 +14,13 @@ export default function Hero() {
         transition={{ duration: 1.2, ease: [0.25, 0.4, 0.25, 1] }}
         className="absolute inset-0 z-0"
       >
-        <div
-          className="w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: `url('/LandingPage/l-image-1.jpg')` }}
+        <Image
+          src="/LandingPage/l-image-1.jpg"
+          alt="Snail Integral background"
+          fill
+          priority
+          quality={85}
+          className="object-cover object-center"
         />
       </motion.div>
 

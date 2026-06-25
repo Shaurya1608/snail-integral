@@ -17,6 +17,17 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [mobileOpen]);
+
   const navLinks = [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
@@ -26,97 +37,99 @@ export default function Navbar() {
   ];
 
   return (
-    <header
-      className={`fixed top-0 z-50 w-full transition-all duration-500 ${
-        scrolled
-          ? "bg-white/90 backdrop-blur-xl shadow-[0_1px_0_rgba(0,0,0,0.05)]"
-          : "bg-transparent"
-      }`}
-    >
-      <nav className="flex items-center justify-between px-6 lg:px-10 py-4 max-w-[1400px] mx-auto w-full">
-        {/* Logo */}
-        <Link href="/" className="relative z-10 flex-shrink-0">
-          <Image
-            src="/logo/Snail Integral New Logo-03.png"
-            alt="Snail Integral Logo"
-            width={200}
-            height={60}
-            className={`h-9 w-auto transition-all duration-300 ${
-              scrolled || !isDarkHero ? '' : 'brightness-0 invert'
-            }`}
-            priority
-          />
-        </Link>
+    <>
+      <header
+        className={`fixed top-0 z-50 w-full transition-colors duration-500 ${
+          scrolled
+            ? "bg-white/90 backdrop-blur-xl shadow-[0_1px_0_rgba(0,0,0,0.05)]"
+            : "bg-transparent"
+        }`}
+      >
+        <nav className="flex items-center justify-between px-6 lg:px-10 py-4 max-w-[1400px] mx-auto w-full">
+          {/* Logo */}
+          <Link href="/" className="relative z-10 flex-shrink-0">
+            <Image
+              src="/logo/Snail Integral New Logo-03.png"
+              alt="Snail Integral Logo"
+              width={200}
+              height={60}
+              className={`h-9 w-auto transition-all duration-300 ${
+                scrolled || !isDarkHero ? '' : 'brightness-0 invert'
+              }`}
+              priority
+            />
+          </Link>
 
-        {/* Center Nav Links — Desktop */}
-        <div className={`hidden lg:flex items-center gap-1 rounded-full px-2 py-1.5 transition-all duration-300 ${
-          scrolled || !isDarkHero
-            ? 'bg-gray-100/70 backdrop-blur-sm'
-            : 'bg-white/10 backdrop-blur-md border border-white/10'
-        }`}>
-          {navLinks.map((link) => (
+          {/* Center Nav Links — Desktop */}
+          <div className={`hidden lg:flex items-center gap-1 rounded-full px-2 py-1.5 transition-all duration-300 ${
+            scrolled || !isDarkHero
+              ? 'bg-gray-100/70 backdrop-blur-sm'
+              : 'bg-white/10 backdrop-blur-md border border-white/10'
+          }`}>
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={`relative px-5 py-2 text-[13px] font-medium rounded-full transition-all duration-200 ${
+                  scrolled || !isDarkHero
+                    ? 'text-gray-600 hover:text-gray-900 hover:bg-white/80'
+                    : 'text-white/80 hover:text-white hover:bg-white/15'
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Right Side CTAs — Desktop */}
+          <div className="hidden lg:flex items-center gap-3">
             <Link
-              key={link.label}
-              href={link.href}
-              className={`relative px-5 py-2 text-[13px] font-medium rounded-full transition-all duration-200 ${
+              href="#contact"
+              className={`px-5 py-2.5 text-[13px] font-medium transition-colors ${
                 scrolled || !isDarkHero
-                  ? 'text-gray-600 hover:text-gray-900 hover:bg-white/80'
-                  : 'text-white/80 hover:text-white hover:bg-white/15'
+                  ? 'text-gray-700 hover:text-gray-900'
+                  : 'text-white/80 hover:text-white'
               }`}
             >
-              {link.label}
+              Contact
             </Link>
-          ))}
-        </div>
+            <Link
+              href="#contact"
+              className={`px-6 py-2.5 text-[13px] font-semibold rounded-full transition-all duration-200 hover:-translate-y-[1px] ${
+                scrolled || !isDarkHero
+                  ? 'bg-primary text-white hover:bg-primary-hover shadow-[0_1px_3px_rgba(106,154,56,0.4)] hover:shadow-[0_4px_12px_rgba(106,154,56,0.3)]'
+                  : 'bg-white text-gray-900 hover:bg-white/90 shadow-[0_2px_10px_rgba(0,0,0,0.15)]'
+              }`}
+            >
+              Get Started
+            </Link>
+          </div>
 
-        {/* Right Side CTAs — Desktop */}
-        <div className="hidden lg:flex items-center gap-3">
-          <Link
-            href="#contact"
-            className={`px-5 py-2.5 text-[13px] font-medium transition-colors ${
-              scrolled || !isDarkHero
-                ? 'text-gray-700 hover:text-gray-900'
-                : 'text-white/80 hover:text-white'
-            }`}
+          {/* Hamburger — Mobile */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="lg:hidden relative z-10 w-10 h-10 flex flex-col items-center justify-center gap-1.5"
+            aria-label="Toggle menu"
           >
-            Contact
-          </Link>
-          <Link
-            href="#contact"
-            className={`px-6 py-2.5 text-[13px] font-semibold rounded-full transition-all duration-200 hover:-translate-y-[1px] ${
-              scrolled || !isDarkHero
-                ? 'bg-primary text-white hover:bg-primary-hover shadow-[0_1px_3px_rgba(106,154,56,0.4)] hover:shadow-[0_4px_12px_rgba(106,154,56,0.3)]'
-                : 'bg-white text-gray-900 hover:bg-white/90 shadow-[0_2px_10px_rgba(0,0,0,0.15)]'
-            }`}
-          >
-            Get Started
-          </Link>
-        </div>
-
-        {/* Hamburger — Mobile */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden relative z-10 w-10 h-10 flex flex-col items-center justify-center gap-1.5"
-          aria-label="Toggle menu"
-        >
-          <span className={`block w-5 h-[1.5px] transition-all duration-300 ${
-            scrolled || !isDarkHero ? 'bg-gray-800' : 'bg-white'
-          } ${mobileOpen ? "rotate-45 translate-y-[4.5px]" : ""}`}></span>
-          <span className={`block w-5 h-[1.5px] transition-all duration-300 ${
-            scrolled || !isDarkHero ? 'bg-gray-800' : 'bg-white'
-          } ${mobileOpen ? "opacity-0 scale-0" : ""}`}></span>
-          <span className={`block w-5 h-[1.5px] transition-all duration-300 ${
-            scrolled || !isDarkHero ? 'bg-gray-800' : 'bg-white'
-          } ${mobileOpen ? "-rotate-45 -translate-y-[4.5px]" : ""}`}></span>
-        </button>
-      </nav>
+            <span className={`block w-5 h-[1.5px] transition-all duration-300 ${
+              scrolled || !isDarkHero ? 'bg-gray-800' : 'bg-white'
+            } ${mobileOpen ? "rotate-45 translate-y-[4.5px]" : ""}`}></span>
+            <span className={`block w-5 h-[1.5px] transition-all duration-300 ${
+              scrolled || !isDarkHero ? 'bg-gray-800' : 'bg-white'
+            } ${mobileOpen ? "opacity-0 scale-0" : ""}`}></span>
+            <span className={`block w-5 h-[1.5px] transition-all duration-300 ${
+              scrolled || !isDarkHero ? 'bg-gray-800' : 'bg-white'
+            } ${mobileOpen ? "-rotate-45 -translate-y-[4.5px]" : ""}`}></span>
+          </button>
+        </nav>
+      </header>
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`lg:hidden fixed inset-0 bg-[#f9fbf7] z-[100] flex flex-col transition-transform duration-500 ease-in-out origin-top ${
+        className={`lg:hidden fixed inset-0 bg-[#f9fbf7] z-[100] flex flex-col transition-all duration-300 ease-in-out ${
           mobileOpen
-            ? "scale-y-100 pointer-events-auto"
-            : "scale-y-0 pointer-events-none"
+            ? "opacity-100 pointer-events-auto translate-y-0"
+            : "opacity-0 pointer-events-none -translate-y-4"
         }`}
       >
         <div className="flex items-center justify-between px-6 py-5 bg-white border-b border-gray-100/50">
@@ -145,7 +158,11 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className={`text-4xl font-serif font-semibold text-gray-900 hover:text-primary transition-all duration-300 translate-y-0 opacity-100 flex items-center justify-between group`}
+              className={`text-4xl font-serif font-semibold text-gray-900 hover:text-primary transition-all duration-300 flex items-center justify-between group ${
+                mobileOpen
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-4 opacity-0"
+              }`}
               style={{ transitionDelay: mobileOpen ? `${100 + i * 50}ms` : '0ms' }}
             >
               {link.label}
@@ -154,7 +171,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="px-8 pb-10 pt-6 flex flex-col gap-4 bg-white/50 border-t border-gray-100 backdrop-blur-md">
+        <div className="px-8 pb-10 pt-6 flex flex-col gap-4 bg-[#f9fbf7] border-t border-gray-100">
           <p className="text-sm font-medium text-gray-500 mb-2 uppercase tracking-wider text-center">Ready to grow?</p>
           <Link
             href="#contact"
@@ -175,6 +192,6 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-    </header>
+    </>
   );
 }
