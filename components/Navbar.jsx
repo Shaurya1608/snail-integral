@@ -32,8 +32,7 @@ export default function Navbar() {
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
-    { label: "Industries", href: "#industries" },
-    { label: "Initiatives", href: "#initiatives" },
+    { label: "Initiatives", href: "/initiatives" },
   ];
 
   return (
@@ -84,17 +83,17 @@ export default function Navbar() {
           {/* Right Side CTAs — Desktop */}
           <div className="hidden lg:flex items-center gap-3">
             <Link
-              href="#contact"
-              className={`px-5 py-2.5 text-[13px] font-medium transition-colors ${
+              href="/contact"
+              className={`px-5 py-2.5 text-[13px] font-semibold border rounded-full transition-all duration-200 hover:-translate-y-[1px] ${
                 scrolled || !isDarkHero
-                  ? 'text-gray-700 hover:text-gray-900'
-                  : 'text-white/80 hover:text-white'
+                  ? 'border-gray-200/80 bg-gray-100/90 text-gray-700 hover:text-gray-900 hover:bg-gray-200/70 hover:border-gray-300'
+                  : 'border-white/35 bg-white/15 text-white hover:text-white hover:bg-white/25 backdrop-blur-md shadow-[0_2px_10px_rgba(0,0,0,0.15)]'
               }`}
             >
               Contact
             </Link>
             <Link
-              href="#contact"
+              href="/contact"
               className={`px-6 py-2.5 text-[13px] font-semibold rounded-full transition-all duration-200 hover:-translate-y-[1px] ${
                 scrolled || !isDarkHero
                   ? 'bg-primary text-white hover:bg-primary-hover shadow-[0_1px_3px_rgba(106,154,56,0.4)] hover:shadow-[0_4px_12px_rgba(106,154,56,0.3)]'
@@ -174,7 +173,7 @@ export default function Navbar() {
         <div className="px-8 pb-10 pt-6 flex flex-col gap-4 bg-[#f9fbf7] border-t border-gray-100">
           <p className="text-sm font-medium text-gray-500 mb-2 uppercase tracking-wider text-center">Ready to grow?</p>
           <Link
-            href="#contact"
+            href="/contact"
             onClick={() => setMobileOpen(false)}
             className="w-full py-4 text-center text-lg font-semibold rounded-2xl bg-primary text-white hover:bg-primary-hover transition-colors shadow-lg"
           >

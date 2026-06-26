@@ -59,7 +59,7 @@ export default function InitiativesPreview() {
         </div>
 
         <AnimatedText delay={0.3}>
-          <Link href="#" className="mt-4 px-8 py-3.5 text-sm font-medium rounded-full border border-gray-300 text-gray-800 hover:border-gray-500 hover:bg-gray-50 transition-all duration-300 shadow-sm inline-flex items-center gap-2 group">
+          <Link href="/initiatives" className="mt-4 px-8 py-3.5 text-sm font-medium rounded-full border border-gray-300 text-gray-800 hover:border-gray-500 hover:bg-gray-50 transition-all duration-300 shadow-sm inline-flex items-center gap-2 group">
             Explore All Initiatives
             <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
           </Link>

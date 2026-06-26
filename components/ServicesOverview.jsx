@@ -1,7 +1,13 @@
+"use client";
+
+import { useState, useRef } from 'react';
 import Link from 'next/link';
 import AnimatedText from './AnimatedText';
 
 export default function ServicesOverview() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const scrollRef = useRef(null);
+
   const services = [
     {
       title: "Brand Consulting",
@@ -45,6 +51,29 @@ export default function ServicesOverview() {
     }
   ];
 
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const cardWidth = container.querySelector('.snap-start')?.clientWidth || 300;
+    const gap = 24; // gap-6 is 24px
+    const index = Math.round(container.scrollLeft / (cardWidth + gap));
+    if (index >= 0 && index < services.length) {
+      setActiveIndex(index);
+    }
+  };
+
+  const scrollToCard = (index) => {
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const cardWidth = container.querySelector('.snap-start')?.clientWidth || 300;
+    const gap = 24;
+    container.scrollTo({
+      left: index * (cardWidth + gap),
+      behavior: 'smooth'
+    });
+    setActiveIndex(index);
+  };
+
   return (
     <section id="services" className="w-full bg-[#f9fbf7] py-10 md:py-16 px-4 md:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col items-center">
@@ -62,9 +91,13 @@ export default function ServicesOverview() {
         </div>
 
         {/* Mobile Horizontal Scroll / Desktop 4-Col Grid */}
-        <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 w-full mb-12 pb-8 md:pb-0 snap-x snap-mandatory hide-scrollbar px-4 md:px-0">
+        <div 
+          ref={scrollRef}
+          onScroll={handleScroll}
+          className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 w-full mb-12 pb-8 md:pb-0 snap-x snap-mandatory hide-scrollbar px-4 md:px-0 scroll-smooth"
+        >
           {services.map((service, index) => (
-            <AnimatedText key={index} delay={0.1 + (index % 4) * 0.1} duration={0.4} className="flex-shrink-0 w-[85vw] sm:w-[320px] md:w-auto snap-center flex">
+            <AnimatedText key={index} delay={0.1 + (index % 4) * 0.1} duration={0.4} className="flex-shrink-0 w-[78vw] sm:w-[320px] md:w-auto snap-start flex">
               <div 
                 className="bg-white border border-gray-100 rounded-xl p-6 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 flex flex-col gap-3 group relative overflow-hidden h-full w-full"
               >
@@ -86,6 +119,22 @@ export default function ServicesOverview() {
                 </Link>
               </div>
             </AnimatedText>
+          ))}
+        </div>
+
+        {/* Pagination Dots for Mobile/Tablet */}
+        <div className="flex md:hidden justify-center items-center gap-2 mb-12">
+          {services.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => scrollToCard(index)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                activeIndex === index 
+                  ? 'w-6 bg-primary' 
+                  : 'w-2 bg-gray-300 hover:bg-gray-400'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
           ))}
         </div>
 
