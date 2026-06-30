@@ -155,7 +155,7 @@ export default function ServicePillars() {
                         </div>
                         
                         {/* Vertically Stacked Image Area */}
-                        <div className="flex flex-col gap-4 mt-12">
+                        <div className="hidden lg:flex flex-col gap-4 mt-12">
                           <div className="w-full h-32 rounded-[1.5rem] overflow-hidden relative shadow-sm">
                             <Image src="/LandingPage/l-image-1.jpg" alt="Service Image 1" fill className="object-cover" />
                           </div>
