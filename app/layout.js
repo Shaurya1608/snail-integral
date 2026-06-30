@@ -49,9 +49,9 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${plusJakartaSans.variable} ${dmSans.variable} h-full antialiased`}
+      className={`${plusJakartaSans.variable} ${dmSans.variable} h-full antialiased w-full overflow-x-hidden`}
     >
-      <body className="min-h-full flex flex-col font-sans">
+      <body className="min-h-full flex flex-col font-sans w-full overflow-x-hidden">
         {children}
         <WhatsAppButton />
       </body>

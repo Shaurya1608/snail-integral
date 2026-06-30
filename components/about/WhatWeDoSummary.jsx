@@ -42,7 +42,7 @@ export default function WhatWeDoSummary() {
         <div className="flex flex-wrap justify-center gap-6 md:gap-8">
           {pillars.map((pillar, index) => (
             <AnimatedText key={index} delay={0.2 + (index * 0.1)}>
-              <div className="w-full flex-1 min-w-[280px] sm:max-w-[calc(50%-1.5rem)] lg:max-w-[320px] bg-white p-6 rounded-2xl shadow-sm border border-gray-100 h-full hover:shadow-md transition-all duration-300 group relative overflow-hidden flex flex-col items-center text-center">
+              <div className="w-full flex-1 min-w-0 sm:min-w-[280px] sm:max-w-[calc(50%-1.5rem)] lg:max-w-[320px] bg-white p-6 rounded-2xl shadow-sm border border-gray-100 h-full hover:shadow-md transition-all duration-300 group relative overflow-hidden flex flex-col items-center text-center">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gray-200 group-hover:bg-[#4a7c24] transition-colors duration-300"></div>
                 
                 <div className="w-12 h-12 bg-[#4a7c24]/5 rounded-full flex items-center justify-center mb-4 group-hover:bg-[#4a7c24]/10 transition-colors">
