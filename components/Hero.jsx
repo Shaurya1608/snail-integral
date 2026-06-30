@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[100dvh] min-h-[600px] overflow-hidden">
+    <section className="relative w-full min-h-[100dvh] overflow-hidden flex flex-col">
       {/* === Background Image === */}
       <motion.div
         initial={{ scale: 1.1, opacity: 0 }}
@@ -29,7 +29,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-[1] bg-gradient-to-r from-black/50 via-transparent to-transparent" />
 
       {/* === Content === */}
-      <div className="relative z-10 h-full flex flex-col justify-end pb-20 md:pb-28 px-6 lg:px-10 max-w-[1400px] mx-auto w-full">
+      <div className="relative z-10 flex-1 flex flex-col justify-center pt-28 pb-20 md:pt-32 md:pb-28 px-6 lg:px-10 max-w-[1400px] mx-auto w-full">
 
         {/* Main Text Block */}
         <div className="flex flex-col gap-5 max-w-3xl">
@@ -76,7 +76,7 @@ export default function Hero() {
               <div className="flex flex-col sm:flex-row items-center gap-3 w-full">
                 <Link
                   href="/services"
-                  className="group relative px-6 py-3.5 sm:py-3 text-[13px] md:text-sm font-semibold rounded-full bg-[#6a9a38] text-white overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(106,154,56,0.4)] hover:-translate-y-[2px] w-full sm:w-auto text-center flex justify-center items-center"
+                  className="group relative px-5 py-3.5 sm:py-3 text-[13px] md:text-sm font-semibold rounded-full bg-[#6a9a38] text-white overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(106,154,56,0.4)] hover:-translate-y-[2px] w-full sm:w-auto text-center flex justify-center items-center"
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     Explore Our Services
@@ -86,7 +86,7 @@ export default function Hero() {
                 </Link>
                 <Link
                   href="#contact"
-                  className="px-6 py-3.5 sm:py-3 text-[13px] md:text-sm font-medium rounded-full border border-white/25 text-white/90 hover:bg-white/10 hover:border-white/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-[2px] w-full sm:w-auto text-center flex justify-center items-center"
+                  className="px-5 py-3.5 sm:py-3 text-[13px] md:text-sm font-medium rounded-full border border-white/25 text-white/90 hover:bg-white/10 hover:border-white/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-[2px] w-full sm:w-auto text-center flex justify-center items-center"
                 >
                   Schedule a Consultation
                 </Link>
@@ -94,8 +94,9 @@ export default function Hero() {
               <div className="flex w-full sm:justify-start">
                 <a
                   href="/Snail%20Brochure%202026.pdf"
-                  download="Snail_Brochure_2026.pdf"
-                  className="px-6 py-3.5 sm:py-3 text-[13px] md:text-sm font-medium rounded-full border border-[#8ec44a]/50 text-[#8ec44a] hover:bg-[#8ec44a]/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-[2px] flex justify-center items-center gap-2 w-full sm:w-auto"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-3.5 sm:py-3 text-[13px] md:text-sm font-medium rounded-full border border-[#8ec44a]/50 text-[#8ec44a] hover:bg-[#8ec44a]/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-[2px] flex justify-center items-center gap-2 w-full sm:w-auto"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                   Download Brochure

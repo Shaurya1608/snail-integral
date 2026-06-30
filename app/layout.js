@@ -43,13 +43,18 @@ export const metadata = {
   },
 };
 
+import WhatsAppButton from "@/components/WhatsAppButton";
+
 export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
       className={`${plusJakartaSans.variable} ${dmSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full flex flex-col font-sans">
+        {children}
+        <WhatsAppButton />
+      </body>
     </html>
   );
 }

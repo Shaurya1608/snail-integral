@@ -5,25 +5,28 @@ export default function InitiativesPreview() {
   const initiatives = [
     {
       title: "Brand R.Comm Summit",
-      desc: "India's premier agriculture and rural communication summit, bringing together leaders, innovators, and communicators across three successful editions."
+      desc: "India's premier agriculture and rural communication summit, bringing together leaders, innovators, and communicators across three successful editions.",
+      link: "/initiatives#brand-rcomm-summit"
     },
     {
       title: "The Snail Show Podcast",
-      desc: "In-depth conversations with industry leaders on agriculture, business, and communication. Available on all major platforms."
+      desc: "In-depth conversations with industry leaders on agriculture, business, and communication. Available on all major platforms.",
+      link: "/initiatives#snail-show-podcast"
     },
     {
       title: "Bio-Agri Next Global Conference",
-      desc: "A global platform for sustainable agriculture, connecting policymakers, researchers, businesses, and farmers through dialogue and collaboration."
+      desc: "A global platform for sustainable agriculture, connecting policymakers, researchers, businesses, and farmers through dialogue and collaboration.",
+      link: "/initiatives#bio-agri-conference"
     }
   ];
 
   return (
-    <section id="initiatives" className="relative w-full bg-[#f9fbf7] text-gray-900 pt-10 md:pt-16 pb-10 md:pb-16 px-8 overflow-hidden">
+    <section id="initiatives" className="relative w-full bg-white text-gray-900 pt-10 md:pt-16 pb-10 md:pb-16 px-8 overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center">
         <div className="text-center max-w-2xl mb-10">
           <AnimatedText delay={0.1}>
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight text-gray-900 mb-4">
-              Beyond Client Work
+              Our Initiatives
             </h2>
           </AnimatedText>
           <AnimatedText delay={0.2}>
@@ -36,32 +39,42 @@ export default function InitiativesPreview() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mb-10">
           {initiatives.map((item, index) => (
             <AnimatedText key={index} delay={0.1 + index * 0.1}>
-              <div className="group border border-gray-200 bg-white rounded-2xl p-8 hover:border-[#4a7c24]/30 hover:-translate-y-2 transition-all duration-500 flex flex-col gap-4 relative overflow-hidden shadow-sm hover:shadow-xl h-full">
-                {/* Subtle background glow effect on hover */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#4a7c24]/5 blur-[40px] group-hover:bg-[#4a7c24]/10 transition-colors duration-500 pointer-events-none rounded-full translate-x-1/2 -translate-y-1/2"></div>
+              <Link href={item.link} className="block h-full group border border-gray-100 bg-white rounded-3xl p-8 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 flex flex-col relative overflow-hidden z-10">
+                {/* Decorative Accent Background */}
+                <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-[#6a9a38]/10 to-transparent rounded-bl-full opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 -z-10"></div>
+                <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-[#6a9a38] to-[#8ec44a] group-hover:w-full transition-all duration-700 ease-out z-20"></div>
                 
-                <h3 className="font-serif text-2xl font-semibold text-gray-900 group-hover:text-[#4a7c24] transition-colors">
+                {/* Number Indicator */}
+                <div className="text-5xl font-serif font-black text-gray-50 mb-4 group-hover:text-[#6a9a38]/10 transition-colors duration-500 select-none">
+                  0{index + 1}
+                </div>
+
+                <h3 className="font-serif text-2xl font-semibold text-gray-900 group-hover:text-[#6a9a38] transition-colors duration-300 mb-4 mt-auto">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-sm flex-grow">
+                <p className="text-gray-500 leading-relaxed text-sm flex-grow">
                   {item.desc}
                 </p>
                 
-                <div className="pt-4 mt-auto border-t border-gray-100 group-hover:border-[#4a7c24]/20 transition-colors">
-                  <span className="inline-flex items-center gap-2 text-sm font-medium text-[#4a7c24]/80 group-hover:text-[#4a7c24] transition-colors">
+                <div className="pt-6 mt-6 border-t border-gray-100 group-hover:border-[#6a9a38]/20 transition-colors duration-300 flex items-center justify-between">
+                  <span className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#6a9a38]/80 group-hover:text-[#6a9a38] transition-colors uppercase tracking-wider">
                     Learn more
-                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                   </span>
+                  <div className="w-8 h-8 rounded-full bg-gray-50 group-hover:bg-[#6a9a38]/10 flex items-center justify-center text-gray-400 group-hover:text-[#6a9a38] transition-colors duration-300">
+                    <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </AnimatedText>
           ))}
         </div>
 
         <AnimatedText delay={0.3}>
-          <Link href="/initiatives" className="mt-4 px-8 py-3.5 text-sm font-medium rounded-full border border-gray-300 text-gray-800 hover:border-gray-500 hover:bg-gray-50 transition-all duration-300 shadow-sm inline-flex items-center gap-2 group">
+          <Link href="/initiatives" className="mt-4 px-8 py-3.5 text-sm font-semibold rounded-full bg-[#6a9a38] text-white hover:bg-[#557d2a] transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 inline-flex items-center gap-2 group">
             Explore All Initiatives
-            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
           </Link>
         </AnimatedText>
       </div>

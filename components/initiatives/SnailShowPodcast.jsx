@@ -13,7 +13,7 @@ export default function SnailShowPodcast() {
   ];
 
   return (
-    <section className="w-full bg-[#f9fbf7] text-gray-900 py-16 md:py-24 px-6 md:px-8 overflow-hidden relative border-t border-b border-gray-150/30">
+    <section id="snail-show-podcast" className="w-full bg-[#f9fbf7] text-gray-900 py-16 md:py-24 px-6 md:px-8 overflow-hidden relative border-t border-b border-gray-150/30">
       {/* Background glow effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
       

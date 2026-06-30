@@ -1,11 +1,22 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import AnimatedText from '../AnimatedText';
 
 export default function HeroServices() {
   return (
     <section className="relative w-full h-[100dvh] min-h-[620px] flex items-center justify-center overflow-hidden bg-[#f9fbf7] border-b border-gray-150/30">
-      {/* Subtle grid pattern background */}
-      <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image 
+          src="/LandingPage/servics.png" 
+          alt="Services Background" 
+          fill 
+          className="object-cover opacity-60"
+          priority
+        />
+        {/* Subtle translucent overlay to ensure text readability */}
+        <div className="absolute inset-0 bg-[#f9fbf7]/40" />
+      </div>
       
       {/* Soft abstract blur glows for visual premium feel */}
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] rounded-full bg-primary/5 blur-[80px] pointer-events-none" />

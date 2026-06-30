@@ -25,8 +25,8 @@ export default function CoreValues() {
   ];
 
   return (
-    <section className="w-full bg-[#f9fbf7] py-16 md:py-24 px-6 md:px-8">
-      <div className="max-w-5xl mx-auto w-full">
+    <section className="w-full bg-white py-16 md:py-24 px-6 md:px-8">
+      <div className="max-w-6xl mx-auto w-full">
         <AnimatedText delay={0.1}>
           <div className="text-center mb-12">
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -38,18 +38,17 @@ export default function CoreValues() {
           </div>
         </AnimatedText>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {values.map((value, index) => (
             <AnimatedText key={index} delay={0.2 + (index * 0.1)}>
-              <div className="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-gray-100 h-full hover:shadow-md transition-all duration-300 group relative overflow-hidden flex flex-col">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gray-200 group-hover:bg-[#4a7c24] transition-colors duration-300"></div>
-                <h3 className="font-serif text-lg md:text-xl font-bold text-gray-900 mb-4">
+              <div className="bg-white p-6 md:p-8 rounded-[2rem] shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(74,124,36,0.15)] hover:-translate-y-2 transition-all duration-500 border border-gray-100 h-full group relative overflow-hidden flex flex-col z-10">
+                <h3 className="font-serif text-xl md:text-2xl font-bold text-gray-900 mb-3 group-hover:text-[#4a7c24] transition-colors duration-300">
                   {value.title}
                 </h3>
-                <p className="font-medium text-[#4a7c24] text-sm md:text-base mb-4">
+                <p className="font-medium text-[#4a7c24] text-sm mb-3">
                   {value.statement}
                 </p>
-                <p className="text-gray-600 leading-relaxed text-sm mt-auto">
+                <p className="text-gray-600 leading-relaxed text-[14px] mt-auto">
                   {value.description}
                 </p>
               </div>

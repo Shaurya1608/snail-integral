@@ -75,7 +75,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="w-full bg-gray-50 text-gray-900 py-20 px-6 md:px-8">
+    <section id="contact-form" className="w-full bg-white text-gray-900 py-20 px-6 md:px-8">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <motion.h2 

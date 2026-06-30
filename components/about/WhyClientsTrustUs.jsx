@@ -30,7 +30,7 @@ export default function WhyClientsTrustUs() {
 
   return (
     <section className="w-full bg-[#f9fbf7] py-16 md:py-24 px-6 md:px-8 border-t border-gray-100">
-      <div className="max-w-5xl mx-auto w-full">
+      <div className="max-w-7xl mx-auto w-full">
         <AnimatedText delay={0.1}>
           <div className="text-center mb-12">
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -45,17 +45,20 @@ export default function WhyClientsTrustUs() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {points.map((point, index) => (
             <AnimatedText key={index} delay={0.2 + (index * 0.1)}>
-              <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 h-full hover:shadow-md transition-all duration-300 group relative overflow-hidden flex flex-col">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gray-200 group-hover:bg-[#4a7c24] transition-colors duration-300"></div>
-                
-                <div className="w-12 h-12 bg-[#4a7c24]/5 rounded-full flex items-center justify-center mb-4 group-hover:bg-[#4a7c24]/10 transition-colors">
-                  <span className="text-[#4a7c24] font-serif font-bold text-lg">{index + 1}</span>
+              <div className="bg-white p-6 md:p-8 rounded-[2rem] shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(74,124,36,0.15)] hover:-translate-y-2 transition-all duration-500 border border-gray-100 h-full group relative overflow-hidden flex flex-col z-10">
+                {/* Background Large Number */}
+                <div className="absolute -bottom-6 -right-6 text-[140px] font-serif font-black text-gray-50 group-hover:text-[#4a7c24]/5 transition-colors duration-500 z-0 leading-none select-none">
+                  0{index + 1}
                 </div>
                 
-                <h3 className="font-serif text-lg md:text-xl font-bold text-gray-900 mb-3">
+                <div className="w-12 h-12 rounded-full bg-[#f5f8f3] group-hover:bg-[#4a7c24] flex items-center justify-center mb-5 transition-colors duration-500 relative z-10">
+                  <span className="text-[#4a7c24] group-hover:text-white font-serif font-bold text-lg transition-colors duration-500">0{index + 1}</span>
+                </div>
+                
+                <h3 className="font-serif text-xl md:text-2xl font-bold text-gray-900 mb-2 group-hover:text-[#4a7c24] transition-colors duration-300 relative z-10">
                   {point.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-sm flex-grow">
+                <p className="text-gray-600 leading-relaxed text-[15px] flex-grow relative z-10">
                   {point.desc}
                 </p>
               </div>
@@ -68,30 +71,39 @@ export default function WhyClientsTrustUs() {
           <AnimatedText delay={0.8}>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Note: Placeholders for 3 real client quotes before launch */}
-              <div className="bg-gray-50 p-6 md:p-8 rounded-2xl relative">
-                 <svg className="absolute top-4 left-4 w-8 h-8 text-gray-200" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                 <p className="text-gray-600 italic text-sm mb-4 relative z-10">&quot;They didn't just execute our brief, they challenged it and made it better. That's the kind of partner we were looking for.&quot;</p>
-                 <div className="mt-auto">
-                    <p className="font-bold text-gray-900 text-sm">Client Name</p>
-                    <p className="text-xs text-gray-500">Designation, Company Name</p>
+              <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:shadow-[#4a7c24]/5 hover:border-[#4a7c24]/20 transition-all duration-500 relative group flex flex-col h-full">
+                 <svg className="absolute top-6 left-6 w-12 h-12 text-gray-100 group-hover:text-[#4a7c24]/10 transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                 <p className="text-gray-700 italic text-[15px] leading-relaxed mb-8 relative z-10 pt-6 flex-grow">&quot;They didn't just execute our brief, they challenged it and made it better. That's the kind of partner we were looking for.&quot;</p>
+                 <div className="mt-auto flex items-center gap-4 relative z-10 border-t border-gray-100 pt-6">
+                    <div className="w-12 h-12 rounded-full bg-[#f5f8f3] flex items-center justify-center text-[#4a7c24] font-serif font-bold text-lg group-hover:bg-[#4a7c24] group-hover:text-white transition-colors duration-500">C</div>
+                    <div>
+                      <p className="font-bold text-gray-900 text-sm">Client Name</p>
+                      <p className="text-[13px] text-[#4a7c24] font-medium">Designation, Company</p>
+                    </div>
                  </div>
               </div>
               
-              <div className="bg-gray-50 p-6 md:p-8 rounded-2xl relative">
-                 <svg className="absolute top-4 left-4 w-8 h-8 text-gray-200" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                 <p className="text-gray-600 italic text-sm mb-4 relative z-10">&quot;Their understanding of the agriculture sector saved us months of onboarding time. They speak our language and our customers' language.&quot;</p>
-                 <div className="mt-auto">
-                    <p className="font-bold text-gray-900 text-sm">Client Name</p>
-                    <p className="text-xs text-gray-500">Designation, Company Name</p>
+              <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:shadow-[#4a7c24]/5 hover:border-[#4a7c24]/20 transition-all duration-500 relative group flex flex-col h-full">
+                 <svg className="absolute top-6 left-6 w-12 h-12 text-gray-100 group-hover:text-[#4a7c24]/10 transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                 <p className="text-gray-700 italic text-[15px] leading-relaxed mb-8 relative z-10 pt-6 flex-grow">&quot;Their understanding of the agriculture sector saved us months of onboarding time. They speak our language and our customers' language.&quot;</p>
+                 <div className="mt-auto flex items-center gap-4 relative z-10 border-t border-gray-100 pt-6">
+                    <div className="w-12 h-12 rounded-full bg-[#f5f8f3] flex items-center justify-center text-[#4a7c24] font-serif font-bold text-lg group-hover:bg-[#4a7c24] group-hover:text-white transition-colors duration-500">C</div>
+                    <div>
+                      <p className="font-bold text-gray-900 text-sm">Client Name</p>
+                      <p className="text-[13px] text-[#4a7c24] font-medium">Designation, Company</p>
+                    </div>
                  </div>
               </div>
 
-              <div className="bg-gray-50 p-6 md:p-8 rounded-2xl relative">
-                 <svg className="absolute top-4 left-4 w-8 h-8 text-gray-200" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                 <p className="text-gray-600 italic text-sm mb-4 relative z-10">&quot;Deadlines are always met, the communication is always clear, and the results are always measurable. A highly professional team.&quot;</p>
-                 <div className="mt-auto">
-                    <p className="font-bold text-gray-900 text-sm">Client Name</p>
-                    <p className="text-xs text-gray-500">Designation, Company Name</p>
+              <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:shadow-[#4a7c24]/5 hover:border-[#4a7c24]/20 transition-all duration-500 relative group flex flex-col h-full">
+                 <svg className="absolute top-6 left-6 w-12 h-12 text-gray-100 group-hover:text-[#4a7c24]/10 transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                 <p className="text-gray-700 italic text-[15px] leading-relaxed mb-8 relative z-10 pt-6 flex-grow">&quot;Deadlines are always met, the communication is always clear, and the results are always measurable. A highly professional team.&quot;</p>
+                 <div className="mt-auto flex items-center gap-4 relative z-10 border-t border-gray-100 pt-6">
+                    <div className="w-12 h-12 rounded-full bg-[#f5f8f3] flex items-center justify-center text-[#4a7c24] font-serif font-bold text-lg group-hover:bg-[#4a7c24] group-hover:text-white transition-colors duration-500">C</div>
+                    <div>
+                      <p className="font-bold text-gray-900 text-sm">Client Name</p>
+                      <p className="text-[13px] text-[#4a7c24] font-medium">Designation, Company</p>
+                    </div>
                  </div>
               </div>
             </div>

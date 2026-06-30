@@ -2,7 +2,7 @@ import AnimatedText from '../AnimatedText';
 
 export default function InitiativesIntro() {
   return (
-    <section className="w-full bg-[#f9fbf7] py-16 md:py-24 px-6 md:px-8 border-b border-gray-100">
+    <section className="w-full bg-white py-16 md:py-24 px-6 md:px-8 border-b border-gray-100">
       <div className="max-w-3xl mx-auto text-center">
         <AnimatedText delay={0.1}>
           <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight text-gray-900 mb-8">

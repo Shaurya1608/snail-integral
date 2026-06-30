@@ -2,7 +2,7 @@ import AnimatedText from '../AnimatedText';
 
 export default function HowWeAreStructured() {
   return (
-    <section className="bg-[#f9fbf7] border-y border-gray-150/50 py-20 md:py-28 px-6 lg:px-10">
+    <section className="bg-white border-y border-gray-150/50 py-20 md:py-28 px-6 lg:px-10">
       <div className="max-w-[1200px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Heading and Highlights */}

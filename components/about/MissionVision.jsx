@@ -36,20 +36,23 @@ export default function MissionVision() {
 
           {/* Vision Card */}
           <AnimatedText delay={0.3}>
-            <div className="bg-white rounded-2xl p-8 md:p-10 shadow-sm hover:shadow-md border border-gray-100 h-full flex flex-col relative overflow-hidden transition-all duration-300 group">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gray-200 group-hover:bg-[#4a7c24] transition-colors duration-300"></div>
+            <div className="bg-white rounded-2xl p-8 md:p-10 shadow-sm hover:shadow-xl border border-gray-100 h-full flex flex-col relative overflow-hidden transition-all duration-500 group">
+              {/* Animated Background */}
+              <div className="absolute bottom-0 left-0 w-full h-0 bg-[#4a7c24] group-hover:h-full transition-all duration-500 ease-out z-0"></div>
               
-              <div className="mb-6">
-                <span className="inline-block px-3 py-1 bg-[#4a7c24]/10 text-[#4a7c24] rounded-md text-xs font-bold tracking-wider uppercase">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gray-200 group-hover:bg-[#4a7c24] transition-colors duration-300 z-10"></div>
+              
+              <div className="mb-6 relative z-10">
+                <span className="inline-block px-3 py-1 bg-[#4a7c24]/10 text-[#4a7c24] group-hover:bg-white/20 group-hover:text-white rounded-md text-xs font-bold tracking-wider uppercase transition-colors duration-300">
                   Our Vision
                 </span>
               </div>
               
-              <h3 className="text-lg md:text-xl font-serif font-bold text-gray-900 mb-6 leading-relaxed">
+              <h3 className="text-lg md:text-xl font-serif font-bold text-gray-900 group-hover:text-white mb-6 leading-relaxed relative z-10 transition-colors duration-300">
                 To be India&apos;s most trusted brand consulting and corporate communication agency, recognized for transforming businesses through strategic thinking and creative excellence.
               </h3>
               
-              <p className="text-gray-600 leading-relaxed text-sm mt-auto">
+              <p className="text-gray-600 group-hover:text-white/90 leading-relaxed text-sm mt-auto relative z-10 transition-colors duration-300">
                 We envision a future where innovative ideas find their audiences without friction, where brands communicate with honesty and purpose, and where the divide between Bharat and India in business communication no longer exists.
               </p>
             </div>

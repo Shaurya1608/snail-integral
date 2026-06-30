@@ -20,7 +20,7 @@ export default function BioAgriConference() {
   ];
 
   return (
-    <section className="w-full bg-[#f9fbf7] py-16 md:py-24 px-6 md:px-8 overflow-hidden border-t border-b border-gray-150/30">
+    <section id="bio-agri-conference" className="w-full bg-white py-16 md:py-24 px-6 md:px-8 overflow-hidden border-t border-b border-gray-150/30">
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         
         {/* Section Header Centered */}

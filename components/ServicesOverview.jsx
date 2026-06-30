@@ -113,7 +113,7 @@ export default function ServicesOverview() {
                     {service.description}
                   </p>
                 </div>
-                <Link href="#" className="inline-flex items-center gap-1 text-sm font-semibold text-gray-800 hover:text-primary transition-colors mt-3">
+                <Link href={`/services#${service.title.toLowerCase().replace(/ /g, '-')}`} className="inline-flex items-center gap-1 text-sm font-semibold text-gray-800 hover:text-primary transition-colors mt-3">
                   Learn more
                   <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </Link>
@@ -139,8 +139,11 @@ export default function ServicesOverview() {
         </div>
 
         <AnimatedText delay={0.3}>
-          <button className="px-8 py-3 text-sm font-medium rounded-xl border border-gray-300 hover:border-gray-400 text-gray-800 transition-colors bg-white shadow-sm inline-flex items-center gap-2">
+          <button className="px-8 py-3.5 text-sm font-semibold rounded-full bg-[#6a9a38] text-white hover:bg-[#557d2a] transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 inline-flex items-center gap-2 group">
             View All Services
+            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
           </button>
         </AnimatedText>
       </div>

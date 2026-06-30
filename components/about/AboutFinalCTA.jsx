@@ -3,7 +3,7 @@ import AnimatedText from '../AnimatedText';
 
 export default function AboutFinalCTA() {
   return (
-    <section className="w-full bg-[#f9fbf7] py-16 md:py-24 px-6 md:px-8 text-center relative overflow-hidden">
+    <section className="w-full bg-white py-16 md:py-24 px-6 md:px-8 text-center relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.02] mix-blend-multiply"></div>
       <div className="max-w-4xl mx-auto relative z-10 w-full">
         <AnimatedText delay={0.1}>

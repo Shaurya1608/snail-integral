@@ -25,7 +25,7 @@ const processes = [
 
 export default function ProcessServices() {
   return (
-    <section className="bg-[#f9fbf7] py-20 md:py-28 px-6 border-b border-gray-150/50">
+    <section className="bg-white py-20 md:py-28 px-6 border-b border-gray-150/50">
       <div className="max-w-[1200px] mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <AnimatedText delay={0.1}>

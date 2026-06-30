@@ -8,7 +8,7 @@ export default function AddressMap() {
   const embedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.046554868297!2d77.42646697550346!3d28.628549375669788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cee5d53951f25%3A0xe212854297157833!2sGaur%20City%202%2C%20Greater%20Noida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1719426210000!5m2!1sen!2sin";
 
   return (
-    <section className="w-full bg-white text-gray-900 py-20 px-6 md:px-8">
+    <section className="w-full bg-[#f9fbf7] text-gray-900 py-20 px-6 md:px-8">
       <div className="max-w-6xl mx-auto">
         <motion.h2 
           initial={{ opacity: 0, y: 15 }}

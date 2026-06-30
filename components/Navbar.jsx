@@ -33,6 +33,7 @@ export default function Navbar() {
     { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
     { label: "Initiatives", href: "/initiatives" },
+    { label: "Case Studies", href: "/case-studies" },
   ];
 
   return (
@@ -70,9 +71,13 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 className={`relative px-5 py-2 text-[13px] font-medium rounded-full transition-all duration-200 ${
-                  scrolled || !isDarkHero
-                    ? 'text-gray-600 hover:text-gray-900 hover:bg-white/80'
-                    : 'text-white/80 hover:text-white hover:bg-white/15'
+                  pathname === link.href
+                    ? scrolled || !isDarkHero
+                      ? 'text-[#4a7c24] bg-white shadow-sm'
+                      : 'text-white bg-white/20'
+                    : scrolled || !isDarkHero
+                      ? 'text-gray-600 hover:text-gray-900 hover:bg-white/80'
+                      : 'text-white/80 hover:text-white hover:bg-white/15'
                 }`}
               >
                 {link.label}
@@ -93,7 +98,7 @@ export default function Navbar() {
               Contact
             </Link>
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className={`px-6 py-2.5 text-[13px] font-semibold rounded-full transition-all duration-200 hover:-translate-y-[1px] ${
                 scrolled || !isDarkHero
                   ? 'bg-primary text-white hover:bg-primary-hover shadow-[0_1px_3px_rgba(106,154,56,0.4)] hover:shadow-[0_4px_12px_rgba(106,154,56,0.3)]'
@@ -157,7 +162,9 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className={`text-4xl font-serif font-semibold text-gray-900 hover:text-primary transition-all duration-300 flex items-center justify-between group ${
+              className={`text-4xl font-serif font-semibold transition-all duration-300 flex items-center justify-between group ${
+                pathname === link.href ? "text-[#4a7c24]" : "text-gray-900 hover:text-[#4a7c24]"
+              } ${
                 mobileOpen
                   ? "translate-y-0 opacity-100"
                   : "translate-y-4 opacity-0"
@@ -173,7 +180,7 @@ export default function Navbar() {
         <div className="px-8 pb-10 pt-6 flex flex-col gap-4 bg-[#f9fbf7] border-t border-gray-100">
           <p className="text-sm font-medium text-gray-500 mb-2 uppercase tracking-wider text-center">Ready to grow?</p>
           <Link
-            href="/contact"
+            href="/contact#contact-form"
             onClick={() => setMobileOpen(false)}
             className="w-full py-4 text-center text-lg font-semibold rounded-2xl bg-primary text-white hover:bg-primary-hover transition-colors shadow-lg"
           >

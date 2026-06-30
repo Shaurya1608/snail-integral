@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import AnimatedText from '../AnimatedText';
 
 const pillars = [
@@ -6,7 +7,7 @@ const pillars = [
     id: 'strategy-consulting',
     title: 'Strategy and Consulting',
     intro: 'Every successful communication effort begins with a clear strategy. Our consulting practice helps businesses define their brand, understand their market, and build the strategic foundation on which all communication is built. We work at the intersection of business thinking and communication expertise, giving our clients both the rationale and the direction for every recommendation we make.',
-    bg: 'bg-[#f9fbf7]',
+    bg: 'bg-white',
     services: [
       {
         title: 'Brand Consulting and Marketing',
@@ -58,7 +59,7 @@ const pillars = [
     id: 'content-creative',
     title: 'Content and Creative',
     intro: 'Content is the currency of modern communication. It is how brands earn attention, build credibility, and stay relevant between campaigns. Our content and creative practice produces work that is strategically grounded, creatively compelling, and built for the specific platform and audience it is designed to reach. We do not separate creative from strategy because the most effective creative is always rooted in a clear strategic brief.',
-    bg: 'bg-[#f9fbf7]',
+    bg: 'bg-white',
     services: [
       {
         title: 'Video Production — TVC, 2D and 3D Animation, AVs',
@@ -141,16 +142,29 @@ export default function ServicePillars() {
                 <AnimatedText key={sIdx} delay={0.15 * sIdx}>
                   <div className="bg-white border border-gray-150/50 rounded-[2rem] p-8 md:p-12 shadow-[0_4px_30px_rgba(0,0,0,0.015)] hover:shadow-[0_15px_40px_rgba(106,154,56,0.06)] hover:-translate-y-1 transition-all duration-300">
                     <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
-                      {/* Left Column: Title and Tagline */}
+                      {/* Left Column: Title, Tagline, and Image Grid */}
                       <div className="lg:w-1/3 shrink-0 flex flex-col justify-start">
                         <h3 className="font-serif text-2xl md:text-3xl font-bold text-gray-900 leading-tight mb-4">
                           {service.title}
                         </h3>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 mb-8">
                           <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
                           <p className="text-primary font-bold text-[11px] md:text-xs tracking-wider uppercase">
                             {service.tagline}
                           </p>
+                        </div>
+                        
+                        {/* Vertically Stacked Image Area */}
+                        <div className="flex flex-col gap-4 mt-12">
+                          <div className="w-full h-32 rounded-[1.5rem] overflow-hidden relative shadow-sm">
+                            <Image src="/LandingPage/l-image-1.jpg" alt="Service Image 1" fill className="object-cover" />
+                          </div>
+                          <div className="w-full h-32 rounded-[1.5rem] overflow-hidden relative shadow-sm">
+                            <Image src="/LandingPage/l-image-2.jpg" alt="Service Image 2" fill className="object-cover" />
+                          </div>
+                          <div className="w-full h-32 rounded-[1.5rem] overflow-hidden relative shadow-sm">
+                            <Image src="/LandingPage/l-image-3.jpg" alt="Service Image 3" fill className="object-cover" />
+                          </div>
                         </div>
                       </div>
 

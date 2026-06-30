@@ -4,7 +4,7 @@ import AnimatedText from './AnimatedText';
 
 export default function FinalCTA() {
   return (
-    <section className="w-full bg-[#f9fbf7] pt-10 md:pt-16 pb-10 md:pb-16 px-6 md:px-8 overflow-hidden">
+    <section className="w-full bg-white pt-10 md:pt-16 pb-10 md:pb-16 px-6 md:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
 
         {/* Top: Centered Heading */}

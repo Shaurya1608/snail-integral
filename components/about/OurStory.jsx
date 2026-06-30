@@ -2,7 +2,7 @@ import AnimatedText from '../AnimatedText';
 
 export default function OurStory() {
   return (
-    <section className="w-full bg-[#f9fbf7] py-16 md:py-24 px-6 md:px-8">
+    <section className="w-full bg-white py-16 md:py-24 px-6 md:px-8">
       <div className="max-w-5xl mx-auto w-full flex flex-col gap-10 lg:gap-12">
         
         {/* Top Full Width Section */}
