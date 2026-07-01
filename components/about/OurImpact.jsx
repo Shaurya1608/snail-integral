@@ -90,35 +90,30 @@ export default function OurImpact() {
   ];
 
   return (
-    <section className="w-full bg-[#6b9b37] py-6 md:py-8 px-6 md:px-8 relative overflow-hidden flex items-center border-y border-[#5f8a31] shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]">
-      {/* Subtle Ambient Glow */}
-      <div className="absolute -top-32 -left-32 w-80 h-80 rounded-full bg-white/5 blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-32 -right-32 w-80 h-80 rounded-full bg-white/5 blur-3xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto relative z-10 w-full">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+    <section className="w-full bg-gradient-to-r from-[#5a862b] via-[#6a9a38] to-[#557d2a] py-4 md:py-6 relative overflow-hidden shadow-inner">
+      {/* Decorative background elements */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-white/10 blur-[100px] rounded-full pointer-events-none"></div>
+      
+      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-5 text-center">
           {stats.map((stat, index) => (
             <AnimatedText key={index} delay={0.15 + (index * 0.08)}>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-5 flex flex-col items-center justify-center text-center h-full hover:bg-white/20 border border-white/10 hover:border-white/25 transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:-translate-y-1 group">
-                
+              <div 
+                className={`group flex flex-col gap-1 items-center justify-center py-2 px-3 h-full border-white/45 lg:border-solid ${index < stats.length - 1 ? 'lg:border-r' : ''}`}
+              >
                 {/* SVG Icon */}
                 <div className="transform group-hover:scale-105 transition-transform duration-300">
                   {stat.icon}
                 </div>
 
-                {/* Stat Display */}
-                <span className="text-3xl md:text-4xl lg:text-[2.2rem] font-serif font-extrabold text-white mb-1.5 leading-none tracking-tight block">
+                <span className="font-serif text-3xl md:text-4xl lg:text-[2.2rem] font-bold text-white tracking-tight drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
                   {stat.stringVal ? (
-                    <span className="text-base sm:text-lg lg:text-[1.3rem] font-sans font-extrabold uppercase tracking-tight text-white whitespace-nowrap block">
-                      {stat.stringVal}
-                    </span>
+                    stat.stringVal
                   ) : (
                     <AnimatedNumber value={stat.value} suffix={stat.suffix} />
                   )}
                 </span>
-
-                {/* Sub-label */}
-                <span className="text-[10px] md:text-xs font-bold text-white/80 group-hover:text-white uppercase tracking-widest transition-colors">
+                <span className="text-white/80 text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-center mt-1 group-hover:text-white transition-colors duration-300">
                   {stat.label}
                 </span>
               </div>

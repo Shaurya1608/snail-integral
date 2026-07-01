@@ -79,8 +79,8 @@ export default function CaseStudiesList() {
                 transition={{ duration: 0.4 }}
                 key={study.id}
                 onClick={() => setSelectedCase(study)}
-                className={`group cursor-pointer rounded-2xl md:rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col md:flex-row h-auto md:min-h-[420px] border relative ${
-                  isDark ? 'bg-[#6a9a38] border-transparent' : 'bg-white border-[#6a9a38]/10'
+                className={`group cursor-pointer rounded-2xl md:rounded-3xl overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.01)] hover:shadow-[0_20px_40px_-15px_rgba(106,154,56,0.1)] hover:-translate-y-1.5 transition-all duration-500 flex flex-col md:flex-row h-auto md:min-h-[420px] border relative ${
+                  isDark ? 'bg-[#f4f7f0] border-gray-150/40' : 'bg-white border-gray-150/40'
                 }`}
               >
                 {/* Animated Background */}
@@ -90,65 +90,39 @@ export default function CaseStudiesList() {
                     whileInView={{ scaleX: 1 }}
                     viewport={{ once: false, margin: "-100px" }}
                     transition={{ duration: 0.8, ease: "easeInOut" }}
-                    className={`absolute inset-0 md:w-1/2 z-0 origin-left ${isDark ? "bg-white" : "bg-[#6a9a38]"}`}
+                    className={`absolute inset-0 md:w-1/2 z-0 origin-left ${isDark ? "bg-white" : "bg-[#f4f7f0]"}`}
                   />
                 )}
-                
+
                 {/* Left Content */}
                 <div className="w-full md:w-1/2 p-8 md:p-10 flex flex-col justify-center gap-2 relative z-10">
                   <div>
-                    <motion.h3 
-                      initial={isMobile ? {} : { color: isDark ? "#ffffff" : "#6a9a38" }}
-                      whileInView={isMobile ? {} : { color: isDark ? "#6a9a38" : "#ffffff" }}
-                      viewport={{ once: false, margin: "-100px" }}
-                      transition={{ duration: 0.4, delay: 0.4 }}
-                      className={`font-sans text-3xl md:text-[40px] font-medium leading-tight mb-6 tracking-tight ${
-                        isDark ? 'text-white' : 'text-[#6a9a38]'
-                      }`}
-                    >
+                    <h3 className="font-sans text-3xl md:text-[40px] font-semibold leading-tight mb-4 tracking-tight text-gray-900 group-hover:text-primary transition-colors duration-300">
                       {study.client}
-                    </motion.h3>
-                    <motion.div 
-                      initial={isMobile ? {} : { color: isDark ? "#ffffff" : "#6a9a38", borderColor: isDark ? "rgba(255,255,255,0.3)" : "rgba(106,154,56,0.3)", backgroundColor: "transparent" }}
-                      whileInView={isMobile ? {} : { color: isDark ? "#6a9a38" : "#ffffff", borderColor: isDark ? "rgba(106,154,56,0.3)" : "rgba(255,255,255,0.3)", backgroundColor: isDark ? "rgba(106,154,56,0.1)" : "rgba(255,255,255,0.1)" }}
-                      viewport={{ once: false, margin: "-100px" }}
-                      transition={{ duration: 0.4, delay: 0.45 }}
-                      className={`inline-block border rounded-full px-4 py-1 text-xs font-medium mb-6 ${
-                        isDark 
-                          ? 'text-white border-white/30 bg-white/10' 
-                          : 'text-[#6a9a38] border-[#6a9a38]/30 bg-[#6a9a38]/5'
-                      }`}
-                    >
+                    </h3>
+                    <div className="inline-block border border-primary/25 bg-primary/5 rounded-full px-4 py-1 text-xs font-semibold text-primary mb-6">
                        {study.category}
-                    </motion.div>
-                    <motion.p 
-                      initial={isMobile ? {} : { color: isDark ? "rgba(255,255,255,0.8)" : "rgba(106,154,56,0.8)" }}
-                      whileInView={isMobile ? {} : { color: isDark ? "rgba(106,154,56,0.8)" : "rgba(255,255,255,0.8)" }}
-                      viewport={{ once: false, margin: "-100px" }}
-                      transition={{ duration: 0.4, delay: 0.5 }}
-                      className={`text-base md:text-sm leading-relaxed line-clamp-4 ${
-                        isDark ? 'text-white/80' : 'text-gray-600'
-                      }`}
-                    >
+                    </div>
+                    <p className="text-gray-600 text-base md:text-sm leading-relaxed line-clamp-4 font-normal">
                       {study.challenge}
-                    </motion.p>
+                    </p>
                   </div>
                   
                   <div className="mt-8 flex justify-start">
-                     <motion.svg 
-                      initial={isMobile ? {} : { color: isDark ? "#ffffff" : "#6a9a38" }}
-                      whileInView={isMobile ? {} : { color: isDark ? "#6a9a38" : "#ffffff" }}
-                      viewport={{ once: false, margin: "-100px" }}
-                      transition={{ duration: 0.4, delay: 0.5 }}
-                      className={`w-8 h-8 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300 ${
-                        isDark ? 'text-white' : 'text-[#6a9a38]'
-                      }`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 17L17 7M17 7H8M17 7v9"></path></motion.svg>
+                     <svg 
+                      className="w-8 h-8 text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                     >
+                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 17L17 7M17 7H8M17 7v9"></path>
+                     </svg>
                   </div>
                 </div>
 
                 {/* Right Image */}
                 <div className="w-full md:w-1/2 h-64 md:h-auto relative overflow-hidden bg-[#eef1f6]">
-                  <div className={`absolute inset-0 mix-blend-multiply z-10 transition-opacity duration-500 ${isDark ? 'bg-[#6a9a38]/40' : 'bg-[#6a9a38]/10'}`}></div>
+                  <div className="absolute inset-0 bg-[#6a9a38]/10 mix-blend-multiply z-10 group-hover:opacity-0 transition-opacity duration-500"></div>
                   <img 
                     src={study.thumbnail} 
                     alt={study.client}

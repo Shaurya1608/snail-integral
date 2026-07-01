@@ -110,6 +110,12 @@ const pillars = [
 ];
 
 export default function ServicePillars() {
+  const serviceImages = [
+    "/LandingPage/l-image-1.jpg",
+    "/LandingPage/l-image-2.jpg",
+    "/LandingPage/l-image-3.jpg"
+  ];
+
   return (
     <>
       {pillars.map((pillar, idx) => (
@@ -154,17 +160,15 @@ export default function ServicePillars() {
                           </p>
                         </div>
                         
-                        {/* Vertically Stacked Image Area */}
-                        <div className="hidden lg:flex flex-col gap-4 mt-12">
-                          <div className="w-full h-32 rounded-[1.5rem] overflow-hidden relative shadow-sm">
-                            <Image src="/LandingPage/l-image-1.jpg" alt="Service Image 1" fill className="object-cover" />
-                          </div>
-                          <div className="w-full h-32 rounded-[1.5rem] overflow-hidden relative shadow-sm">
-                            <Image src="/LandingPage/l-image-2.jpg" alt="Service Image 2" fill className="object-cover" />
-                          </div>
-                          <div className="w-full h-32 rounded-[1.5rem] overflow-hidden relative shadow-sm">
-                            <Image src="/LandingPage/l-image-3.jpg" alt="Service Image 3" fill className="object-cover" />
-                          </div>
+                        {/* Single Large Service Image */}
+                        <div className="hidden lg:block w-[90%] mx-auto h-[480px] rounded-[2rem] overflow-hidden relative shadow-sm mt-10 border border-gray-150/30">
+                          <Image 
+                            src={serviceImages[(idx * 3 + sIdx) % serviceImages.length]} 
+                            alt={service.title} 
+                            fill 
+                            sizes="(max-width: 1024px) 100vw, 33vw"
+                            className="object-cover" 
+                          />
                         </div>
                       </div>
 

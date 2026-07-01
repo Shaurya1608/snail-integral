@@ -1,4 +1,5 @@
 import AnimatedText from '../AnimatedText';
+import Image from 'next/image';
 
 export default function BioAgriConference() {
   const focusAreas = [
@@ -31,6 +32,15 @@ export default function BioAgriConference() {
             </div>
           </AnimatedText>
           <AnimatedText delay={0.2}>
+            <div className="flex justify-center mb-5">
+              <Image
+                src="/initiatives/BIO AGRI NEXT LOGO.png"
+                alt="Bio-Agri Next Global Conference Logo"
+                width={180}
+                height={80}
+                className="object-contain"
+              />
+            </div>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-2">
               Bio-Agri Next Global Conference
             </h2>

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import AnimatedText from './AnimatedText';
 
 export default function InitiativesPreview() {
@@ -6,17 +7,32 @@ export default function InitiativesPreview() {
     {
       title: "Brand R.Comm Summit",
       desc: "India's premier agriculture and rural communication summit, bringing together leaders, innovators, and communicators across three successful editions.",
-      link: "/initiatives#brand-rcomm-summit"
-    },
-    {
-      title: "The Snail Show Podcast",
-      desc: "In-depth conversations with industry leaders on agriculture, business, and communication. Available on all major platforms.",
-      link: "/initiatives#snail-show-podcast"
+      link: "/initiatives#brand-rcomm-summit",
+      logo: "/initiatives/Brand R.Comm final logo.png"
     },
     {
       title: "Bio-Agri Next Global Conference",
       desc: "A global platform for sustainable agriculture, connecting policymakers, researchers, businesses, and farmers through dialogue and collaboration.",
-      link: "/initiatives#bio-agri-conference"
+      link: "/initiatives#bio-agri-conference",
+      logo: "/initiatives/BIO AGRI NEXT LOGO.png"
+    },
+    {
+      title: "The Snail Show Coffee Table Book",
+      desc: "A prestigious, large-format visual record documenting the changemakers, innovations, and communities shaping the future of Indian agriculture.",
+      link: "/initiatives#coffee-table-book",
+      logo: "/initiatives/Snail show CTB logo-01.png"
+    },
+    {
+      title: "The Snail Show Podcast",
+      desc: "In-depth conversations with industry leaders on agriculture, business, and communication. Available on all major platforms.",
+      link: "/initiatives#snail-show-podcast",
+      logo: "/initiatives/Snail Show Podcast Logo-01.png"
+    },
+    {
+      title: "The Snail Show Newsletter",
+      desc: "Weekly intelligence digest covering key developments, policy changes, and communication trends at the intersection of agriculture and business.",
+      link: "/initiatives#snail-show-newsletter",
+      logo: "/initiatives/Snail Show NewsLetter Logo-01.png"
     }
   ];
 
@@ -36,17 +52,27 @@ export default function InitiativesPreview() {
           </AnimatedText>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mb-10">
+        <div className="flex flex-wrap justify-center gap-6 w-full mb-10">
           {initiatives.map((item, index) => (
-            <AnimatedText key={index} delay={0.1 + index * 0.1}>
-              <Link href={item.link} className="block h-full group border border-gray-100 bg-white rounded-3xl p-8 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 flex flex-col relative overflow-hidden z-10">
+            <AnimatedText 
+              key={index} 
+              delay={0.1 + index * 0.1}
+              className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex"
+            >
+              <Link href={item.link} className="w-full group border border-gray-100 bg-white rounded-3xl p-8 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 flex flex-col relative overflow-hidden z-10">
                 {/* Decorative Accent Background */}
                 <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-[#6a9a38]/10 to-transparent rounded-bl-full opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 -z-10"></div>
                 <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-[#6a9a38] to-[#8ec44a] group-hover:w-full transition-all duration-700 ease-out z-20"></div>
                 
-                {/* Number Indicator */}
-                <div className="text-5xl font-serif font-black text-gray-50 mb-4 group-hover:text-[#6a9a38]/10 transition-colors duration-500 select-none">
-                  0{index + 1}
+                {/* Logo */}
+                <div className="mb-5 h-12 flex items-center">
+                  <Image
+                    src={item.logo}
+                    alt={`${item.title} logo`}
+                    width={120}
+                    height={48}
+                    className="object-contain object-left max-h-12 w-auto"
+                  />
                 </div>
 
                 <h3 className="font-serif text-2xl font-semibold text-gray-900 group-hover:text-[#6a9a38] transition-colors duration-300 mb-4 mt-auto">

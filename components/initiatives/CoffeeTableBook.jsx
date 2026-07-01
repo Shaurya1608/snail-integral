@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import AnimatedText from '../AnimatedText';
+import Image from 'next/image';
 
 export default function CoffeeTableBook() {
   const [activeVolume, setActiveVolume] = useState(1);
@@ -14,7 +15,7 @@ export default function CoffeeTableBook() {
   ];
 
   return (
-    <section className="w-full bg-[#f9fbf7] py-16 md:py-24 px-6 md:px-8 overflow-hidden">
+    <section id="coffee-table-book" className="w-full bg-[#f9fbf7] py-16 md:py-24 px-6 md:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         
         {/* Section Header */}
@@ -25,6 +26,15 @@ export default function CoffeeTableBook() {
             </div>
           </AnimatedText>
           <AnimatedText delay={0.2}>
+            <div className="flex justify-center mb-5">
+              <Image
+                src="/initiatives/Snail show CTB logo-01.png"
+                alt="The Snail Show Coffee Table Book Logo"
+                width={180}
+                height={80}
+                className="object-contain"
+              />
+            </div>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-4">
               The Snail Show Coffee Table Book
             </h2>
@@ -57,42 +67,42 @@ export default function CoffeeTableBook() {
           {/* Left Side: Mockup of the book */}
           <div className="hidden lg:flex lg:col-span-5 justify-center order-2 lg:order-1">
             <AnimatedText delay={0.2} direction="left" className="w-full max-w-[380px]">
-              {/* Simulated 3D Book Layout */}
-              <div className={`relative aspect-[3/4] w-full rounded-r-3xl shadow-[25px_25px_50px_-10px_rgba(0,0,0,0.15)] border-l-[12px] border-t border-r border-b border-gray-200/60 overflow-hidden flex flex-col justify-between p-8 group hover:-rotate-1 hover:translate-x-1 hover:shadow-[30px_30px_60px_-12px_rgba(0,0,0,0.18)] transition-all duration-500 ${activeVolume === 1 ? 'bg-[#f6f5f0] border-l-[#4a7c24]' : 'bg-[#fffdf5] border-l-amber-600'}`}>
-                {/* Book cover sheen */}
-                <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-transparent pointer-events-none" />
-                
-                {/* Spine shadows */}
-                <div className="absolute top-0 bottom-0 left-0 w-2 bg-black/10" />
+              {/* Real Book Photo with spine effect */}
+              <div className={`relative aspect-[3/4] w-full rounded-r-2xl overflow-hidden shadow-[20px_20px_60px_-10px_rgba(0,0,0,0.25)] border-l-[10px] group hover:-rotate-1 hover:translate-x-1 hover:shadow-[30px_30px_70px_-12px_rgba(0,0,0,0.3)] transition-all duration-500 ${activeVolume === 1 ? 'border-l-[#4a7c24]' : 'border-l-amber-600'}`}>
+                {/* Spine shadow overlay */}
+                <div className="absolute top-0 bottom-0 left-0 w-4 bg-black/15 z-10 pointer-events-none" />
+                {/* Right sheen */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/10 z-10 pointer-events-none" />
 
-                {/* Top brand */}
-                <div className={`relative z-10 text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 ${activeVolume === 1 ? 'text-[#4a7c24]' : 'text-amber-700'}`}>
-                  <span className={`w-1.5 h-1.5 rounded-full ${activeVolume === 1 ? 'bg-[#4a7c24]' : 'bg-amber-600'}`} />
-                  Snail Publications
+                {/* Volume 1 Image */}
+                <div className={`absolute inset-0 transition-opacity duration-500 ${activeVolume === 1 ? 'opacity-100' : 'opacity-0'}`}>
+                  <Image
+                    src="/initiatives/coffee-table/Coffee Table Book 1.jpg"
+                    alt="The Snail Show Coffee Table Book Volume 1"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 33vw"
+                    className="object-cover object-center"
+                    priority
+                  />
                 </div>
 
-                {/* Cover Title */}
-                <div className="relative z-10 my-auto">
-                  <div className="text-gray-400 text-xs font-semibold uppercase tracking-widest mb-2">The Snail Show</div>
-                  <h3 className="font-serif text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight tracking-tight">
-                    {activeVolume === 1 ? (
-                      <>Transforming<br />Indian<br /><span className="italic text-[#4a7c24]">Agriculture</span></>
-                    ) : (
-                      <>Sustainable<br />Future of<br /><span className="italic text-amber-600">Farming</span></>
-                    )}
-                  </h3>
-                  <div className={`w-12 h-[2px] mt-6 mb-4 ${activeVolume === 1 ? 'bg-[#4a7c24]' : 'bg-amber-600'}`} />
-                  <p className="text-[10px] text-gray-500 max-w-[200px] leading-relaxed">
-                    {activeVolume === 1 
-                      ? 'Volume 1: A visual record of the people and ideas shaping the future of farming.'
-                      : 'Volume 2: Documenting the next generation of climate-resilient practices.'}
-                  </p>
+                {/* Volume 2 Image */}
+                <div className={`absolute inset-0 transition-opacity duration-500 ${activeVolume === 2 ? 'opacity-100' : 'opacity-0'}`}>
+                  <Image
+                    src="/initiatives/coffee-table/Coffee Table Book - 2.jpg"
+                    alt="The Snail Show Coffee Table Book Volume 2"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 33vw"
+                    className="object-cover object-center"
+                  />
                 </div>
 
-                {/* Volume badge */}
-                <div className="relative z-10 flex justify-between items-center text-[10px] font-bold text-gray-700 tracking-wider border-t border-gray-200/50 pt-4">
-                  <span>VOLUME {activeVolume}</span>
-                  <span className={activeVolume === 1 ? 'text-[#4a7c24]' : 'text-amber-700'}>SNAIL INTEGRAL</span>
+                {/* Volume label badge at bottom */}
+                <div className="absolute bottom-0 left-0 right-0 z-20 bg-gradient-to-t from-black/60 to-transparent px-5 py-4 flex justify-between items-end">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-white/80">Volume {activeVolume}</span>
+                  <span className={`text-[9px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded ${activeVolume === 1 ? 'bg-[#4a7c24]/80 text-white' : 'bg-amber-600/80 text-white'}`}>
+                    {activeVolume === 1 ? 'Published' : 'In Development'}
+                  </span>
                 </div>
               </div>
             </AnimatedText>

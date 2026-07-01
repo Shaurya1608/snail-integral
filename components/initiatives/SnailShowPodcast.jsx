@@ -1,4 +1,5 @@
 import AnimatedText from '../AnimatedText';
+import Image from 'next/image';
 
 export default function SnailShowPodcast() {
   const platforms = ["Spotify", "Apple Podcasts", "YouTube", "Google Podcasts", "Amazon Music"];
@@ -27,6 +28,15 @@ export default function SnailShowPodcast() {
             </div>
           </AnimatedText>
           <AnimatedText delay={0.2}>
+            <div className="flex justify-center mb-5">
+              <Image
+                src="/initiatives/Snail Show Podcast Logo-01.png"
+                alt="The Snail Show Podcast Logo"
+                width={180}
+                height={80}
+                className="object-contain"
+              />
+            </div>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-4">
               The Snail Show Podcast
             </h2>
@@ -50,46 +60,53 @@ export default function SnailShowPodcast() {
         {/* Layout Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
           
-          {/* Left: Podcast Cover Art / Audio Visualizer */}
+          {/* Left: Podcast Cover Art / Video Link */}
           <div className="hidden lg:flex lg:col-span-5 justify-center">
-            <AnimatedText delay={0.2} direction="left" className="w-full max-w-[360px] -translate-y-24 lg:-translate-y-6">
-              <div className="relative aspect-[3/4] w-full rounded-2xl bg-[#141414] border border-white/5 p-6 flex flex-col justify-between shadow-2xl overflow-hidden group">
-                {/* Visualizer bars at top */}
-                <div className="flex justify-end gap-1.5 h-6 items-end relative z-10">
-                  {[...Array(6)].map((_, i) => (
-                    <div 
-                      key={i} 
-                      className="w-1 bg-white/20 rounded-full animate-soundwave"
-                      style={{ 
-                        height: `${[40, 90, 60, 100, 50, 80][i]}%`,
-                        animationDelay: `${i * 0.15}s`
-                      }}
-                    />
-                  ))}
-                </div>
+            <AnimatedText delay={0.2} direction="left" className="w-full max-w-[360px] -translate-y-24 lg:-translate-y-6 flex flex-col gap-4">
+              <a 
+                href="https://www.youtube.com/@thesnailshowpodcast"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block relative aspect-[2/3] w-full rounded-2xl overflow-hidden shadow-2xl group border border-gray-250 bg-[#141414]"
+              >
+                {/* Background Podcast Image */}
+                <Image 
+                  src="/others/image.png" 
+                  alt="The Snail Show Podcast on YouTube" 
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+                
+                {/* Dark Vignette Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40 group-hover:via-black/35 transition-all duration-300" />
 
-                {/* Central Play/Podcast Branding */}
-                <div className="my-auto text-center relative z-10 flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full bg-white hover:bg-gray-100 flex items-center justify-center shadow-lg cursor-pointer transform hover:scale-105 transition-all duration-300 mb-6">
-                    <svg className="w-6 h-6 text-gray-900 fill-current ml-1" viewBox="0 0 24 24">
+                {/* Pulsing YouTube Play Button Overlay */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 z-10 p-6 text-center">
+                  <div className="w-16 h-16 rounded-full bg-red-600 group-hover:bg-red-700 text-white flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-all duration-300">
+                    {/* YouTube Play Triangle Icon */}
+                    <svg className="w-6 h-6 fill-current ml-1" viewBox="0 0 24 24">
                       <path d="M8 5v14l11-7z" />
                     </svg>
                   </div>
-                  <span className="text-[1.8rem] font-serif font-bold text-white tracking-tighter">THE SNAIL SHOW</span>
-                  <span className="text-[9px] font-bold text-gray-400 tracking-widest uppercase mt-0.5">PODCAST CHANNEL</span>
-                </div>
-
-                {/* Bottom Platforms list */}
-                <div className="relative z-10 pt-4 border-t border-white/10 flex flex-col gap-2">
-                  <div className="text-[9px] font-bold text-gray-500 uppercase tracking-widest">Listen On</div>
-                  <div className="flex flex-wrap gap-1.5">
-                    {platforms.map((plat, i) => (
-                      <span key={i} className="bg-white/[0.04] border border-white/10 rounded px-2.5 py-0.5 text-[9px] text-gray-400 font-medium">
-                        {plat}
-                      </span>
-                    ))}
+                  <div>
+                    <span className="text-sm font-bold text-white uppercase tracking-widest block drop-shadow-md">
+                      Watch on YouTube
+                    </span>
+                    <span className="text-[10px] text-white/70 font-semibold tracking-wider uppercase mt-1 block drop-shadow-md">
+                      @thesnailshowpodcast
+                    </span>
                   </div>
                 </div>
+              </a>
+
+              {/* Subtitle Badge below the card */}
+              <div className="flex justify-between items-center bg-white border border-gray-200 rounded-xl p-3 text-[10px] text-gray-700 font-bold tracking-wider shadow-sm">
+                <span>THE SNAIL SHOW</span>
+                <span className="text-red-600 flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping" />
+                  SUBSCRIBE
+                </span>
               </div>
             </AnimatedText>
           </div>
@@ -141,10 +158,15 @@ export default function SnailShowPodcast() {
           </AnimatedText>
 
           <AnimatedText delay={0.45}>
-            <button className="group inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold rounded-xl bg-primary text-white hover:bg-primary-hover shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto">
-              Listen to the Latest Episode
+            <a 
+              href="https://www.youtube.com/@thesnailshowpodcast"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold rounded-xl bg-primary text-white hover:bg-primary-hover shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto"
+            >
+              Watch & Listen on YouTube
               <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-            </button>
+            </a>
           </AnimatedText>
         </div>
 

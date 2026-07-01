@@ -1,4 +1,5 @@
 import AnimatedText from '../AnimatedText';
+import Image from 'next/image';
 
 export default function BrandCommSummit() {
   const seasons = [
@@ -19,6 +20,15 @@ export default function BrandCommSummit() {
             </div>
           </AnimatedText>
           <AnimatedText delay={0.2}>
+            <div className="flex justify-center mb-5">
+              <Image
+                src="/initiatives/Brand R.Comm final logo.png"
+                alt="Brand R.Comm Summit Logo"
+                width={180}
+                height={80}
+                className="object-contain"
+              />
+            </div>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-2">
               Brand R.Comm Summit
             </h2>

@@ -1,4 +1,5 @@
 import AnimatedText from '../AnimatedText';
+import Image from 'next/image';
 
 export default function SnailShowNewsletter() {
   const readers = [
@@ -11,7 +12,7 @@ export default function SnailShowNewsletter() {
   ];
 
   return (
-    <section className="w-full bg-white py-16 md:py-24 px-6 md:px-8 overflow-hidden border-t border-gray-100">
+    <section id="snail-show-newsletter" className="w-full bg-white py-16 md:py-24 px-6 md:px-8 overflow-hidden border-t border-gray-100">
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         
         {/* Section Header Centered */}
@@ -22,6 +23,15 @@ export default function SnailShowNewsletter() {
             </div>
           </AnimatedText>
           <AnimatedText delay={0.2}>
+            <div className="flex justify-center mb-5">
+              <Image
+                src="/initiatives/Snail Show NewsLetter Logo-01.png"
+                alt="The Snail Show Newsletter Logo"
+                width={180}
+                height={80}
+                className="object-contain"
+              />
+            </div>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-2">
               The Snail Show Newsletter
             </h2>
@@ -47,42 +57,29 @@ export default function SnailShowNewsletter() {
           {/* Left Side: Newsletter Preview Visual */}
           <div className="hidden lg:flex lg:col-span-5 justify-center">
             <AnimatedText delay={0.2} direction="left" className="w-full max-w-[420px]">
-              <div className="border border-gray-200 bg-[#fafafa] rounded-2xl p-6 shadow-lg flex flex-col gap-4 relative overflow-hidden group hover:shadow-xl transition-all duration-300">
-                {/* Paper header style */}
-                <div className="flex justify-between items-center border-b border-gray-200 pb-3 text-[10px] font-bold text-gray-400 tracking-wider">
-                  <span>THE WEEKLY DIGEST</span>
-                  <span>VOL. 42 / NO. 18</span>
-                </div>
-
-                {/* Newsletter Title banner */}
-                <div className="text-center py-2 border-b border-gray-200">
-                  <span className="font-serif text-2xl font-bold text-gray-900 tracking-tight">The Snail Show</span>
-                  <p className="text-[9px] text-[#4a7c24] font-semibold tracking-widest uppercase mt-0.5">Editorial Intelligence</p>
-                </div>
-
-                {/* Newsletter Content Preview */}
-                <div className="flex flex-col gap-3 py-2">
-                  <div className="text-xs font-semibold text-gray-800">
-                    This Week: Overcoming the Ag-Tech Scaling Wall
+              <a 
+                href="https://www.linkedin.com/newsletters/the-snailshow-newsletter-7287459818590683136/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block border border-gray-200 bg-white rounded-2xl overflow-hidden shadow-lg relative group hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="aspect-square relative w-full overflow-hidden bg-white p-2">
+                  <Image 
+                    src="/others/newsletter.jpeg" 
+                    alt="The Snail Show Newsletter Preview" 
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 33vw"
+                    className="object-contain group-hover:scale-102 transition-transform duration-500" 
+                  />
+                  {/* Subtle glass overlay banner on hover */}
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="bg-white/95 backdrop-blur-xs text-gray-800 text-xs font-semibold px-4 py-2.5 rounded-full shadow-md flex items-center gap-1.5 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                      Read & Subscribe on LinkedIn
+                      <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </span>
                   </div>
-                  <div className="w-full h-1.5 bg-gray-200 rounded-full" />
-                  <p className="text-[10px] text-gray-500 leading-relaxed">
-                    As biological inputs gain regulatory clarity, companies face a downstream communication hurdle. How do you translate lab results into trusted field advice? Our analysts break down the three primary levers for building farmer confidence...
-                  </p>
-                  <div className="w-2/3 h-1.5 bg-gray-200 rounded-full" />
-                  <div className="w-1/2 h-1.5 bg-gray-200 rounded-full" />
                 </div>
-
-                {/* Bottom mockup input button */}
-                <div className="pt-3 border-t border-gray-200 flex gap-2">
-                  <div className="flex-grow bg-white border border-gray-200 rounded-lg px-3 py-2 text-[10px] text-gray-400">
-                    enter your email address
-                  </div>
-                  <button className="bg-primary hover:bg-primary-hover text-white text-[10px] font-semibold px-4 rounded-lg">
-                    Join
-                  </button>
-                </div>
-              </div>
+              </a>
             </AnimatedText>
           </div>
 
@@ -133,10 +130,15 @@ export default function SnailShowNewsletter() {
           </AnimatedText>
 
           <AnimatedText delay={0.5}>
-            <button className="group inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold rounded-xl bg-primary text-white hover:bg-primary-hover shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto">
+            <a 
+              href="https://www.linkedin.com/newsletters/the-snailshow-newsletter-7287459818590683136/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold rounded-xl bg-primary text-white hover:bg-primary-hover shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto"
+            >
               Subscribe to the Newsletter
               <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-            </button>
+            </a>
           </AnimatedText>
         </div>
 
