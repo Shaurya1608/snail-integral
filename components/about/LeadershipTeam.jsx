@@ -11,36 +11,42 @@ export default function LeadershipTeam() {
       name: "Amit BK Khare",
       designation: "Founder & Managing Partner",
       image: "/Team Photos/Amit Khare.png",
+      linkedin: "https://linkedin.com/in/amit-khare-1a073419",
       bio: "Amit founded Snail Integral with a vision to bridge the communication gap that often limits business growth, especially in agriculture and emerging sectors. With years of experience in branding, strategic communication, and business consulting, he has built the agency into a trusted partner for organizations looking to create stronger market presence and meaningful customer connections. His leadership continues to shape the agency's long-term vision and client relationships."
     },
     {
       name: "Arti Khare",
       designation: "Director & Co-Founder",
       image: "/Team Photos/Arti khare.png",
+      linkedin: "https://linkedin.com/in/arti-khare-22194010",
       bio: "Arti plays a key role in driving the strategic and operational direction of the agency. She focuses on building strong systems, maintaining quality standards, and ensuring smooth collaboration across teams and clients. Her balanced approach towards creativity, management, and execution has helped the agency grow while consistently delivering reliable and impactful work."
     },
     {
       name: "Vaishnav Thakur",
       designation: "Head - Digital Marketing",
       image: "/Team Photos/Vaishanav.png",
+      linkedin: null,
       bio: "Vaishnav leads the agency's digital marketing initiatives with a strong focus on performance, audience engagement, and platform strategy. He works across social media campaigns, paid marketing, analytics, and digital growth planning to help brands improve visibility and customer reach. His practical understanding of evolving digital trends allows the team to create campaigns that are both creative and result-oriented."
     },
     {
       name: "Shubham Joshi",
       designation: "Lead - Creative & Concept",
       image: "/Team Photos/Shubham Joshi.png",
+      linkedin: "https://linkedin.com/in/shubhamm-brandstrategist",
       bio: "Shubham leads creative ideation and conceptual development for branding, campaigns, and visual communication projects. He believes strong ideas are at the heart of every successful brand experience and works closely with the design team to turn concepts into impactful creative outputs. His approach combines storytelling, simplicity, and strategic thinking to create communication that connects with audiences."
     },
     {
       name: "Yashasvi Sharma",
       designation: "Lead - Business Support",
       image: "/Team Photos/Yashi sharma.png",
+      linkedin: "https://linkedin.com/in/yashasvi-sharma-156373387",
       bio: "Yashasvi supports the agency's client coordination, business operations, and internal workflow management. She works closely with teams to ensure projects move smoothly from planning to execution while maintaining clear communication with clients. Her organized and collaborative working style helps create a seamless experience across ongoing projects and partnerships."
     },
     {
       name: "Arpita Kaur Matharu",
       designation: "Lead - Digital Marketing",
       image: "/Team Photos/Arpita.png",
+      linkedin: "https://linkedin.com/in/arpitadigi-marketer",
       bio: "Arpita manages social media communication, content planning, and digital campaign execution for the agency's clients. She brings together creativity and data-driven thinking to build digital experiences that strengthen audience engagement and brand recall. Her focus remains on creating communication that is relevant, consistent, and aligned with business goals."
     }
   ];
@@ -94,11 +100,19 @@ export default function LeadershipTeam() {
                   </p>
                   
                   {/* LinkedIn link */}
-                  <div className={`mt-auto flex ${index % 2 !== 0 ? 'justify-center md:justify-end' : 'justify-center md:justify-start'}`}>
-                    <a href="#" className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 text-gray-400 hover:bg-[#4a7c24] hover:text-white hover:shadow-lg transition-all duration-300">
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    </a>
-                  </div>
+                  {member.linkedin && (
+                    <div className={`mt-auto flex ${index % 2 !== 0 ? 'justify-center md:justify-end' : 'justify-center md:justify-start'}`}>
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${member.name} on LinkedIn`}
+                        className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 text-gray-400 hover:bg-[#4a7c24] hover:text-white hover:shadow-lg transition-all duration-300"
+                      >
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
             </motion.div>

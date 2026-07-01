@@ -48,11 +48,11 @@ export default function ClientLogos() {
 
       <div 
         ref={scrollRef}
-        className="flex flex-col gap-6 md:gap-10 w-full max-w-[100vw] overflow-x-auto md:overflow-hidden relative hide-scrollbar scroll-smooth pb-4 md:pb-0"
+        className="flex flex-col gap-6 md:gap-10 w-full max-w-[100vw] overflow-hidden relative hide-scrollbar pb-4 md:pb-0"
       >
-        {/* Simple fade edges for desktop */}
-        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#f9fbf7] to-transparent z-10 hidden md:block pointer-events-none"></div>
-        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#f9fbf7] to-transparent z-10 hidden md:block pointer-events-none"></div>
+        {/* Fade edges — both mobile and desktop */}
+        <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
 
         {/* Row 1 */}
         <div className="flex w-max desktop-animate-scroll hover:pause px-4 md:px-0">
@@ -150,13 +150,11 @@ export default function ClientLogos() {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
-        @media (min-width: 768px) {
-          .desktop-animate-scroll {
-            animation: scroll 80s linear infinite;
-          }
-          .desktop-animate-scroll-reverse {
-            animation: scroll 90s linear infinite reverse;
-          }
+        .desktop-animate-scroll {
+          animation: scroll 60s linear infinite;
+        }
+        .desktop-animate-scroll-reverse {
+          animation: scroll 70s linear infinite reverse;
         }
         .hover\\:pause:hover {
           animation-play-state: paused;
