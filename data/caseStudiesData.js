@@ -10,7 +10,7 @@ export const caseStudies = [
     solution: "We identified a unique cultural moment to leverage. With the controversy around the film Adipurush reigniting public nostalgia for Ramanand Sagar's iconic Ramayana and the series coincidentally matching the company's founding era of the 1980s, we saw a powerful brand alignment opportunity.\nWe proposed and executed the onboarding of Shri Arun Govil Ji celebrated for his portrayal of Lord Rama as the brand's official Brand Ambassador. His image, deeply associated with truth, trust, and moral integrity, created an authentic bridge between the brand's values and farmer sentiment.\nThe result was a corporate AV that didn't just introduce a celebrity, it wove the celebrity's identity into the brand's own story.",
     outcome: "Enhanced brand visibility, increased farmer trust, and a brand identity that now stands out distinctly in the agrochemical market.",
     videoUrl: "https://youtu.be/H4-ZMQhVJK8?si=o78fq-kmjc1WXcxN",
-    thumbnail: "/LandingPage/l-image-2.jpg"
+    thumbnail: "/casepstudies/Video Production-20260702T103110Z-3-001/Video Production/1.webp"
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ export const caseStudies = [
     solution: "We developed a comprehensive product branding video anchored around the campaign punchline: \"Super Star.\"\nRather than a straightforward product showcase, we told the story behind the product, its inspiration, its creation journey, and its intended impact on farmers in a poetic, narrative format. This authentic storytelling approach built an emotional connection with the target audience that conventional advertising cannot achieve.",
     outcome: "The \"Super Star\" positioning gave the product a distinct identity, boosted credibility among farmers, and created a lasting emotional recall in the market.",
     videoUrl: "https://youtu.be/l00GgNHU_yE?si=2vr8ZnPcf6DK43HB",
-    thumbnail: "/LandingPage/l-image-3.jpg"
+    thumbnail: "/casepstudies/Video Production-20260702T103110Z-3-001/Video Production/2.webp"
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ export const caseStudies = [
     solution: "We developed a branding video featuring Shri Arun Govil Ji with the punchline \"Vahi Jo Sach Hai\" aligning perfectly with his widely recognized persona as Lord Rama, the symbol of absolute truth and righteousness.\nThe punchline reinforced the product's effectiveness, safety, and environmental credibility, all in four powerful words.",
     outcome: "A differentiated product identity built on a foundation of trust, with a punchline that farmers remember and believe in.",
     videoUrl: "https://youtu.be/xjiNlvMGQUI?si=PmRqa4D-OzrEmGH0",
-    thumbnail: "/LandingPage/l-image-4.jpg"
+    thumbnail: "/casepstudies/Video Production-20260702T103110Z-3-001/Video Production/3.jpg"
   },
   {
     id: 4,
@@ -49,7 +49,7 @@ export const caseStudies = [
     solution: "We created a comprehensive awareness video that opened with relatable scenarios, common daily problems that both students and hostel staff face, before demonstrating how FretBox's intuitive interface solves them. Quick feature snippets highlighted the platform's ease of use and time-saving capabilities, making the product feel immediately accessible and essential.",
     outcome: "Increased product visibility in the market, stronger credibility with institutional clients, and improved adoption among students and hostel management teams.",
     videoUrl: null,
-    thumbnail: "/LandingPage/l-image-15.jpg"
+    thumbnail: "/casepstudies/Video Production-20260702T103110Z-3-001/Video Production/4.png"
   },
   {
     id: 5,
@@ -62,7 +62,7 @@ export const caseStudies = [
     solution: "We developed a branding video built around the bold campaign punchline: \"Phosphorus Ka Baap.\" The metaphor of a father figure, one who provides a nurturing, protected environment for growth, directly communicated the product's role in enabling healthy, resilient crops. The punchline was raw, memorable, and deeply resonant with rural audiences.",
     outcome: "A strong, culturally relevant brand identity that cuts through the noise and gives the product instant recall in a competitive market.",
     videoUrl: "https://youtu.be/RwSK5oU2p4Q?si=F8DQSwNrl8hBIGwC",
-    thumbnail: "/LandingPage/l-image-1.jpg"
+    thumbnail: "/casepstudies/Video Production-20260702T103110Z-3-001/Video Production/5.jpg"
   },
   {
     id: 6,
@@ -75,7 +75,7 @@ export const caseStudies = [
     solution: "Snail Integral took a structured, precision-led approach: complex concepts were simplified using strategic visuals and animations; authentic farmer testimonials were captured on location to add real-world impact; and meticulous planning ensured seamless coordination across all locations. Clear, continuous stakeholder communication kept the project aligned to the brand's vision throughout.",
     outcome: "A compelling corporate film that showcased JU Agriscience's innovation, strengthened its brand identity, and delivered a powerful narrative, on time and on brief.",
     videoUrl: "https://youtu.be/W5pJiN-x6fU?si=IiaqauafwVwOoRSp",
-    thumbnail: "/LandingPage/l-image-2.jpg"
+    thumbnail: "/casepstudies/Video Production-20260702T103110Z-3-001/Video Production/6.webp"
   },
   {
     id: 7,
@@ -88,7 +88,7 @@ export const caseStudies = [
     solution: "We created a high-impact promotional video combining clear messaging, visual storytelling, and easy-to-understand product demonstrations. The production included concept development, scripting, shoot, editing, professional voiceover, and motion graphics delivered as a complete AV film.",
     outcome: "Delivered Concept, script, shoot, editing, voiceover, motion graphics, and final AV film.",
     videoUrl: "https://youtu.be/E7ZSvtB26FU?si=nBTGGM4x7r7Ekn6P",
-    thumbnail: "/LandingPage/l-image-3.jpg"
+    thumbnail: "/casepstudies/Video Production-20260702T103110Z-3-001/Video Production/7.jpg"
   },
   {
     id: 8,
@@ -101,7 +101,7 @@ export const caseStudies = [
     solution: "We executed a targeted PR strategy including authored article placement from FretBox spokespersons, non-agenda relationship-building meetings with education and technology journalists, proactive industry story participation, and speaker opportunity positioning at relevant industry platforms.",
     outcome: "FretBox earned regular features in Economic Times, ET NOW, Business Standard, TOI, The Hindu, Indian Express, Amar Ujala, Dainik Jagran, and leading educational trade media, establishing it as a credible player in the EdTech/hostel-management space.",
     videoUrl: null,
-    thumbnail: "/LandingPage/l-image-4.jpg"
+    thumbnail: "/casepstudies/PR-20260702T103118Z-3-001/PR/PR1.jpg"
   },
   {
     id: 9,
@@ -114,7 +114,7 @@ export const caseStudies = [
     solution: "We aligned the PR strategy around the uniqueness of this endorsement — a personality with zero prior brand association, carrying the unimpeachable image of Lord Rama — and positioned the press conference to maximize both media curiosity and editorial coverage. The messaging reinforced TCL's brand promise of purity and trust, echoed powerfully in Arun Govil Ji's public persona.",
     outcome: "75+ media coverages across national and regional outlets, establishing the Brand Ambassador launch as a marquee moment for the company.",
     videoUrl: null,
-    thumbnail: "/LandingPage/l-image-15.jpg"
+    thumbnail: "/casepstudies/PR-20260702T103118Z-3-001/PR/PR2.jpg"
   },
   {
     id: 10,
@@ -127,7 +127,7 @@ export const caseStudies = [
     solution: "Snail Integral executed a focused media outreach strategy around the product launch, positioning it as a landmark collaboration between an Indian cooperative institution and a global biosolutions leader. We secured editorial coverage across leading business, agriculture, and Hindi-language media.",
     outcome: "Coverage secured across Financial Express, Mint, Millennium Post, Business Line, The Print, Zee Business, Dainik Jagran, and more. Total coverage: 100+ media imprints.",
     videoUrl: null,
-    thumbnail: "/LandingPage/l-image-1.jpg"
+    thumbnail: "/casepstudies/PR-20260702T103118Z-3-001/PR/PR3.jpg"
   },
   {
     id: 11,
@@ -140,12 +140,12 @@ export const caseStudies = [
     solution: "We positioned NBIF's President and key spokespersons as authoritative industry voices and executed a strong media placement campaign around their key policy demand that India needs science-driven, industry-aligned regulation, not subsidies. We placed the narrative across top business and policy media.",
     outcome: "Coverage secured in The Pioneer, PTI, Business Standard, Economic Times, Business Line, The Print, MSN, and Zee Business. Total coverage: 100+ media imprints.",
     videoUrl: null,
-    thumbnail: "/LandingPage/l-image-2.jpg"
+    thumbnail: "/casepstudies/PR-20260702T103118Z-3-001/PR/PR4.png"
   },
   {
     id: 12,
     category: "Business Consulting",
-    client: "MIC",
+    client: "Market Insight Consultants",
     product: "",
     service: "Business & Market Consultancy",
     industry: "Food Processing / Agri-Processing",
@@ -153,7 +153,7 @@ export const caseStudies = [
     solution: "Assessment of current grain processing technologies and applicable quality standards. Complete product marketing consultancy including B2B & B2C market assessment, key geographies, customer segments, competitor analysis, product range, and target customer profiling.",
     outcome: "Machine sourcing with quotations and technical specifications and complete DPR preparation.",
     videoUrl: null,
-    thumbnail: "/LandingPage/l-image-3.jpg"
+    thumbnail: "/casepstudies/Business consulting-20260702T103123Z-3-001/Business consulting/Business consulting 1.jpg"
   },
   {
     id: 13,
@@ -166,7 +166,7 @@ export const caseStudies = [
     solution: "Engineering & technical inputs along with quality standards. Full product marketing consultancy: market assessment (B2B & B2C), key geographies, segments, competitor landscape, import/export analysis, and legal services. Supply chain analysis: proximity to raw material sources, machinery suppliers, warehousing and fuel costs.",
     outcome: "Complete Detailed Project Report (DPR) with techno-financial inputs.",
     videoUrl: null,
-    thumbnail: "/LandingPage/l-image-4.jpg"
+    thumbnail: "/casepstudies/Business consulting-20260702T103123Z-3-001/Business consulting/Business consulting 2.jpg"
   },
   {
     id: 14,
@@ -179,7 +179,7 @@ export const caseStudies = [
     solution: "Snail Integral conceptualized and executed multi-city events spanning Delhi, Agra, Thiruvananthapuram, Ahmedabad, Jaipur, Dewas, Raipur, Indore, Dubai, and more. Each event was designed with localized branding, live plant demonstrations, farmer testimonials, technical sessions, and interactive nukkad natak formats.",
     outcome: "Complete event branding, creatives, on-ground management, farmer testimonial content, and post-event communications across 10+ cities and one international location.",
     videoUrl: null,
-    thumbnail: "/LandingPage/l-image-15.jpg"
+    thumbnail: "/casepstudies/Event Branding & Management-20260702T103126Z-3-001/Event Branding & Management/event 1.jpg"
   },
   {
     id: 15,
@@ -192,7 +192,7 @@ export const caseStudies = [
     solution: "We developed complete on-ground branding including pagoda structures, entrance gates, demo plot display boards, field creatives, and product information panels bringing a premium brand experience directly to the field.",
     outcome: "Pagoda branding, gates, demo plot visuals, field information boards, and complete on-ground execution materials.",
     videoUrl: null,
-    thumbnail: "/LandingPage/l-image-1.jpg"
+    thumbnail: "/casepstudies/Event Branding & Management-20260702T103126Z-3-001/Event Branding & Management/event 2.jpg"
   },
   {
     id: 16,
@@ -205,7 +205,7 @@ export const caseStudies = [
     solution: "Snail Integral handled complete end-to-end event management: stage branding, invitation design, event creatives, and full on-ground execution delivering a polished, professional inauguration experience that matched EpiLogic's global identity.",
     outcome: "Stage branding, event invitations, creatives, and complete event execution.",
     videoUrl: null,
-    thumbnail: "/LandingPage/l-image-2.jpg"
+    thumbnail: "/casepstudies/Event Branding & Management-20260702T103126Z-3-001/Event Branding & Management/event 3.jpg"
   },
   {
     id: 17,
@@ -218,7 +218,7 @@ export const caseStudies = [
     solution: "We developed a complete packaging system using AI-assisted design methods and strict brand guidelines. Each product category received its own visual language while maintaining the overarching Unnati brand identity. Deliverables included labels, pouch designs, bottle labels, and 3D mockups.",
     outcome: "A consistent, shelf-ready packaging system for 100+ agrochemical products print-ready and market-tested.",
     videoUrl: null,
-    thumbnail: "/LandingPage/l-image-3.jpg"
+    thumbnail: "/casepstudies/Branding & Packaging Design-20260702T103121Z-3-001/Branding & Packaging Design/P1.jpg"
   },
   {
     id: 18,
@@ -231,7 +231,7 @@ export const caseStudies = [
     solution: "We created a modern, cohesive packaging design language across 100+ products covering multiple categories. Deliverables included complete label designs, artwork files, and 3D mockups in print-ready formats.",
     outcome: "100+ products with a unified, professional visual identity ready for retail shelves and dealer distribution.",
     videoUrl: null,
-    thumbnail: "/LandingPage/l-image-4.jpg"
+    thumbnail: "/casepstudies/Branding & Packaging Design-20260702T103121Z-3-001/Branding & Packaging Design/P2.jpg"
   },
   {
     id: 19,
@@ -244,7 +244,7 @@ export const caseStudies = [
     solution: "We redesigned packaging with a fresh, clear, and farmer-focused visual approach. Beyond individual product packs, we handled full company branding and developed artwork for 10+ products including the flagship Magic Tonic.",
     outcome: "Packaging artwork, full company branding, and print-ready design files for 10+ products.",
     videoUrl: null,
-    thumbnail: "/LandingPage/l-image-15.jpg"
+    thumbnail: "/casepstudies/Branding & Packaging Design-20260702T103121Z-3-001/Branding & Packaging Design/P3.png"
   },
   {
     id: 20,
@@ -257,7 +257,7 @@ export const caseStudies = [
     solution: "We designed product packaging that reflected the brand's identity and stood out on retail shelves. Alongside this, we produced crop-specific educational videos covering the complete crop journey from seed to harvest for Peanut, Sugarcane, Soybean, Cotton, Maize and Chilli.",
     outcome: "Stronger product presentation, consistent brand communication, and easy-to-understand educational content for farmers.",
     videoUrl: null,
-    thumbnail: "/LandingPage/l-image-1.jpg"
+    thumbnail: "/casepstudies/Branding & Packaging Design-20260702T103121Z-3-001/Branding & Packaging Design/P4.jpg"
   },
   {
     id: 21,
@@ -270,7 +270,7 @@ export const caseStudies = [
     solution: "We created a complete social media strategy including content planning, creative design, educational campaigns, festival creatives, reels and product-focused communication. Every piece of content was designed to educate farmers, improve engagement and strengthen brand recall across digital platforms.",
     outcome: "Consistent brand presence on social media, higher audience engagement, and better farmer awareness through educational content.",
     videoUrl: null,
-    thumbnail: "/LandingPage/l-image-2.jpg"
+    thumbnail: "/casepstudies/SMM-20260702T103111Z-3-001/SMM/SMM 1.jpg"
   },
   {
     id: 22,
@@ -283,7 +283,7 @@ export const caseStudies = [
     solution: "We designed and developed a modern, responsive website with a clean layout, intuitive navigation and well-structured content. The website was optimized for performance, mobile responsiveness and search engines, ensuring a seamless user experience across all devices.",
     outcome: "Professional digital presence, improved user experience, and a mobile-friendly, SEO-ready website.",
     videoUrl: null,
-    thumbnail: "/LandingPage/l-image-3.jpg"
+    thumbnail: "/casepstudies/Website-20260702T104758Z-3-001/Website/Website-01.jpg"
   },
   {
     id: 23,
@@ -296,7 +296,7 @@ export const caseStudies = [
     solution: "We developed a responsive corporate website with a user-friendly interface, structured product pages and optimized content architecture. The website was built to deliver fast performance, easy navigation and a consistent brand experience across all devices.",
     outcome: "Enhanced online brand presence, better product accessibility, and improved website performance.",
     videoUrl: null,
-    thumbnail: "/LandingPage/l-image-4.jpg"
+    thumbnail: "/casepstudies/Website-20260702T104758Z-3-001/Website/Website-02.jpg"
   },
   {
     id: 24,
@@ -309,6 +309,6 @@ export const caseStudies = [
     solution: "We designed and developed a responsive corporate website focused on usability, performance and modern design. The website featured a structured information architecture, optimized loading speed and a seamless browsing experience across desktop and mobile devices.",
     outcome: "Stronger corporate identity online, clear presentation of products and services, and a responsive and SEO-friendly website.",
     videoUrl: null,
-    thumbnail: "/LandingPage/l-image-15.jpg"
+    thumbnail: "/casepstudies/Website-20260702T104758Z-3-001/Website/Website-03.png"
   }
 ];
