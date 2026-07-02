@@ -55,7 +55,7 @@ export default function SnailShowNewsletter() {
         {/* Grid Layout for visual and description */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
           {/* Left Side: Newsletter Preview Visual */}
-          <div className="hidden lg:flex lg:col-span-5 justify-center">
+          <div className="flex lg:col-span-5 justify-center mb-10 lg:mb-0">
             <AnimatedText delay={0.2} direction="left" className="w-full max-w-[420px]">
               <a 
                 href="https://www.linkedin.com/newsletters/the-snailshow-newsletter-7287459818590683136/"
@@ -129,17 +129,7 @@ export default function SnailShowNewsletter() {
             </div>
           </AnimatedText>
 
-          <AnimatedText delay={0.5}>
-            <a 
-              href="https://www.linkedin.com/newsletters/the-snailshow-newsletter-7287459818590683136/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold rounded-xl bg-primary text-white hover:bg-primary-hover shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto"
-            >
-              Subscribe to the Newsletter
-              <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-            </a>
-          </AnimatedText>
+
         </div>
 
       </div>

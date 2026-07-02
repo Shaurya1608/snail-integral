@@ -41,32 +41,34 @@ export default function BrandCommSummit() {
         {/* Grid Layout for visual and body description */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
           {/* Left Side: Visual Representation */}
-          <div className="hidden lg:flex lg:col-span-5 relative w-full justify-center">
+          <div className="flex lg:col-span-5 relative w-full justify-center mb-8 lg:mb-0">
             <AnimatedText delay={0.2} direction="left" className="w-full max-w-[400px]">
               <div className="relative aspect-[4/5] w-full rounded-3xl bg-[#141414] border border-white/5 p-8 flex flex-col justify-between text-white shadow-2xl overflow-hidden group">
+                <Image 
+                  src="/others/b-r-com-s3.jpg" 
+                  alt="Brand R.Comm Summit Season 3" 
+                  fill 
+                  className="object-cover group-hover:scale-105 transition-transform duration-700" 
+                />
                 {/* Subtle ambient light */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
 
                 {/* Top Row: Brand Label */}
-                <div className="relative z-10 flex items-center justify-between border-b border-white/10 pb-4">
-                  <span className="text-[10px] font-semibold tracking-widest uppercase text-gray-400">Flagship Platform</span>
-                  <span className="bg-white/10 text-white border border-white/15 text-[9px] font-semibold px-2.5 py-0.5 rounded uppercase tracking-wider">
+                <div className="relative z-10 flex items-center justify-between border-b border-white/20 pb-4 drop-shadow-md">
+                  <span className="text-[10px] font-semibold tracking-widest uppercase text-white/90">Flagship Platform</span>
+                  <span className="bg-black/30 backdrop-blur-sm text-white border border-white/20 text-[9px] font-semibold px-2.5 py-0.5 rounded uppercase tracking-wider drop-shadow-sm">
                     Established
                   </span>
                 </div>
 
-                {/* Center Branding Graphic */}
-                <div className="relative z-10 my-auto py-8">
-                  <div className="text-[3.5rem] md:text-[4rem] font-serif font-extrabold leading-none text-white tracking-tighter mb-1">
+                {/* Branding Graphic Pushed to Bottom */}
+                <div className="relative z-10 mt-auto pb-6">
+                  <div className="text-4xl md:text-5xl font-serif font-extrabold leading-none text-white tracking-tighter mb-1 drop-shadow-md">
                     R.COMM
                   </div>
-                  <div className="font-serif text-xl font-light text-gray-400 uppercase tracking-widest mb-4">
+                  <div className="font-serif text-lg font-bold text-white/90 uppercase tracking-widest drop-shadow-sm">
                     SUMMIT
                   </div>
-                  <div className="w-8 h-[1px] bg-gray-500 mb-4" />
-                  <p className="text-[11px] text-gray-400 max-w-[280px] leading-relaxed font-light">
-                    India's premier summit dedicated to excellence in agricultural and rural communication.
-                  </p>
                 </div>
 
                 {/* Bottom Row: Seasons completed badges */}
@@ -76,8 +78,8 @@ export default function BrandCommSummit() {
                       key={i} 
                       className="flex-1 min-w-[70px] bg-white/[0.03] border border-white/10 rounded-lg p-2 text-center"
                     >
-                      <div className="text-[9px] font-medium text-gray-500 uppercase">{season.label}</div>
-                      <div className="text-xs font-semibold text-gray-300 mt-0.5">{season.status}</div>
+                      <div className="text-[9px] font-medium text-white/80 uppercase drop-shadow-sm">{season.label}</div>
+                      <div className="text-xs font-semibold text-white drop-shadow-sm mt-0.5">{season.status}</div>
                     </div>
                   ))}
                 </div>
@@ -132,12 +134,7 @@ export default function BrandCommSummit() {
             </div>
           </AnimatedText>
 
-          <AnimatedText delay={0.5}>
-            <button className="group inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold rounded-xl bg-primary text-white hover:bg-primary-hover shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto">
-              Register Your Interest for the Next Edition
-              <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-            </button>
-          </AnimatedText>
+
         </div>
 
       </div>

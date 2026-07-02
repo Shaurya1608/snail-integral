@@ -80,54 +80,42 @@ export default function BioAgriConference() {
           </div>
 
           {/* Right Side: Visual Representation */}
-          <div className="hidden lg:flex lg:col-span-5 relative w-full justify-center order-1 lg:order-2">
+          <div className="flex lg:col-span-5 relative w-full justify-center order-1 lg:order-2 mb-8 lg:mb-0">
             <AnimatedText delay={0.2} direction="right" className="w-full max-w-[400px]">
-              <div className="relative aspect-[4/5] w-full rounded-3xl bg-[#141414] border border-white/5 p-8 flex flex-col justify-between text-white shadow-2xl overflow-hidden group">
+              <div className="relative aspect-[4/5] w-full rounded-3xl border border-gray-200/20 p-8 flex flex-col justify-between text-white shadow-2xl overflow-hidden group">
+                <Image 
+                  src="/others/b2-02.png" 
+                  alt="Bio-Agri Next Global Conference" 
+                  fill 
+                  className="object-cover group-hover:scale-105 transition-transform duration-700" 
+                />
+                <div className="absolute inset-0 bg-black/20" />
                 {/* Subtle ambient light */}
                 <div className="absolute top-0 right-0 w-56 h-56 bg-white/5 rounded-full blur-3xl" />
 
                 {/* Top Row: Global Flag */}
-                <div className="relative z-10 flex items-center justify-between border-b border-white/10 pb-4">
-                  <span className="text-[10px] font-semibold tracking-widest uppercase text-gray-400">Global Platform</span>
-                  <span className="text-[10px] text-gray-400 font-light flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <div className="relative z-10 flex items-center justify-between border-b border-white/20 pb-4 drop-shadow-md">
+                  <span className="text-[10px] font-semibold tracking-widest uppercase text-white/90">Global Platform</span>
+                  <span className="text-[10px] text-white/90 font-medium flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                     Live Connect
                   </span>
                 </div>
 
-                {/* Center Globe/Global Network Graphic */}
-                <div className="relative z-10 my-auto py-6 flex justify-center items-center">
-                  <div className="w-full max-w-[220px] aspect-square relative flex items-center justify-center">
-                    <svg className="w-full h-full text-white/[0.08]" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.5">
-                      {/* Concentric circles */}
-                      <circle cx="50" cy="50" r="40" strokeDasharray="2 2" />
-                      <circle cx="50" cy="50" r="30" />
-                      <circle cx="50" cy="50" r="20" strokeDasharray="1 3" />
-                      
-                      {/* Diagonal axes */}
-                      <line x1="10" y1="50" x2="90" y2="50" />
-                      <line x1="50" y1="10" x2="50" y2="90" />
-                      <line x1="21.7" y1="21.7" x2="78.3" y2="78.3" strokeDasharray="4 2" />
-                      <line x1="78.3" y1="21.7" x2="21.7" y2="78.3" strokeDasharray="4 2" />
-                      
-                      {/* Muted white nodes */}
-                      <circle cx="50" cy="10" r="2" fill="#fff" fillOpacity="0.4" />
-                      <circle cx="90" cy="50" r="2" fill="#fff" fillOpacity="0.4" />
-                      <circle cx="50" cy="90" r="1.5" fill="#fff" fillOpacity="0.3" />
-                      <circle cx="21.7" cy="21.7" r="2" fill="#fff" fillOpacity="0.4" />
-                      <circle cx="78.3" cy="78.3" r="2" fill="#fff" fillOpacity="0.4" />
-                    </svg>
-                    <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-2">
-                      <span className="text-[2rem] font-serif font-bold text-white tracking-tighter">BIO-AGRI</span>
-                      <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest -mt-1">NEXT</span>
-                    </div>
+                {/* Branding Graphic Pushed to Bottom */}
+                <div className="relative z-10 mt-auto pb-6">
+                  <div className="text-4xl md:text-5xl font-serif font-extrabold leading-none text-white tracking-tighter mb-1 drop-shadow-md">
+                    BIO-AGRI
+                  </div>
+                  <div className="font-serif text-lg font-bold text-white/90 uppercase tracking-widest drop-shadow-sm">
+                    NEXT
                   </div>
                 </div>
 
                 {/* Bottom Row */}
-                <div className="relative z-10 pt-4 border-t border-white/10 flex justify-between items-center text-[10px] text-gray-400">
+                <div className="relative z-10 pt-4 border-t border-white/20 flex justify-between items-center text-[10px] text-white/80 drop-shadow-sm">
                   <span>International Scope</span>
-                  <span className="text-gray-300 font-medium">Science & Policy</span>
+                  <span className="text-white font-medium drop-shadow-sm">Science & Policy</span>
                 </div>
               </div>
             </AnimatedText>
@@ -166,12 +154,7 @@ export default function BioAgriConference() {
             </AnimatedText>
           </div>
 
-          <AnimatedText delay={0.5}>
-            <button className="group inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold rounded-xl bg-primary text-white hover:bg-primary-hover shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto">
-              Learn More About Bio-Agri Next
-              <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-            </button>
-          </AnimatedText>
+
         </div>
 
       </div>

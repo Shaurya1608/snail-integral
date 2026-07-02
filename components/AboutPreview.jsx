@@ -40,7 +40,7 @@ export default function AboutPreview() {
         {/* Right Side: Image Placeholder */}
         <div className="relative h-[400px] md:h-[500px] w-full rounded-[2rem] rounded-tr-[5rem] overflow-hidden shadow-2xl group">
            <Image 
-             src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" 
+             src="/others/about.png" 
              alt="Snail Integral Team" 
              fill 
              className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"

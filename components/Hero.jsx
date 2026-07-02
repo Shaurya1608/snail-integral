@@ -41,7 +41,7 @@ export default function Hero() {
           >
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-white/80 text-[10px] md:text-xs font-semibold uppercase tracking-widest">
               <span className="w-1.5 h-1.5 rounded-full bg-[#6a9a38] animate-pulse" />
-              Snail Integral — 20+ Years of Impact
+              Snail Integral — Trusted by Industry Leaders
             </span>
           </motion.div>
 

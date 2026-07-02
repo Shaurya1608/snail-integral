@@ -61,8 +61,8 @@ export default function SnailShowPodcast() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
           
           {/* Left: Podcast Cover Art / Video Link */}
-          <div className="hidden lg:flex lg:col-span-5 justify-center">
-            <AnimatedText delay={0.2} direction="left" className="w-full max-w-[360px] -translate-y-24 lg:-translate-y-6 flex flex-col gap-4">
+          <div className="flex lg:col-span-5 justify-center mb-6 lg:mb-0">
+            <AnimatedText delay={0.2} direction="left" className="w-full max-w-[360px] lg:-translate-y-6 flex flex-col gap-4">
               <a 
                 href="https://www.youtube.com/@thesnailshowpodcast"
                 target="_blank"

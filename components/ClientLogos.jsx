@@ -59,14 +59,14 @@ export default function ClientLogos() {
           <div className="flex gap-4 md:gap-8 pr-4 md:pr-8">
             {row1Logos.map((logo, i) => (
                <div key={`row1a-${i}`} className="w-32 h-16 md:w-48 md:h-24 bg-white border border-gray-100 rounded-xl flex items-center justify-center hover:shadow-md transition-all duration-300 relative overflow-hidden shrink-0">
-                  <Image src={`/All Brands logo copy/${logo}`} alt={`Client Logo`} fill sizes="(max-width: 768px) 128px, 192px" className="object-contain p-2.5 md:p-4" />
+                  <Image src={`/All Brands logo copy/${logo}`} alt={`Client Logo`} fill sizes="(max-width: 768px) 128px, 192px" className="object-contain p-0.5" />
                </div>
             ))}
           </div>
           <div className="flex gap-4 md:gap-8 pr-4 md:pr-8">
             {row1Logos.map((logo, i) => (
                <div key={`row1b-${i}`} className="w-32 h-16 md:w-48 md:h-24 bg-white border border-gray-100 rounded-xl flex items-center justify-center hover:shadow-md transition-all duration-300 relative overflow-hidden shrink-0">
-                  <Image src={`/All Brands logo copy/${logo}`} alt={`Client Logo`} fill sizes="(max-width: 768px) 128px, 192px" className="object-contain p-2.5 md:p-4" />
+                  <Image src={`/All Brands logo copy/${logo}`} alt={`Client Logo`} fill sizes="(max-width: 768px) 128px, 192px" className="object-contain p-0.5" />
                </div>
             ))}
           </div>
@@ -77,14 +77,14 @@ export default function ClientLogos() {
           <div className="flex gap-4 md:gap-8 pr-4 md:pr-8">
             {row2Logos.map((logo, i) => (
                <div key={`row2a-${i}`} className="w-32 h-16 md:w-48 md:h-24 bg-white border border-gray-100 rounded-xl flex items-center justify-center hover:shadow-md transition-all duration-300 relative overflow-hidden shrink-0">
-                  <Image src={`/All Brands logo copy/${logo}`} alt={`Client Logo`} fill sizes="(max-width: 768px) 128px, 192px" className="object-contain p-2.5 md:p-4" />
+                  <Image src={`/All Brands logo copy/${logo}`} alt={`Client Logo`} fill sizes="(max-width: 768px) 128px, 192px" className="object-contain p-0.5" />
                </div>
             ))}
           </div>
           <div className="flex gap-4 md:gap-8 pr-4 md:pr-8">
             {row2Logos.map((logo, i) => (
                <div key={`row2b-${i}`} className="w-32 h-16 md:w-48 md:h-24 bg-white border border-gray-100 rounded-xl flex items-center justify-center hover:shadow-md transition-all duration-300 relative overflow-hidden shrink-0">
-                  <Image src={`/All Brands logo copy/${logo}`} alt={`Client Logo`} fill sizes="(max-width: 768px) 128px, 192px" className="object-contain p-2.5 md:p-4" />
+                  <Image src={`/All Brands logo copy/${logo}`} alt={`Client Logo`} fill sizes="(max-width: 768px) 128px, 192px" className="object-contain p-0.5" />
                </div>
             ))}
           </div>
@@ -95,14 +95,14 @@ export default function ClientLogos() {
           <div className="flex gap-4 md:gap-8 pr-4 md:pr-8">
             {row3Logos.map((logo, i) => (
                <div key={`row3a-${i}`} className="w-32 h-16 md:w-48 md:h-24 bg-white border border-gray-100 rounded-xl flex items-center justify-center hover:shadow-md transition-all duration-300 relative overflow-hidden shrink-0">
-                  <Image src={`/All Brands logo copy/${logo}`} alt={`Client Logo`} fill sizes="(max-width: 768px) 128px, 192px" className="object-contain p-2.5 md:p-4" />
+                  <Image src={`/All Brands logo copy/${logo}`} alt={`Client Logo`} fill sizes="(max-width: 768px) 128px, 192px" className="object-contain p-0.5" />
                </div>
             ))}
           </div>
           <div className="flex gap-4 md:gap-8 pr-4 md:pr-8">
             {row3Logos.map((logo, i) => (
                <div key={`row3b-${i}`} className="w-32 h-16 md:w-48 md:h-24 bg-white border border-gray-100 rounded-xl flex items-center justify-center hover:shadow-md transition-all duration-300 relative overflow-hidden shrink-0">
-                  <Image src={`/All Brands logo copy/${logo}`} alt={`Client Logo`} fill sizes="(max-width: 768px) 128px, 192px" className="object-contain p-2.5 md:p-4" />
+                  <Image src={`/All Brands logo copy/${logo}`} alt={`Client Logo`} fill sizes="(max-width: 768px) 128px, 192px" className="object-contain p-0.5" />
                </div>
             ))}
           </div>
@@ -113,14 +113,14 @@ export default function ClientLogos() {
           <div className="flex gap-4 md:gap-8 pr-4 md:pr-8">
             {row4Logos.map((logo, i) => (
                <div key={`row4a-${i}`} className="w-32 h-16 md:w-48 md:h-24 bg-white border border-gray-100 rounded-xl flex items-center justify-center hover:shadow-md transition-all duration-300 relative overflow-hidden shrink-0">
-                  <Image src={`/All Brands logo copy/${logo}`} alt={`Client Logo`} fill sizes="(max-width: 768px) 128px, 192px" className="object-contain p-2.5 md:p-4" />
+                  <Image src={`/All Brands logo copy/${logo}`} alt={`Client Logo`} fill sizes="(max-width: 768px) 128px, 192px" className="object-contain p-0.5" />
                </div>
             ))}
           </div>
           <div className="flex gap-4 md:gap-8 pr-4 md:pr-8">
             {row4Logos.map((logo, i) => (
                <div key={`row4b-${i}`} className="w-32 h-16 md:w-48 md:h-24 bg-white border border-gray-100 rounded-xl flex items-center justify-center hover:shadow-md transition-all duration-300 relative overflow-hidden shrink-0">
-                  <Image src={`/All Brands logo copy/${logo}`} alt={`Client Logo`} fill sizes="(max-width: 768px) 128px, 192px" className="object-contain p-2.5 md:p-4" />
+                  <Image src={`/All Brands logo copy/${logo}`} alt={`Client Logo`} fill sizes="(max-width: 768px) 128px, 192px" className="object-contain p-0.5" />
                </div>
             ))}
           </div>

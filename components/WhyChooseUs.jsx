@@ -29,8 +29,8 @@ function AnimatedNumber({ value, suffix = "" }) {
 export default function WhyChooseUs() {
   const points = [
     {
-      title: "Two Decades of Experience",
-      desc: "Over 20 years of working across diverse industries has given us the depth to navigate complex communication challenges."
+      title: "4+ Years of Experience",
+      desc: "Over 4 years of working across diverse industries has given us the expertise to solve complex communication challenges with clarity, strategy, and measurable impact."
     },
     {
       title: "Integrated Under One Roof",
@@ -56,7 +56,7 @@ export default function WhyChooseUs() {
 
   const stats = [
     { 
-      value: 20, 
+      value: 5, 
       suffix: "+", 
       label: "Years of Experience",
       icon: (
@@ -127,7 +127,7 @@ export default function WhyChooseUs() {
             <div className="mt-4 relative w-full h-64 sm:h-72 md:h-80 rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.06)] group border border-gray-100">
               <div className="absolute inset-0 bg-[#6a9a38]/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-700"></div>
               <img 
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1000&auto=format&fit=crop" 
+                src="/others/why brands.png" 
                 alt="Snail Integral Team Collaboration" 
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
               />

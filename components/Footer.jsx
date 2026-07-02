@@ -48,7 +48,7 @@ export default function Footer() {
         </div>
 
         {/* Middle Section: Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-14">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 mb-14">
           
           {/* Column 1: Company */}
           <div className="flex flex-col gap-4">
@@ -69,14 +69,7 @@ export default function Footer() {
             <Link href="/services#digital-technology" className="text-sm text-white/60 hover:text-white transition-colors duration-200">Digital & Social</Link>
           </div>
 
-          {/* Column 3: Industries */}
-          <div className="flex flex-col gap-4">
-            <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-white/30 mb-1">Industries</h4>
-            <Link href="#industries" className="text-sm text-white/60 hover:text-white transition-colors duration-200">Agriculture</Link>
-            <Link href="#industries" className="text-sm text-white/60 hover:text-white transition-colors duration-200">Corporate & B2B</Link>
-            <Link href="#industries" className="text-sm text-white/60 hover:text-white transition-colors duration-200">Government</Link>
-            <Link href="#industries" className="text-sm text-white/60 hover:text-white transition-colors duration-200">Technology</Link>
-          </div>
+
 
           {/* Column 4: Get in Touch */}
           <div className="flex flex-col gap-4">
@@ -90,10 +83,15 @@ export default function Footer() {
                 <svg className="w-4 h-4 text-[#5b872b] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                 info@snailintegral.com
               </a>
-              <p className="text-sm text-white/60 flex items-center gap-2">
-                <svg className="w-4 h-4 text-[#5b872b] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                New Delhi, India
-              </p>
+              <div className="text-sm text-white/60 flex items-start gap-2">
+                <svg className="w-4 h-4 text-[#5b872b] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                <span className="leading-relaxed">
+                  Snail Integral Private Limited<br />
+                  Q-170141, 14th Avenue, Gaur City - 2,<br />
+                  Noida Extension, Greater Noida,<br />
+                  Uttar Pradesh, India
+                </span>
+              </div>
             </div>
           </div>
         </div>

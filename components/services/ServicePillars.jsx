@@ -110,11 +110,20 @@ const pillars = [
 ];
 
 export default function ServicePillars() {
-  const serviceImages = [
-    "/LandingPage/l-image-1.jpg",
-    "/LandingPage/l-image-2.jpg",
-    "/LandingPage/l-image-3.jpg"
-  ];
+  const serviceImageMap = {
+    'Brand Consulting and Marketing': '/Services/Brand Consulting.jpg',
+    'Business Consulting': '/Services/Business consulting.jpg',
+    'Market Research': '/Services/Market research.jpg',
+    'Digital and Social Media Management': '/Services/Digital and Social Media Management.jpg',
+    'Website, Apps and Software Development': '/Services/Website, Apps and Software Development.jpg',
+    'Performance Marketing Execution': '/Services/Performance Marketing Execution.jpg',
+    'Video Production — TVC, 2D and 3D Animation, AVs': '/Services/Video Production — TVC, 2D and 3D Animation, AVs.jpg',
+    'Content Creation and Design': '/Services/Content Creation and Design.jpg',
+    'Influencer and Referral Marketing': '/Services/Influencer and Referral Marketing.jpg',
+    'Public Relations and Media Communication': '/Services/Public Relations and Media Communication.jpg',
+    'Event Management and Brand Activations': '/Services/Event Management and Brand Activations.jpg',
+    'Celebrity Management': '/Services/Celebrity Management.jpeg'
+  };
 
   return (
     <>
@@ -161,9 +170,9 @@ export default function ServicePillars() {
                         </div>
                         
                         {/* Single Large Service Image */}
-                        <div className="hidden lg:block w-[90%] mx-auto h-[480px] rounded-[2rem] overflow-hidden relative shadow-sm mt-10 border border-gray-150/30">
+                        <div className="block w-full lg:w-[90%] mx-auto h-[240px] sm:h-[320px] lg:h-[480px] mb-6 lg:mb-0 rounded-3xl overflow-hidden relative shadow-sm mt-4 lg:mt-10 border border-gray-150/30">
                           <Image 
-                            src={serviceImages[(idx * 3 + sIdx) % serviceImages.length]} 
+                            src={serviceImageMap[service.title] || "/LandingPage/l-image-1.jpg"} 
                             alt={service.title} 
                             fill 
                             sizes="(max-width: 1024px) 100vw, 33vw"
@@ -190,15 +199,7 @@ export default function ServicePillars() {
                           </div>
                         </div>
 
-                        <div>
-                          <Link 
-                            href="#contact"
-                            className="inline-flex items-center justify-center gap-2 px-6 py-3 text-xs md:text-sm font-bold rounded-full border border-gray-200 text-gray-800 hover:border-primary hover:bg-primary/5 hover:text-primary transition-all duration-300 group"
-                          >
-                            Enquire or Learn More
-                            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform text-gray-400 group-hover:text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                          </Link>
-                        </div>
+
                       </div>
                     </div>
                   </div>

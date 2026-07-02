@@ -65,7 +65,7 @@ export default function CoffeeTableBook() {
         {/* Two Columns for Content and simulated Book Cover */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full mt-6">
           {/* Left Side: Mockup of the book */}
-          <div className="hidden lg:flex lg:col-span-5 justify-center order-2 lg:order-1">
+          <div className="flex lg:col-span-5 justify-center mb-10 lg:mb-0">
             <AnimatedText delay={0.2} direction="left" className="w-full max-w-[380px]">
               {/* Real Book Photo with spine effect */}
               <div className={`relative aspect-[3/4] w-full rounded-r-2xl overflow-hidden shadow-[20px_20px_60px_-10px_rgba(0,0,0,0.25)] border-l-[10px] group hover:-rotate-1 hover:translate-x-1 hover:shadow-[30px_30px_70px_-12px_rgba(0,0,0,0.3)] transition-all duration-500 ${activeVolume === 1 ? 'border-l-[#4a7c24]' : 'border-l-amber-600'}`}>
@@ -109,7 +109,7 @@ export default function CoffeeTableBook() {
           </div>
 
           {/* Right Side: Text & Content */}
-          <div className="lg:col-span-7 flex flex-col order-1 lg:order-2">
+          <div className="lg:col-span-7 flex flex-col">
             <div className="flex flex-col gap-5 text-gray-600 text-sm md:text-base leading-relaxed mb-8">
               <AnimatedText delay={0.2}>
                 <p>
@@ -153,12 +153,7 @@ export default function CoffeeTableBook() {
             </div>
           </AnimatedText>
 
-          <AnimatedText delay={0.45}>
-            <button className="group inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold rounded-xl bg-primary text-white hover:bg-primary-hover shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto">
-              Request a Copy of Volume 1
-              <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-            </button>
-          </AnimatedText>
+
         </div>
 
       </div>

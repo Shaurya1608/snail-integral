@@ -30,7 +30,7 @@ export default function Process() {
         <div className="text-center max-w-2xl mb-20">
           <AnimatedText delay={0.1}>
             <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight text-gray-900 mb-6">
-              How We Work
+              How we work
             </h2>
           </AnimatedText>
           <AnimatedText delay={0.2}>

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import AnimatedText from '../AnimatedText';
 
 export default function OurStory() {
@@ -13,7 +14,7 @@ export default function OurStory() {
                 Our Story
               </h2>
               <p className="text-lg md:text-xl text-[#4a7c24] font-medium leading-snug max-w-2xl mx-auto">
-                From a focused communication agency to one of India&apos;s trusted multi-sector brand consulting firms.
+                From a focused communication agency to one of India&apos;s trusted <span className="whitespace-nowrap">multi-sector</span> brand consulting firms.
               </p>
             </div>
           </AnimatedText>
@@ -48,10 +49,15 @@ export default function OurStory() {
           </div>
 
           <div className="md:w-5/12 w-full relative aspect-[4/5] rounded-2xl overflow-hidden bg-gray-50 flex items-center justify-center border border-gray-100 shadow-sm mt-4 md:mt-0">
-            {/* Visual representation */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#4a7c24]/5 to-[#4a7c24]/20" />
-            <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-white/60 blur-2xl" />
-            <div className="absolute bottom-0 left-0 w-40 h-40 rounded-full bg-[#4a7c24]/10 blur-2xl" />
+            {/* Image Background */}
+            <Image 
+              src="/others/About section img (1).jpg" 
+              alt="Snail Integral Story" 
+              fill 
+              className="object-cover" 
+            />
+            <div className="absolute inset-0 bg-white/50 backdrop-blur-[1px]" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#4a7c24]/10 to-transparent" />
             
             <div className="z-10 text-center px-6">
                <div className="w-16 h-16 bg-white rounded-full mx-auto mb-5 flex items-center justify-center shadow-md">

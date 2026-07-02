@@ -49,19 +49,20 @@ export default function Navbar() {
     { label: "Services", href: "/services" },
     { label: "Initiatives", href: "/initiatives" },
     { label: "Case Studies", href: "/case-studies" },
+    { label: "Blog", href: "/blog" },
   ];
 
   const events = [
     {
       label: "Brand R.Comm Summit",
       desc: "Agriculture & rural communication excellence",
-      href: "/initiatives#brand-rcomm-summit",
+      href: "http://localhost:3001",
       logo: "/initiatives/Brand R.Comm final logo.png",
     },
     {
       label: "Bio-Agri Next Global Conference",
       desc: "Sustainable agriculture meets global collaboration",
-      href: "/initiatives#bio-agri-conference",
+      href: "http://localhost:3002",
       logo: "/initiatives/BIO AGRI NEXT LOGO.png",
     },
   ];

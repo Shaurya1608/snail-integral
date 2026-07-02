@@ -7,12 +7,11 @@ import CoreValues from '../../components/about/CoreValues';
 import WhatWeDoSummary from '../../components/about/WhatWeDoSummary';
 import OurImpact from '../../components/about/OurImpact';
 import LeadershipTeam from '../../components/about/LeadershipTeam';
-import WhyClientsTrustUs from '../../components/about/WhyClientsTrustUs';
 import AboutFinalCTA from '../../components/about/AboutFinalCTA';
 
 export const metadata = {
   title: 'About Snail Integral | Brand Consulting and Corporate Communication Agency',
-  description: 'Learn about Snail Integral, a multi-sector brand consulting and corporate communication agency with 20 plus years of experience serving agriculture, corporate, FMCG, and government sectors across India.',
+  description: 'Learn about Snail Integral, a multi-sector brand consulting and corporate communication agency with 5 plus years of experience serving agriculture, corporate, FMCG, and government sectors across India.',
   keywords: 'about Snail Integral, brand consulting agency India, corporate communication company India, multi-sector communication agency, brand strategy experts India',
 };
 
@@ -28,7 +27,6 @@ export default function AboutPage() {
         <WhatWeDoSummary />
         <OurImpact />
         <LeadershipTeam />
-        <WhyClientsTrustUs />
         <AboutFinalCTA />
       </main>
       <Footer />

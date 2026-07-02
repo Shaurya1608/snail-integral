@@ -49,7 +49,7 @@ export default function OurImpact() {
       )
     },
     { 
-      value: 20, 
+      value: 5, 
       suffix: "+", 
       label: "Years",
       icon: (
@@ -79,8 +79,8 @@ export default function OurImpact() {
       )
     },
     { 
-      stringVal: "Pan India", 
-      label: "Reach",
+      stringVal: "India & Overseas", 
+      label: "Serving",
       icon: (
         <svg className="w-5 h-5 text-white/90 mb-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h2a2.5 2.5 0 002.5-2.5V14a2 2 0 00-2-2h-.5a2 2 0 01-2-2V5a2 2 0 00-2-2H9a3 3 0 00-3 3v.15H8z" />
