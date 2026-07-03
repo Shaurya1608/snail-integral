@@ -56,13 +56,13 @@ export default function Navbar() {
     {
       label: "Brand R.Comm Summit",
       desc: "Agriculture & rural communication excellence",
-      href: "http://localhost:3001",
+      href: process.env.NEXT_PUBLIC_BRAND_R_COMM_URL || "https://brand-r-com.vercel.app/",
       logo: "/initiatives/Brand R.Comm final logo.png",
     },
     {
       label: "Bio-Agri Next Global Conference",
       desc: "Sustainable agriculture meets global collaboration",
-      href: "http://localhost:3002",
+      href: process.env.NEXT_PUBLIC_BIO_AGRI_URL || "https://bio-agri.vercel.app/",
       logo: "/initiatives/BIO AGRI NEXT LOGO.png",
     },
   ];
