@@ -259,7 +259,7 @@ export default function Navbar() {
             </svg>
           </div>
 
-          <div className="h-full flex flex-col px-8 pt-12 gap-6 overflow-y-auto pb-8">
+          <div className="h-full flex flex-col px-8 pt-12 gap-6 overflow-y-auto pb-32">
           {navLinks.map((link, i) => (
             <Link
               key={link.label}
@@ -289,15 +289,9 @@ export default function Navbar() {
           >
             <button
               onClick={() => {
-                const opening = !mobileEventsOpen;
-                setMobileEventsOpen(opening);
-                if (opening) {
-                  setTimeout(() => {
-                    mobileEventsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }, 50);
-                }
+                setMobileEventsOpen(!mobileEventsOpen);
               }}
-              className="w-full text-4xl font-serif font-semibold text-gray-900 hover:text-[#4a7c24] transition-colors flex items-center justify-between group"
+              className="w-full text-4xl font-serif font-semibold text-gray-900 hover:text-[#4a7c24] transition-colors flex items-center justify-between group outline-none focus:outline-none"
             >
               Events
               <svg
