@@ -106,19 +106,9 @@ export default function CaseStudiesList() {
                 key={study.id}
                 onClick={() => setSelectedCase(study)}
                 className={`group cursor-pointer rounded-2xl md:rounded-3xl overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.01)] hover:shadow-[0_20px_40px_-15px_rgba(106,154,56,0.1)] hover:-translate-y-1.5 transition-all duration-500 flex flex-col md:flex-row h-auto md:min-h-[420px] border relative w-[85vw] md:w-auto shrink-0 snap-center md:snap-align-none ${
-                  isDark ? 'bg-[#f4f7f0] border-gray-150/40' : 'bg-white border-gray-150/40'
+                  isDark ? 'bg-[#f4f7f0] border-gray-200' : 'bg-white border-gray-200'
                 }`}
               >
-                {/* Animated Background */}
-                {!isMobile && (
-                  <motion.div 
-                    initial={{ scaleX: 0 }}
-                    whileInView={{ scaleX: 1 }}
-                    viewport={{ once: false, margin: "-100px" }}
-                    transition={{ duration: 0.8, ease: "easeInOut" }}
-                    className={`absolute inset-0 md:w-1/2 z-0 origin-left ${isDark ? "bg-white" : "bg-[#f4f7f0]"}`}
-                  />
-                )}
 
                 {/* Left Content */}
                 <div className="w-full md:w-1/2 p-8 md:p-10 flex flex-col justify-center gap-2 relative z-10">

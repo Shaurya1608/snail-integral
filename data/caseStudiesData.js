@@ -283,7 +283,7 @@ export const caseStudies = [
     solution: "We designed and developed a modern, responsive website with a clean layout, intuitive navigation and well-structured content. The website was optimized for performance, mobile responsiveness and search engines, ensuring a seamless user experience across all devices.",
     outcome: "Professional digital presence, improved user experience, and a mobile-friendly, SEO-ready website.",
     videoUrl: null,
-    thumbnail: "/casepstudies/Website-20260702T104758Z-3-001/Website/Website-01.jpg"
+    thumbnail: "/casepstudies/Website-20260702T104758Z-3-001/Website/Website-03.png"
   },
   {
     id: 23,
@@ -309,6 +309,6 @@ export const caseStudies = [
     solution: "We designed and developed a responsive corporate website focused on usability, performance and modern design. The website featured a structured information architecture, optimized loading speed and a seamless browsing experience across desktop and mobile devices.",
     outcome: "Stronger corporate identity online, clear presentation of products and services, and a responsive and SEO-friendly website.",
     videoUrl: null,
-    thumbnail: "/casepstudies/Website-20260702T104758Z-3-001/Website/Website-03.png"
+    thumbnail: "/casepstudies/Website-20260702T104758Z-3-001/Website/Website-01.jpg"
   }
 ];

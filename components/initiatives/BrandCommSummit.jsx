@@ -50,6 +50,8 @@ export default function BrandCommSummit() {
                   fill 
                   className="object-cover group-hover:scale-105 transition-transform duration-700" 
                 />
+                {/* Dark Overlay for Text Readability */}
+                <div className="absolute inset-0 bg-black/50 pointer-events-none" />
                 {/* Subtle ambient light */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
 

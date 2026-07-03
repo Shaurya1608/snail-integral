@@ -89,7 +89,8 @@ export default function BioAgriConference() {
                   fill 
                   className="object-cover group-hover:scale-105 transition-transform duration-700" 
                 />
-                <div className="absolute inset-0 bg-black/20" />
+                {/* Dark Overlay for Text Readability */}
+                <div className="absolute inset-0 bg-black/50 pointer-events-none" />
                 {/* Subtle ambient light */}
                 <div className="absolute top-0 right-0 w-56 h-56 bg-white/5 rounded-full blur-3xl" />
 

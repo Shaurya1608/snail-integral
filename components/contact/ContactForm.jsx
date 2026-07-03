@@ -57,21 +57,35 @@ export default function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API request delay
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-      setFormData({
-        fullName: '',
-        organization: '',
-        designation: '',
-        email: '',
-        phone: '',
-        enquiryNature: '',
-        requirement: '',
-        source: ''
-      });
-    }, 1200);
+    const phoneNumber = "918750807676"; 
+    
+    const message = `*New Contact Form Enquiry*
+*Name:* ${formData.fullName}
+*Organization:* ${formData.organization}
+${formData.designation ? `*Designation:* ${formData.designation}\n` : ''}*Email:* ${formData.email}
+*Phone:* ${formData.phone}
+*Enquiry Nature:* ${formData.enquiryNature}
+*Source:* ${formData.source || 'Not specified'}
+*Requirement:* ${formData.requirement || 'Not specified'}
+`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappUrl, '_blank');
+    
+    setIsSubmitting(false);
+    setSubmitted(true);
+    setFormData({
+      fullName: '',
+      organization: '',
+      designation: '',
+      email: '',
+      phone: '',
+      enquiryNature: '',
+      requirement: '',
+      source: ''
+    });
   };
 
   return (
