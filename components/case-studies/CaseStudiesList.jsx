@@ -113,9 +113,16 @@ export default function CaseStudiesList() {
                 {/* Left Content */}
                 <div className="w-full md:w-1/2 p-8 md:p-10 flex flex-col justify-center gap-2 relative z-10">
                   <div>
-                    <h3 className="font-sans text-3xl md:text-[40px] font-semibold leading-tight mb-4 tracking-tight text-gray-900 group-hover:text-primary transition-colors duration-300">
-                      {study.client}
-                    </h3>
+                    <div className="flex items-center gap-4 mb-4">
+                      {study.logo && (
+                        <div className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 bg-white rounded-xl shadow-sm border border-gray-100 p-2 flex items-center justify-center overflow-hidden">
+                          <img src={study.logo} alt={study.client} className="w-full h-full object-contain" />
+                        </div>
+                      )}
+                      <h3 className="font-sans text-3xl md:text-[40px] font-semibold leading-tight tracking-tight text-gray-900 group-hover:text-primary transition-colors duration-300">
+                        {study.client}
+                      </h3>
+                    </div>
                     <div className="inline-block border border-primary/25 bg-primary/5 rounded-full px-4 py-1 text-xs font-semibold text-primary mb-6">
                        {study.category}
                     </div>

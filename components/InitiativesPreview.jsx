@@ -33,6 +33,12 @@ export default function InitiativesPreview() {
       desc: "Weekly intelligence digest covering key developments, policy changes, and communication trends at the intersection of agriculture and business.",
       link: "/initiatives#snail-show-newsletter",
       logo: "/initiatives/Snail Show NewsLetter Logo-01.png"
+    },
+    {
+      title: "Snail Connect",
+      desc: "Bridging Learning. Building Careers. A new initiative designed to connect agriculture education with industry opportunities through learning, assessment and talent development. Coming Soon. Stay Connected.",
+      link: "/initiatives",
+      logo: "/logo/Snail Connect final logo-01.png"
     }
   ];
 

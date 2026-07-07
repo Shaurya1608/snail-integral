@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import AnimatedText from '../AnimatedText';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function CoffeeTableBook() {
   const [activeVolume, setActiveVolume] = useState(1);
@@ -153,6 +154,23 @@ export default function CoffeeTableBook() {
             </div>
           </AnimatedText>
 
+          <AnimatedText delay={0.45} className="w-full text-center mt-6">
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 uppercase tracking-wide">
+              FEATURE YOUR COMPANY OR PERSONAL PROFILE IN THIRD EDITION
+            </h3>
+            <p className="text-primary font-bold text-sm md:text-base uppercase tracking-wider mb-8">
+              LIMITED PAGES AVAILABLE
+            </p>
+            <div className="flex justify-center">
+              <Link 
+                href="/contact"
+                className="group inline-flex items-center justify-center px-8 py-4 text-sm font-bold rounded-xl bg-primary text-white hover:bg-primary-hover shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 uppercase tracking-wide"
+              >
+                RESERVE YOUR SPACE TODAY!
+                <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </Link>
+            </div>
+          </AnimatedText>
 
         </div>
 

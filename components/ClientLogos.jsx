@@ -20,7 +20,7 @@ export default function ClientLogos() {
   const allLogos = Array.from({ length: 97 }, (_, i) => String(i + 1).padStart(2, '0'))
     .filter(n => n !== '98')
     .concat(['99', '100', '101', '102', '103'])
-    .map(num => `All Brands logo-${num}.png`);
+    .map(num => num === '66' ? `All Brands logo-66_new.png` : `All Brands logo-${num}.png`);
 
   const row1Logos = allLogos.slice(0, 25);
   const row2Logos = allLogos.slice(25, 50);

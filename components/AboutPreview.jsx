@@ -20,7 +20,7 @@ export default function AboutPreview() {
           <AnimatedText delay={0.3}>
             <div className="flex flex-col gap-4 text-gray-600 text-sm md:text-base leading-relaxed">
               <p>
-                Snail Integral is a brand consulting and corporate communication agency with over two decades of experience working across India. We understand that strong communication is not just about being seen. It is about being understood, trusted, and remembered.
+                Snail Integral is a brand consulting and corporate communication agency with over two decades of cumulative experience working across India. We understand that strong communication is not just about being seen. It is about being understood, trusted, and remembered.
               </p>
               <p>
                 We work with businesses across agriculture, corporate, manufacturing, FMCG, government institutions, and technology sectors. Our approach brings together research-backed strategy, creative execution, and a deep understanding of diverse audiences, whether you are reaching farmers in rural India or decision-makers in corporate boardrooms.
@@ -40,7 +40,7 @@ export default function AboutPreview() {
         {/* Right Side: Image Placeholder */}
         <div className="relative h-[400px] md:h-[500px] w-full rounded-[2rem] rounded-tr-[5rem] overflow-hidden shadow-2xl group">
            <Image 
-             src="/others/about.png" 
+             src="/others/Who we are new photo.png" 
              alt="Snail Integral Team" 
              fill 
              className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"

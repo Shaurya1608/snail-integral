@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { useInView, animate } from 'framer-motion';
 import AnimatedText from '../AnimatedText';
+import Link from 'next/link';
 
 function AnimatedNumber({ value, suffix = "" }) {
   const ref = useRef(null);
@@ -51,7 +52,8 @@ export default function OurImpact() {
     { 
       value: 5, 
       suffix: "+", 
-      label: "Years",
+      label: "Initiatives",
+      link: "/initiatives",
       icon: (
         <svg className="w-5 h-5 text-white/90 mb-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -96,11 +98,9 @@ export default function OurImpact() {
       
       <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-5 text-center">
-          {stats.map((stat, index) => (
-            <AnimatedText key={index} delay={0.15 + (index * 0.08)}>
-              <div 
-                className={`group flex flex-col gap-1 items-center justify-center py-2 px-3 h-full border-white/45 lg:border-solid ${index < stats.length - 1 ? 'lg:border-r' : ''}`}
-              >
+          {stats.map((stat, index) => {
+            const content = (
+              <>
                 {/* SVG Icon */}
                 <div className="transform group-hover:scale-105 transition-transform duration-300">
                   {stat.icon}
@@ -116,9 +116,25 @@ export default function OurImpact() {
                 <span className="text-white/80 text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-center mt-1 group-hover:text-white transition-colors duration-300">
                   {stat.label}
                 </span>
-              </div>
-            </AnimatedText>
-          ))}
+              </>
+            );
+
+            const className = `group flex flex-col gap-1 items-center justify-center py-2 px-3 h-full border-white/45 lg:border-solid ${index < stats.length - 1 ? 'lg:border-r' : ''} ${stat.link ? 'cursor-pointer hover:bg-white/5 transition-colors duration-300 rounded-lg' : ''}`;
+
+            return (
+              <AnimatedText key={index} delay={0.15 + (index * 0.08)}>
+                {stat.link ? (
+                  <Link href={stat.link} className={className}>
+                    {content}
+                  </Link>
+                ) : (
+                  <div className={className}>
+                    {content}
+                  </div>
+                )}
+              </AnimatedText>
+            );
+          })}
         </div>
       </div>
     </section>

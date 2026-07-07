@@ -35,3 +35,4 @@ export default function InitiativesPage() {
     </div>
   );
 }
+// Force Next.js rebuild

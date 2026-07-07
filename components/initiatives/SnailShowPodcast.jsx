@@ -1,5 +1,6 @@
 import AnimatedText from '../AnimatedText';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function SnailShowPodcast() {
   const platforms = ["Spotify", "Apple Podcasts", "YouTube", "Google Podcasts", "Amazon Music"];
@@ -158,15 +159,24 @@ export default function SnailShowPodcast() {
           </AnimatedText>
 
           <AnimatedText delay={0.45}>
-            <a 
-              href="https://www.youtube.com/@thesnailshowpodcast"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold rounded-xl bg-primary text-white hover:bg-primary-hover shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto"
-            >
-              Watch & Listen on YouTube
-              <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-            </a>
+            <div className="flex flex-col sm:flex-row justify-center gap-4 w-full">
+              <a 
+                href="https://www.youtube.com/@thesnailshowpodcast"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold rounded-xl bg-primary text-white hover:bg-primary-hover shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto"
+              >
+                Watch & Listen on YouTube
+                <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </a>
+              <Link 
+                href="/contact"
+                className="group inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold rounded-xl bg-white border-2 border-primary text-primary hover:bg-primary/5 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto"
+              >
+                Be Part of Snail Show Podcast
+                <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </Link>
+            </div>
           </AnimatedText>
         </div>
 

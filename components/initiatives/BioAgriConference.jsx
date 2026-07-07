@@ -1,5 +1,6 @@
 import AnimatedText from '../AnimatedText';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function BioAgriConference() {
   const focusAreas = [
@@ -42,7 +43,7 @@ export default function BioAgriConference() {
               />
             </div>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-2">
-              Bio-Agri Next Global Conference
+              Bio-Agri Next Global Conference & Expo
             </h2>
             <p className="text-primary font-medium text-base md:text-lg tracking-wide">
               Where sustainable agriculture meets global collaboration.
@@ -156,7 +157,7 @@ export default function BioAgriConference() {
           </div>
 
           <AnimatedText delay={0.5} className="w-full mt-6">
-            <div className="flex justify-center">
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a 
                 href={process.env.NEXT_PUBLIC_BIO_AGRI_URL || "https://bio-agri.vercel.app/"}
                 target="_blank"
@@ -166,6 +167,13 @@ export default function BioAgriConference() {
                 Visit Bio-Agri Next Website
                 <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
               </a>
+              <Link 
+                href="/contact"
+                className="group inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold rounded-xl bg-white border-2 border-primary text-primary hover:bg-primary/5 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+              >
+                Be Part of Bio-Agri Next 2027 - Season 3
+                <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </Link>
             </div>
           </AnimatedText>
 

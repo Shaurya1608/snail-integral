@@ -46,8 +46,15 @@ export default function CaseStudyModal({ study, onClose }) {
                 alt={study.client} 
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex items-end p-6">
-                 <h2 className="text-white font-serif text-2xl font-semibold leading-tight">{study.client}</h2>
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 to-transparent flex items-end p-6">
+                <div className="flex items-center gap-4">
+                  {study.logo && (
+                    <div className="flex-shrink-0 w-12 h-12 bg-white rounded-lg p-1.5 flex items-center justify-center">
+                      <img src={study.logo} alt={study.client} className="w-full h-full object-contain" />
+                    </div>
+                  )}
+                  <h2 className="text-white font-serif text-2xl font-semibold leading-tight">{study.client}</h2>
+                </div>
               </div>
             </div>
             
@@ -123,7 +130,7 @@ export default function CaseStudyModal({ study, onClose }) {
                 </span>
                 The Outcome
               </h3>
-              <p className="text-gray-800 font-medium leading-relaxed text-sm">
+              <p className="text-gray-800 font-medium leading-relaxed text-sm whitespace-pre-line">
                 {study.outcome}
               </p>
             </div>

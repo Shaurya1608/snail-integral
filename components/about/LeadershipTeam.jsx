@@ -10,14 +10,14 @@ export default function LeadershipTeam() {
     {
       name: "Amit BK Khare",
       designation: "Founder & Managing Partner",
-      image: "/Team Photos/Amit Khare.png",
+      image: "/Team Photos/Amit Khare New.png",
       linkedin: "https://linkedin.com/in/amit-khare-1a073419",
       bio: "Amit founded Snail Integral with a vision to bridge the communication gap that often limits business growth, especially in agriculture and emerging sectors. With years of experience in branding, strategic communication, and business consulting, he has built the agency into a trusted partner for organizations looking to create stronger market presence and meaningful customer connections. His leadership continues to shape the agency's long-term vision and client relationships."
     },
     {
       name: "Arti Khare",
       designation: "Director & Co-Founder",
-      image: "/Team Photos/Arti khare.png",
+      image: "/Team Photos/Arti khare 2.png",
       linkedin: "https://linkedin.com/in/arti-khare-22194010",
       bio: "Arti plays a key role in driving the strategic and operational direction of the agency. She focuses on building strong systems, maintaining quality standards, and ensuring smooth collaboration across teams and clients. Her balanced approach towards creativity, management, and execution has helped the agency grow while consistently delivering reliable and impactful work."
     },

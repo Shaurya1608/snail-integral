@@ -40,7 +40,7 @@ export default function IndustriesWeServe() {
         <div className="text-center max-w-2xl mb-16">
           <AnimatedText delay={0.1}>
             <h2 className="font-serif text-3xl md:text-5xl font-semibold tracking-tight text-gray-900 mb-6">
-              Industries We Serve
+              Who We Serve
             </h2>
           </AnimatedText>
           <AnimatedText delay={0.2}>

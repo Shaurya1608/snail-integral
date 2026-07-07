@@ -72,8 +72,8 @@ export default function ClosingLine() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[10px] sm:text-xs font-semibold tracking-widest text-gray-400 uppercase mt-12 z-10 border-t border-gray-250/65 pt-6 w-full max-w-md"
         >
-          <a href="mailto:hello@snailintegral.com" className="hover:text-primary transition-colors duration-300">
-            hello@snailintegral.com
+          <a href="mailto:info@snailintegral.com" className="hover:text-primary transition-colors duration-300">
+            info@snailintegral.com
           </a>
           <span className="text-gray-300 hidden sm:inline">•</span>
           <a href="https://snailintegral.com" className="hover:text-primary transition-colors duration-300">

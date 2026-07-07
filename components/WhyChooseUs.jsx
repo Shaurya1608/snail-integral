@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { useInView, animate } from 'framer-motion';
 import AnimatedText from './AnimatedText';
+import Link from 'next/link';
 
 function AnimatedNumber({ value, suffix = "" }) {
   const ref = useRef(null);
@@ -29,8 +30,8 @@ function AnimatedNumber({ value, suffix = "" }) {
 export default function WhyChooseUs() {
   const points = [
     {
-      title: "4+ Years of Experience",
-      desc: "Over 4 years of working across diverse industries has given us the expertise to solve complex communication challenges with clarity, strategy, and measurable impact."
+      title: "Our Expertise",
+      desc: "Two decades of working across diverse industries has given us the expertise to solve complex communication challenges with clarity, strategy, and measurable impact."
     },
     {
       title: "Integrated Under One Roof",
@@ -58,7 +59,8 @@ export default function WhyChooseUs() {
     { 
       value: 5, 
       suffix: "+", 
-      label: "Years of Experience",
+      label: "Initiatives",
+      link: "/initiatives",
       icon: (
         <svg className="w-5 h-5 text-white/90 mb-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -157,24 +159,35 @@ export default function WhyChooseUs() {
         
         <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-5 text-center">
-            {stats.map((stat, idx) => (
-              <div 
-                key={`stat-${idx}`} 
-                className={`group flex flex-col gap-1 items-center justify-center py-2 px-3 border-white/45 lg:border-r lg:border-solid last:border-r-0 ${idx === 4 ? 'col-span-2 md:col-span-1' : ''}`}
-              >
-                {/* SVG Icon */}
-                <div className="transform group-hover:scale-105 transition-transform duration-300">
-                  {stat.icon}
-                </div>
+            {stats.map((stat, idx) => {
+              const content = (
+                <>
+                  {/* SVG Icon */}
+                  <div className="transform group-hover:scale-105 transition-transform duration-300">
+                    {stat.icon}
+                  </div>
 
-                <span className="font-serif text-3xl md:text-4xl lg:text-[2.2rem] font-bold text-white tracking-tight drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
-                  <AnimatedNumber value={stat.value} suffix={stat.suffix} />
-                </span>
-                <span className="text-white/80 text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-center mt-1 group-hover:text-white transition-colors duration-300">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
+                  <span className="font-serif text-3xl md:text-4xl lg:text-[2.2rem] font-bold text-white tracking-tight drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
+                    <AnimatedNumber value={stat.value} suffix={stat.suffix} />
+                  </span>
+                  <span className="text-white/80 text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-center mt-1 group-hover:text-white transition-colors duration-300">
+                    {stat.label}
+                  </span>
+                </>
+              );
+
+              const className = `group flex flex-col gap-1 items-center justify-center py-2 px-3 border-white/45 lg:border-r lg:border-solid last:border-r-0 ${idx === 4 ? 'col-span-2 md:col-span-1' : ''} ${stat.link ? 'cursor-pointer hover:bg-white/5 transition-colors duration-300 rounded-lg' : ''}`;
+
+              return stat.link ? (
+                <Link href={stat.link} key={`stat-${idx}`} className={className}>
+                  {content}
+                </Link>
+              ) : (
+                <div key={`stat-${idx}`} className={className}>
+                  {content}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

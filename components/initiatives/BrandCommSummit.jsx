@@ -1,5 +1,6 @@
 import AnimatedText from '../AnimatedText';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function BrandCommSummit() {
   const seasons = [
@@ -136,7 +137,7 @@ export default function BrandCommSummit() {
             </div>
           </AnimatedText>
           <AnimatedText delay={0.5} className="w-full mt-6">
-            <div className="flex justify-center">
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a 
                 href={process.env.NEXT_PUBLIC_BRAND_R_COMM_URL || "https://brand-r-com.vercel.app/"}
                 target="_blank"
@@ -146,6 +147,13 @@ export default function BrandCommSummit() {
                 Visit Brand R.Comm Summit Website
                 <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
               </a>
+              <Link 
+                href="/contact"
+                className="group inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold rounded-xl bg-white border-2 border-primary text-primary hover:bg-primary/5 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+              >
+                Be Part of BRAND R.COMM Summit 2026 - Season 4
+                <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </Link>
             </div>
           </AnimatedText>
 
