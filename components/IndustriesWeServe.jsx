@@ -1,4 +1,5 @@
 import AnimatedText from './AnimatedText';
+import Link from 'next/link';
 
 export default function IndustriesWeServe() {
   const industries = [
@@ -81,12 +82,12 @@ export default function IndustriesWeServe() {
         </div>
 
         <AnimatedText delay={0.3}>
-          <button className="px-8 py-3.5 text-sm font-semibold rounded-full bg-[#6a9a38] text-white hover:bg-[#557d2a] transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 inline-flex items-center gap-2 group">
+          <Link href="/contact" className="px-8 py-3.5 text-sm font-semibold rounded-full bg-[#6a9a38] text-white hover:bg-[#557d2a] transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 inline-flex items-center gap-2 group">
             Discover How We Can Help Your Industry
             <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
               <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
-          </button>
+          </Link>
         </AnimatedText>
       </div>
     </section>
