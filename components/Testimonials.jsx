@@ -37,16 +37,25 @@ export default function Testimonials() {
   };
   const testimonials = [
     {
+      quote: "Snail Integral has created unique platforms that celebrate leadership, innovation, and knowledge sharing in agriculture. Through The SnailShow Podcast, the Coffee Table Book, industry events, and BRAND R.Comm Awards, they have successfully built a vibrant ecosystem that recognizes excellence and promotes impactful dialogue across the industry.",
+      name: "Mr. Manoj Varshney",
+      title: "MD & CEO",
+      company: "IFFCO-MC Crop Science Pvt. Ltd.",
+      image: "/speakers/Mr. Manoj Varshney.jpg"
+    },
+    {
       quote: "Snail Integral has been a reliable partner in celebrity management, TVC production, media planning, and social media management. Their quick execution and strategic approach have significantly strengthened our brand visibility. We look forward to continuing this successful partnership.",
       name: "Sumit Gupta",
       title: "Director Project",
-      company: "Thakar Chemical Limited"
+      company: "Thakar Chemical Limited",
+      image: "/speakers/Sumit Gupta.jpg"
     },
     {
       quote: "Snail Integral has been a trusted extension of our team, delivering consistent results across brand communication and marketing. Their strategic thinking, timely execution, and deep understanding of rural markets have helped strengthen our brand presence. We highly value this partnership and confidently recommend Snail Integral.",
       name: "Rajendar Kumar",
       title: "Head-Agri Input Business",
-      company: "Akshamaala Solutions Pvt. Ltd. (Unnati)"
+      company: "Akshamaala Solutions Pvt. Ltd. (Unnati)",
+      image: "/speakers/Rajendar Kumar.jpg"
     },
     {
       quote: "Snail Integral has become a trusted communication partner for Kan Biosys and BASAI. Their expertise in corporate communication, impactful storytelling through The SnailShow Podcast, and flawless event execution has significantly strengthened our industry visibility. Their understanding of the agricultural ecosystem and commitment to excellence make them an invaluable partner for organizations seeking meaningful engagement with stakeholders.",
