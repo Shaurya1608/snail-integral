@@ -23,7 +23,7 @@ export default function ServicesCTA() {
         <AnimatedText delay={0.3}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="px-8 py-4 w-full sm:w-auto text-sm font-semibold rounded-full bg-primary text-white hover:bg-primary-hover shadow-[0_8px_30px_rgb(74,124,36,0.2)] hover:shadow-[0_15px_40px_rgb(74,124,36,0.3)] hover:-translate-y-0.5 transition-all duration-300"
             >
               Schedule a Free Consultation

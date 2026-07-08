@@ -270,6 +270,7 @@ export const caseStudies = [
     solution: "We created a complete social media strategy including content planning, creative design, educational campaigns, festival creatives, reels and product-focused communication. Every piece of content was designed to educate farmers, improve engagement and strengthen brand recall across digital platforms.",
     outcome: "Consistent brand presence on social media, higher audience engagement, and better farmer awareness through educational content.",
     videoUrl: null,
+    logo: "/casepstudies/All Brands logo-35.png",
     thumbnail: "/casepstudies/SMM-20260702T103111Z-3-001/SMM/SMM 1.jpg"
   },
   {
@@ -283,7 +284,7 @@ export const caseStudies = [
     solution: "We developed and managed a complete social media strategy focused on educational and product-driven communication. Our team created regular creatives, engaging reel videos, seasonal campaigns, and farmer-centric content that aligned with the brand's identity and business objectives.\n\nDeliverables:\n• Monthly Social Media Creatives\n• Reel Video Production\n• Content Planning & Copywriting\n• Campaign Creatives\n• Social Media Management\n• Community Engagement Support",
     outcome: "• Consistent and professional brand presence across social platforms\n• Increased farmer engagement through informative and relatable content\n• Improved product awareness and digital visibility\n• Stronger brand recall with regular communication",
     videoUrl: null,
-    logo: "/All Brands logo copy/All Brands logo-26.png",
+    logo: "/All Brands logo copy/All Brands logo-75.png",
     thumbnail: "/others/Thakar.png"
   },
   {
@@ -297,7 +298,7 @@ export const caseStudies = [
     solution: "We developed and managed a complete social media strategy focused on awareness, education and brand storytelling. From environmental campaigns and industry observance days to agriculture-focused creatives, every post was designed to communicate the brand's values while encouraging audience engagement.\n\nDeliverables:\n• Monthly Social Media Content Calendar\n• Creative Design & Visual Storytelling\n• Awareness Campaign Creatives\n• Educational Posts\n• Reel Concepts & Short-form Content\n• Content Writing & Copywriting\n• Social Media Management",
     outcome: "• Strong and consistent brand presence across social media\n• Increased audience engagement through educational and awareness-driven content\n• Improved brand recall with high-quality visual communication\n• Enhanced digital visibility through regular content and campaign execution",
     videoUrl: null,
-    logo: "/All Brands logo copy/All Brands logo-75.png",
+    logo: "/All Brands logo copy/All Brands logo-64.png",
     thumbnail: "/others/Synergy.jpg"
   },
   {
@@ -311,7 +312,7 @@ export const caseStudies = [
     solution: "We developed and managed a strategic social media communication plan focused on thought leadership, awareness campaigns and educational storytelling. Our team created visually engaging creatives around industry insights, sustainability, food security, regulatory developments, observance days and the growing role of biostimulants in modern agriculture.\n\nDeliverables:\n• Social Media Strategy\n• Monthly Content Calendar\n• Creative Design & Visual Storytelling\n• Educational & Awareness Campaigns\n• Industry-Focused Content\n• Content Writing & Copywriting\n• Social Media Management",
     outcome: "• Established a consistent and professional digital presence\n• Increased awareness of biostimulants and sustainable agriculture\n• Strengthened engagement with industry stakeholders\n• Reinforced NBIF's position as a trusted industry voice through meaningful content",
     videoUrl: null,
-    logo: "/All Brands logo copy/All Brands logo-64.png",
+    logo: "/All Brands logo copy/All Brands logo-26.png",
     thumbnail: "/others/NBIF.jpg"
   },
   {

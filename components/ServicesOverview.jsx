@@ -11,48 +11,56 @@ export default function ServicesOverview() {
   const services = [
     {
       title: "Brand Consulting",
+      targetId: "brand-consulting",
       tagline: "Building brands that stand the test of time.",
       description: "We help businesses develop brand identities, positioning strategies, and communication frameworks that create sustainable growth.",
       icon: <svg className="w-8 h-8 text-primary mb-1 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
     },
     {
       title: "Corporate Communication",
+      targetId: "public-relations",
       tagline: "Where strategy meets stakeholder engagement.",
       description: "We design and execute corporate communication strategies that build reputation, manage complexity, and strengthen business relationships.",
       icon: <svg className="w-8 h-8 text-primary mb-1 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" /></svg>
     },
     {
       title: "Public Relations",
+      targetId: "public-relations",
       tagline: "Turning your brand story into trusted conversations.",
       description: "We craft PR strategies that secure meaningful media coverage and position your brand as a credible voice in your industry.",
       icon: <svg className="w-8 h-8 text-primary mb-1 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" /></svg>
     },
     {
       title: "Digital and Social Media",
+      targetId: "digital-and-social-media",
       tagline: "Data-driven strategy, creativity-powered results.",
       description: "We create digital ecosystems that engage audiences, build communities, and convert attention into real business outcomes.",
       icon: <svg className="w-8 h-8 text-primary mb-1 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
     },
     {
       title: "Video Production",
+      targetId: "video-production",
       tagline: "Stories that move hearts, minds, and markets.",
       description: "From TVCs to corporate films and 2D or 3D animations, we bring your brand story to life across every screen.",
       icon: <svg className="w-8 h-8 text-primary mb-1 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
     },
     {
       title: "SEO and PPC Optimization",
+      targetId: "seo-and-ppc-optimization",
       tagline: "Be found by the right people at the right time.",
       description: "We build performance-focused digital strategies that drive qualified traffic, improve search visibility, and deliver measurable ROI.",
       icon: <svg className="w-8 h-8 text-primary mb-1 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
     },
     {
       title: "Event Management",
+      targetId: "event-management",
       tagline: "Experiences that leave a lasting impression.",
       description: "From product launches to industry summits and award ceremonies, we design and deliver events that amplify your brand presence.",
       icon: <svg className="w-8 h-8 text-primary mb-1 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
     },
     {
       title: "Business Consulting",
+      targetId: "business-consulting",
       tagline: "Turning challenges into strategic opportunities.",
       description: "We work with businesses to enter new markets, improve profitability, and build data-driven strategies for long-term competitive advantage.",
       icon: <svg className="w-8 h-8 text-primary mb-1 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
@@ -122,7 +130,7 @@ export default function ServicesOverview() {
                     {service.description}
                   </p>
                 </div>
-                <Link href={`/services#${service.title.toLowerCase().replace(/ /g, '-')}`} className="inline-flex items-center gap-1 text-sm font-semibold text-gray-800 hover:text-primary transition-colors mt-3">
+                <Link href={`/services#${service.targetId}`} className="inline-flex items-center gap-1 text-sm font-semibold text-gray-800 hover:text-primary transition-colors mt-3">
                   Learn more
                   <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </Link>

@@ -40,7 +40,7 @@ export default function HeroServices() {
           <AnimatedText delay={0.4}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
               <Link
-                href="#contact"
+                href="/contact#contact-form"
                 className="group inline-flex items-center justify-center px-8 py-4 text-xs md:text-sm font-semibold rounded-full bg-primary text-white hover:bg-primary-hover shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto"
               >
                 Schedule a Consultation

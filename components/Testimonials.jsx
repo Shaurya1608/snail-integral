@@ -26,13 +26,13 @@ export default function Testimonials() {
 
   const scrollLeft = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+      scrollRef.current.scrollBy({ left: -400, behavior: 'smooth' });
     }
   };
 
   const scrollRight = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+      scrollRef.current.scrollBy({ left: 400, behavior: 'smooth' });
     }
   };
   const testimonials = [
@@ -204,13 +204,13 @@ export default function Testimonials() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
-          className="flex overflow-x-auto pb-6 snap-x snap-mandatory hide-scrollbar md:block md:columns-2 lg:columns-3 md:gap-5 w-full max-w-7xl mx-auto -mx-6 px-6 md:px-0 md:mx-auto"
+          className="flex overflow-x-auto pb-8 snap-x snap-mandatory hide-scrollbar gap-5 w-full max-w-7xl mx-auto px-6 md:px-4"
         >
           {testimonials.map((t, index) => (
             <motion.div 
               key={index} 
               variants={itemVariants}
-              className="bg-white p-5 md:p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex flex-col hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgb(106,154,56,0.08)] transition-all duration-500 relative overflow-hidden group break-inside-avoid w-[85vw] sm:w-[350px] md:w-full flex-shrink-0 snap-center mr-4 md:mr-0 md:mb-5 md:inline-block"
+              className="bg-white p-5 md:p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex flex-col hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgb(106,154,56,0.08)] transition-all duration-500 relative overflow-hidden group flex-shrink-0 snap-center w-[85vw] sm:w-[350px] md:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)]"
             >
               
               {/* Decorative Accent */}
@@ -247,8 +247,8 @@ export default function Testimonials() {
           ))}
         </motion.div>
 
-        {/* Mobile Navigation Arrows & Dots */}
-        <div className="flex md:hidden flex-col items-center gap-4 mt-2">
+        {/* Navigation Arrows & Dots */}
+        <div className="flex flex-col items-center gap-4 mt-2">
           {/* Dots Indicator */}
           <div className="flex items-center justify-center gap-1.5 mt-2">
             {testimonials.map((_, idx) => (

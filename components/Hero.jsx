@@ -85,7 +85,7 @@ export default function Hero() {
                   <span className="absolute inset-0 bg-[#557d2a] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300" />
                 </Link>
                 <Link
-                  href="#contact"
+                  href="/contact#contact-form"
                   className="px-5 py-3.5 sm:py-3 text-[13px] md:text-sm font-medium rounded-full border border-white/25 text-white/90 hover:bg-white/10 hover:border-white/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-[2px] w-full sm:w-auto text-center flex justify-center items-center"
                 >
                   Schedule a Consultation

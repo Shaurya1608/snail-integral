@@ -11,10 +11,7 @@ export default function ContactCards() {
   const emails = [
     "info@snailintegral.com",
     "amit.khare@snailintegral.com",
-    "marketing@snailintegral.com",
-    "bioagri.next@snailintegral.com",
-    "snailintegral@gmail.com",
-    "snailintegral2@gmail.com"
+    "marketing@snailintegral.com"
   ];
   
   const qr = "/qr/Amit Khare QR Code.png";
@@ -25,7 +22,7 @@ export default function ContactCards() {
         
         {/* Header */}
         <div className="text-center mb-12 flex flex-col items-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#143d2c] mb-3">For Enquiry</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-[#143d2c] mb-3">Contact Us</h2>
           <div className="w-12 h-1 bg-[#d4a373]"></div>
         </div>
 
@@ -65,7 +62,7 @@ export default function ContactCards() {
 
           {/* QR Code */}
           <div className="flex flex-col items-center justify-center shrink-0 w-full md:w-auto mt-6 md:mt-0 pt-8 md:pt-0 border-t md:border-t-0 md:border-l border-gray-100 md:pl-12">
-             <h3 className="text-sm font-bold text-gray-900 mb-5 uppercase tracking-widest">Amit BK Khare</h3>
+             <h3 className="text-sm font-bold text-gray-900 mb-5 uppercase tracking-widest">SCAN QR FOR ENQUIRY</h3>
              <div className="w-48 h-48 relative border border-gray-100 rounded-2xl overflow-hidden p-3 bg-[#f9fbf7]">
                <Image src={qr} alt={`QR Code`} fill className="object-contain p-3" />
              </div>

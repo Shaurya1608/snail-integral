@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import AnimatedText from './AnimatedText';
 
 export default function AboutPreview() {
@@ -29,10 +30,10 @@ export default function AboutPreview() {
           </AnimatedText>
           <AnimatedText delay={0.4}>
             <div className="pt-4">
-              <button className="px-7 py-3 text-sm font-medium rounded-full bg-primary text-white hover:bg-primary-hover hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(91,135,43,0.3)] transition-all duration-300 inline-flex items-center gap-2 group">
+              <Link href="/about" className="px-7 py-3 text-sm font-medium rounded-full bg-primary text-white hover:bg-primary-hover hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(91,135,43,0.3)] transition-all duration-300 inline-flex items-center gap-2 group">
                 Learn More About Us
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-              </button>
+              </Link>
             </div>
           </AnimatedText>
         </div>

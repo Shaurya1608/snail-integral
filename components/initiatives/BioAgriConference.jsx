@@ -168,7 +168,7 @@ export default function BioAgriConference() {
                 <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
               </a>
               <Link 
-                href="/contact"
+                href="/contact#contact-form"
                 className="group inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold rounded-xl bg-white border-2 border-primary text-primary hover:bg-primary/5 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
               >
                 Be Part of Bio-Agri Next 2027 - Season 3

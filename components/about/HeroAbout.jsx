@@ -6,10 +6,10 @@ export default function HeroAbout() {
     <section className="relative w-full bg-[#f9fbf7] min-h-screen flex flex-col items-center justify-center pt-32 pb-24 px-6 md:px-8 overflow-hidden">
       
       {/* Background Watermark */}
-      <div className="absolute inset-0 z-0 opacity-15 pointer-events-none mix-blend-multiply">
+      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none mix-blend-multiply">
         <Image 
-          src="/LandingPage/sn2.png" 
-          alt="Snail Integral Background" 
+          src="/LandingPage/agri_background.png" 
+          alt="Snail Integral Agriculture Background" 
           fill
           sizes="100vw"
           quality={85}

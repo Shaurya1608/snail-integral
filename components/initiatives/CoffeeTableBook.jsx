@@ -163,7 +163,7 @@ export default function CoffeeTableBook() {
             </p>
             <div className="flex justify-center">
               <Link 
-                href="/contact"
+                href="/contact#contact-form"
                 className="group inline-flex items-center justify-center px-8 py-4 text-sm font-bold rounded-xl bg-primary text-white hover:bg-primary-hover shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 uppercase tracking-wide"
               >
                 RESERVE YOUR SPACE TODAY!

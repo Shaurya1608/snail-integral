@@ -35,8 +35,14 @@ export default function InitiativesPreview() {
       logo: "/initiatives/Snail Show NewsLetter Logo-01.png"
     },
     {
-      title: "Snail Connect",
-      desc: "Bridging Learning. Building Careers. A new initiative designed to connect agriculture education with industry opportunities through learning, assessment and talent development. Coming Soon. Stay Connected.",
+      title: "Snails Connect",
+      desc: (
+        <>
+          <strong>Bridging Learning. Building Careers.</strong><br />
+          A new initiative designed to connect agriculture education with industry opportunities through learning, assessment and talent development.<br />
+          <span className="italic font-bold">Coming Soon. Stay Connected.</span>
+        </>
+      ),
       link: "/initiatives",
       logo: "/logo/Snail Connect final logo-01.png"
     }

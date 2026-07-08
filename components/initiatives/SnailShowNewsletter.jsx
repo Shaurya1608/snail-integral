@@ -132,7 +132,7 @@ export default function SnailShowNewsletter() {
           <AnimatedText delay={0.5} className="w-full">
             <div className="flex justify-center">
               <Link 
-                href="/contact"
+                href="/contact#contact-form"
                 className="group inline-flex items-center justify-center px-8 py-3.5 text-sm font-bold rounded-xl bg-primary text-white hover:bg-primary-hover shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 uppercase tracking-wide w-full sm:w-auto"
               >
                 Send Your News

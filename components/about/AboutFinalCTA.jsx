@@ -21,7 +21,7 @@ export default function AboutFinalCTA() {
         <AnimatedText delay={0.3}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
             <Link 
-              href="#contact"
+              href="/contact#contact-form"
               className="w-full sm:w-auto px-6 py-3 text-sm font-semibold rounded-full bg-[#4a7c24] text-white hover:bg-[#3d6a1d] transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
             >
               Schedule a Consultation

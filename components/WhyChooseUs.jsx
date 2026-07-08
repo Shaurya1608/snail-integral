@@ -31,7 +31,7 @@ export default function WhyChooseUs() {
   const points = [
     {
       title: "Our Expertise",
-      desc: "Two decades of working across diverse industries has given us the expertise to solve complex communication challenges with clarity, strategy, and measurable impact."
+      desc: "Two decades of working experience across diverse industries has given us the expertise to solve complex communication challenges with clarity, strategy, and measurable impact."
     },
     {
       title: "Integrated Under One Roof",
