@@ -4,6 +4,59 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function ContactForm() {
+  const CustomSelect = ({ options, value, onChange, placeholder, name }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    return (
+      <div className="relative w-full">
+        <div 
+          className={`w-full px-4 py-3 rounded-xl border ${isOpen ? 'border-primary ring-1 ring-primary bg-white' : 'border-gray-200 bg-gray-50/30'} text-sm transition-all flex justify-between items-center cursor-pointer hover:border-gray-300`}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <span className={`block truncate ${value ? 'text-gray-900' : 'text-gray-500'}`}>
+            {value || placeholder}
+          </span>
+          <motion.svg 
+            animate={{ rotate: isOpen ? 180 : 0 }}
+            transition={{ duration: 0.2 }}
+            className="w-4 h-4 text-gray-400 flex-shrink-0 ml-2" 
+            fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+          </motion.svg>
+        </div>
+        
+        {isOpen && (
+          <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
+        )}
+
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -5, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -5, scale: 0.98 }}
+              transition={{ duration: 0.15, ease: "easeOut" }}
+              className="absolute z-50 w-full mt-2 bg-white border border-gray-100 rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] max-h-60 overflow-y-auto py-2 outline-none"
+            >
+              {options.map((opt, i) => (
+                <div 
+                  key={i}
+                  className={`px-4 py-2.5 text-sm cursor-pointer transition-colors ${value === opt ? 'bg-primary/5 text-primary font-medium' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}`}
+                  onClick={() => {
+                    onChange({ target: { name, value: opt } });
+                    setIsOpen(false);
+                  }}
+                >
+                  {opt}
+                </div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    );
+  };
+
   const [formData, setFormData] = useState({
     fullName: '',
     organization: '',
@@ -222,20 +275,13 @@ ${formData.designation ? `*Designation:* ${formData.designation}\n` : ''}*Email:
                     <label htmlFor="enquiryNature" className="text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">
                       Nature of Enquiry <span className="text-red-500">*</span>
                     </label>
-                    <select
-                      id="enquiryNature"
+                    <CustomSelect
                       name="enquiryNature"
                       value={formData.enquiryNature}
                       onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-sm transition-all bg-gray-50/30 appearance-none cursor-pointer"
-                      style={{ backgroundImage: `url("data:image/svg+xml;utf8,<svg fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'></path></svg>")`, backgroundPosition: 'right 16px center', backgroundSize: '16px', backgroundRepeat: 'no-repeat' }}
-                    >
-                      <option value="" disabled>Select enquiry type</option>
-                      {enquiryOptions.map((opt, i) => (
-                        <option key={i} value={opt}>{opt}</option>
-                      ))}
-                    </select>
+                      options={enquiryOptions}
+                      placeholder="Select enquiry type"
+                    />
                   </div>
 
                   {/* Field 8: How Did You Hear About Us */}
@@ -243,19 +289,13 @@ ${formData.designation ? `*Designation:* ${formData.designation}\n` : ''}*Email:
                     <label htmlFor="source" className="text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">
                       How Did You Hear About Us
                     </label>
-                    <select
-                      id="source"
+                    <CustomSelect
                       name="source"
                       value={formData.source}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-sm transition-all bg-gray-50/30 appearance-none cursor-pointer"
-                      style={{ backgroundImage: `url("data:image/svg+xml;utf8,<svg fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'></path></svg>")`, backgroundPosition: 'right 16px center', backgroundSize: '16px', backgroundRepeat: 'no-repeat' }}
-                    >
-                      <option value="">Select an option</option>
-                      {sourceOptions.map((opt, i) => (
-                        <option key={i} value={opt}>{opt}</option>
-                      ))}
-                    </select>
+                      options={sourceOptions}
+                      placeholder="Select an option"
+                    />
                   </div>
                 </div>
 

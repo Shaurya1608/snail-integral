@@ -55,9 +55,15 @@ export default function CoffeeTableBook() {
               </button>
               <button 
                 onClick={() => setActiveVolume(2)}
-                className={`border px-3 py-1.5 rounded-lg shadow-sm transition-all duration-300 ${activeVolume === 2 ? 'bg-amber-500 text-white border-amber-600' : 'bg-amber-50 text-amber-700 border-amber-200 hover:bg-amber-100'}`}
+                className={`px-3 py-1.5 rounded-lg shadow-sm transition-all duration-300 ${activeVolume === 2 ? 'bg-[#4a7c24] text-white' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}`}
               >
-                Volume 2 In Development
+                Volume 2 Published
+              </button>
+              <button 
+                onClick={() => setActiveVolume(3)}
+                className={`border px-3 py-1.5 rounded-lg shadow-sm transition-all duration-300 ${activeVolume === 3 ? 'bg-amber-500 text-white border-amber-600' : 'bg-amber-50 text-amber-700 border-amber-200 hover:bg-amber-100'}`}
+              >
+                Volume 3 In Development
               </button>
             </div>
           </AnimatedText>
@@ -69,7 +75,7 @@ export default function CoffeeTableBook() {
           <div className="flex lg:col-span-5 justify-center mb-10 lg:mb-0">
             <AnimatedText delay={0.2} direction="left" className="w-full max-w-[380px]">
               {/* Real Book Photo with spine effect */}
-              <div className={`relative aspect-[3/4] w-full rounded-r-2xl overflow-hidden shadow-[20px_20px_60px_-10px_rgba(0,0,0,0.25)] border-l-[10px] group hover:-rotate-1 hover:translate-x-1 hover:shadow-[30px_30px_70px_-12px_rgba(0,0,0,0.3)] transition-all duration-500 ${activeVolume === 1 ? 'border-l-[#4a7c24]' : 'border-l-amber-600'}`}>
+              <div className={`relative aspect-[3/4] w-full rounded-r-2xl overflow-hidden shadow-[20px_20px_60px_-10px_rgba(0,0,0,0.25)] border-l-[10px] group hover:-rotate-1 hover:translate-x-1 hover:shadow-[30px_30px_70px_-12px_rgba(0,0,0,0.3)] transition-all duration-500 ${activeVolume === 3 ? 'border-l-amber-600' : 'border-l-[#4a7c24]'}`}>
                 {/* Spine shadow overlay */}
                 <div className="absolute top-0 bottom-0 left-0 w-4 bg-black/15 z-10 pointer-events-none" />
                 {/* Right sheen */}
@@ -98,11 +104,24 @@ export default function CoffeeTableBook() {
                   />
                 </div>
 
+                {/* Volume 3 Image Placeholder */}
+                <div className={`absolute inset-0 transition-opacity duration-500 ${activeVolume === 3 ? 'opacity-100' : 'opacity-0'} bg-stone-100 flex flex-col items-center justify-center p-6 text-center`}>
+                  <Image
+                    src="/initiatives/Snail show CTB logo-01.png"
+                    alt="The Snail Show Coffee Table Book Logo"
+                    width={240}
+                    height={100}
+                    className="object-contain opacity-60 mb-6"
+                  />
+                  <div className="text-amber-700 font-serif text-2xl font-bold tracking-wide mb-2">3rd Edition</div>
+                  <div className="text-stone-400 font-serif text-xl tracking-widest uppercase">Coming Soon</div>
+                </div>
+
                 {/* Volume label badge at bottom */}
                 <div className="absolute bottom-0 left-0 right-0 z-20 bg-gradient-to-t from-black/60 to-transparent px-5 py-4 flex justify-between items-end">
                   <span className="text-[10px] font-bold uppercase tracking-widest text-white/80">Volume {activeVolume}</span>
-                  <span className={`text-[9px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded ${activeVolume === 1 ? 'bg-[#4a7c24]/80 text-white' : 'bg-amber-600/80 text-white'}`}>
-                    {activeVolume === 1 ? 'Published' : 'In Development'}
+                  <span className={`text-[9px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded ${activeVolume === 3 ? 'bg-amber-600/80 text-white' : 'bg-[#4a7c24]/80 text-white'}`}>
+                    {activeVolume === 3 ? 'In Development' : 'Published'}
                   </span>
                 </div>
               </div>
@@ -129,7 +148,12 @@ export default function CoffeeTableBook() {
               </AnimatedText>
               <AnimatedText delay={0.35}>
                 <p>
-                  Volume 2 is currently in development and will build on the foundation established by the first edition, with an expanded editorial scope and an even broader representation of the voices and stories that define Indian agriculture today.
+                  Volume 2 built on the foundation established by the first edition, with an expanded editorial scope and an even broader representation of the voices and stories that define Indian agriculture today.
+                </p>
+              </AnimatedText>
+              <AnimatedText delay={0.35}>
+                <p>
+                  Volume 3 is currently in development and will continue to spotlight the innovators, policies, and practices that are driving the sector forward into the future.
                 </p>
               </AnimatedText>
             </div>
