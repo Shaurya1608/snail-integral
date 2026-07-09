@@ -214,7 +214,23 @@ export default function BlogPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-[#f9fbf7]">
+      <main className="h-screen bg-[#f9fbf7] overflow-hidden relative">
+        {/* Coming Soon Overlay */}
+        <div className="absolute inset-0 z-40 backdrop-blur-md bg-white/40 flex items-center justify-center pointer-events-auto pt-20">
+          <div className="bg-white/90 backdrop-blur-sm p-10 md:p-14 rounded-[2.5rem] shadow-2xl border border-white/60 flex flex-col items-center text-center max-w-xl mx-4 transform hover:scale-[1.02] transition-transform duration-500">
+            <span className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-[#4a7c24]/10 text-[#4a7c24] text-xs font-bold uppercase tracking-widest mb-6">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#4a7c24] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#4a7c24]"></span>
+              </span>
+              Stay Tuned
+            </span>
+            <h2 className="font-serif text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">Coming Soon</h2>
+            <p className="text-gray-600 text-lg md:text-xl font-light">We are crafting some amazing insights and articles. The blog will be available shortly!</p>
+          </div>
+        </div>
+
+        <div className="pointer-events-none select-none opacity-50">
       {/* Hero Header */}
       <section className="w-full bg-[#f9fbf7] border-b border-gray-100 pt-36 pb-12 px-6 md:px-10 relative overflow-hidden">
         {/* Decorative Backgrounds */}
@@ -333,6 +349,7 @@ export default function BlogPage() {
         </div>
 
       </div>
+        </div>
       </main>
       <Footer />
     </>
