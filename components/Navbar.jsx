@@ -56,14 +56,19 @@ export default function Navbar() {
     {
       label: "Brand R.Comm Summit",
       desc: "Agriculture & rural communication excellence",
-      href: process.env.NEXT_PUBLIC_BRAND_R_COMM_URL || "https://brand-r-com.vercel.app/",
+      // href: process.env.NEXT_PUBLIC_BRAND_R_COMM_URL || "https://brandrcomm.com/",
+      href: "https://brandrcomm.com/",
       logo: "/initiatives/Brand R.Comm final logo.png",
+      disabled: false,
     },
     {
       label: "Bio-Agri Next Global Conference",
       desc: "Sustainable agriculture meets global collaboration",
-      href: process.env.NEXT_PUBLIC_BIO_AGRI_URL || "https://bio-agri.vercel.app/",
+      // href: process.env.NEXT_PUBLIC_BIO_AGRI_URL || "https://bio-agri.vercel.app/",
+      href: "https://bioagrinext.com/",
       logo: "/initiatives/BIO AGRI NEXT LOGO.png",
+      // disabled: true,
+      disabled: false,
     },
   ];
 
@@ -143,12 +148,15 @@ export default function Navbar() {
                 eventsOpen ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'
               }`}>
                 <div className="p-2">
-                  {events.map((event) => (
-                    /* TEMPORARY DISABLED: To make clickable again, change 'div' back to 'Link', remove 'cursor-not-allowed opacity-60', and add 'href={event.href}' and 'onClick={() => setEventsOpen(false)}' */
-                    <div
+                  {events.map((event) => {
+                    const Tag = event.disabled ? 'div' : Link;
+                    const props = event.disabled
+                      ? { className: "flex items-center gap-3 p-3 rounded-xl hover:bg-[#f4f9ee] group transition-all duration-200 cursor-not-allowed opacity-60", title: "Coming Soon" }
+                      : { href: event.href, onClick: () => setEventsOpen(false), className: "flex items-center gap-3 p-3 rounded-xl hover:bg-[#f4f9ee] group transition-all duration-200", target: "_blank", rel: "noopener noreferrer" };
+                    return (
+                    <Tag
                       key={event.label}
-                      className="flex items-center gap-3 p-3 rounded-xl hover:bg-[#f4f9ee] group transition-all duration-200 cursor-not-allowed opacity-60"
-                      title="Coming Soon"
+                      {...props}
                     >
                       <div className="w-14 h-10 flex-shrink-0 flex items-center justify-center bg-gray-50 rounded-lg border border-gray-100 p-1.5">
                         <Image
@@ -168,10 +176,10 @@ export default function Navbar() {
                         </span>
                       </div>
                       <svg className="w-3.5 h-3.5 text-gray-300 group-hover:text-[#4a7c24] group-hover:translate-x-0.5 transition-all ml-auto flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7-7" />
                       </svg>
-                    </div>
-                  ))}
+                    </Tag>
+                  )})}
                 </div>
 
               </div>
@@ -304,12 +312,15 @@ export default function Navbar() {
 
             {/* Sub-items */}
             <div className={`mt-3 flex flex-col gap-2 overflow-hidden transition-all duration-300 ${mobileEventsOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-              {events.map((event) => (
-                /* TEMPORARY DISABLED: To make clickable again, change 'div' back to 'Link', remove 'cursor-not-allowed opacity-60', and add 'href={event.href}' and 'onClick={() => { setMobileOpen(false); setMobileEventsOpen(false); }}' */
-                <div
+              {events.map((event) => {
+                const Tag = event.disabled ? 'div' : Link;
+                const props = event.disabled
+                  ? { className: "flex items-center gap-3 pl-2 py-3 rounded-xl hover:bg-white group transition-all border-b border-gray-100 last:border-0 cursor-not-allowed opacity-60", title: "Coming Soon" }
+                  : { href: event.href, onClick: () => { setMobileOpen(false); setMobileEventsOpen(false); }, className: "flex items-center gap-3 pl-2 py-3 rounded-xl hover:bg-white group transition-all border-b border-gray-100 last:border-0", target: "_blank", rel: "noopener noreferrer" };
+                return (
+                <Tag
                   key={event.label}
-                  className="flex items-center gap-3 pl-2 py-3 rounded-xl hover:bg-white group transition-all border-b border-gray-100 last:border-0 cursor-not-allowed opacity-60"
-                  title="Coming Soon"
+                  {...props}
                 >
                   <div className="w-14 h-10 flex items-center justify-center bg-white rounded-lg border border-gray-100 p-1.5 flex-shrink-0 shadow-sm">
                     <Image
@@ -325,10 +336,10 @@ export default function Navbar() {
                     <div className="text-xs text-gray-400 mt-0.5 leading-snug">{event.desc}</div>
                   </div>
                   <svg className="w-4 h-4 text-gray-300 group-hover:text-[#4a7c24] flex-shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7-7" />
                   </svg>
-                </div>
-              ))}
+                </Tag>
+              )})}
             </div>
           </div>
           </div>
