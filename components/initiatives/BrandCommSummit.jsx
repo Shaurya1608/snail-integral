@@ -67,7 +67,7 @@ export default function BrandCommSummit() {
                 {/* Branding Graphic Pushed to Bottom */}
                 <div className="relative z-10 mt-auto pb-6">
                   <div className="text-4xl md:text-5xl font-serif font-extrabold leading-none text-white tracking-tighter mb-1 drop-shadow-md">
-                    R.COMM
+                    BRAND R.COMM
                   </div>
                   <div className="font-serif text-lg font-bold text-white/90 uppercase tracking-widest drop-shadow-sm">
                     SUMMIT & AWARDS
