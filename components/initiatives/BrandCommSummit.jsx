@@ -31,7 +31,7 @@ export default function BrandCommSummit() {
               />
             </div>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-2">
-              Brand R.Comm Summit
+              Brand R.Comm Summit & Awards
             </h2>
             <p className="text-primary font-medium text-base md:text-lg tracking-wide">
               India's platform for agriculture and rural communication excellence.
@@ -70,7 +70,7 @@ export default function BrandCommSummit() {
                     R.COMM
                   </div>
                   <div className="font-serif text-lg font-bold text-white/90 uppercase tracking-widest drop-shadow-sm">
-                    SUMMIT
+                    SUMMIT & AWARDS
                   </div>
                 </div>
 
@@ -96,7 +96,7 @@ export default function BrandCommSummit() {
             <div className="flex flex-col gap-5 text-gray-600 text-sm md:text-base leading-relaxed mb-8">
               <AnimatedText delay={0.25}>
                 <p>
-                  The Brand R.Comm Summit was created to address a gap that Snail Integral had observed throughout its years of working in the agriculture and rural sector. Communication, advertising, and marketing professionals working in agricultural and rural contexts were doing some of the most challenging and innovative work in the Indian industry, and yet there was no dedicated platform that brought them together, recognized their contributions, and facilitated the kind of peer knowledge exchange that professionals in other sectors took for granted.
+                  The Brand R.Comm Summit & Awards was created to address a gap that Snail Integral had observed throughout its years of working in the agriculture and rural sector. Communication, advertising, and marketing professionals working in agricultural and rural contexts were doing some of the most challenging and innovative work in the Indian industry, and yet there was no dedicated platform that brought them together, recognized their contributions, and facilitated the kind of peer knowledge exchange that professionals in other sectors took for granted.
                 </p>
               </AnimatedText>
               <AnimatedText delay={0.3}>
