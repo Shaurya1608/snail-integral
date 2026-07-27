@@ -10,7 +10,7 @@ export default function LeadershipTeam() {
     {
       name: "Amit BK Khare",
       designation: "Founder & Managing Partner",
-      image: "/dp-images/Amit Bhaiya new.png",
+      image: "/dp-images/amit bhaiya 2.jpeg",
       linkedin: "https://linkedin.com/in/amit-khare-1a073419",
       bio: "Amit founded Snail Integral with a vision to bridge the communication gap that often limits business growth, especially in agriculture and emerging sectors. With years of experience in branding, strategic communication, and business consulting, he has built the agency into a trusted partner for organizations looking to create stronger market presence and meaningful customer connections. His leadership continues to shape the agency's long-term vision and client relationships."
     },
