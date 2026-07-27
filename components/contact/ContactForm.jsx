@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 
 export default function ContactForm() {
   const CustomSelect = ({ options, value, onChange, placeholder, name }) => {
@@ -106,39 +107,52 @@ export default function ContactForm() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    const phoneNumber = "918750807676"; 
-    
-    const message = `*New Contact Form Enquiry*
-*Name:* ${formData.fullName}
-*Organization:* ${formData.organization}
-${formData.designation ? `*Designation:* ${formData.designation}\n` : ''}*Email:* ${formData.email}
-*Phone:* ${formData.phone}
-*Enquiry Nature:* ${formData.enquiryNature}
-*Source:* ${formData.source || 'Not specified'}
-*Requirement:* ${formData.requirement || 'Not specified'}
-`;
+    try {
+      // Prepare the data matching your EmailJS template variables
+      const templateParams = {
+        from_name: formData.fullName,
+        organization: formData.organization,
+        designation: formData.designation || 'Not specified',
+        reply_to: formData.email,
+        phone: formData.phone,
+        enquiry_nature: formData.enquiryNature,
+        source: formData.source || 'Not specified',
+        message: formData.requirement || 'Not specified',
+      };
 
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+      // Using environment variables for EmailJS credentials
+      const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
-    window.open(whatsappUrl, '_blank');
-    
-    setIsSubmitting(false);
-    setSubmitted(true);
-    setFormData({
-      fullName: '',
-      organization: '',
-      designation: '',
-      email: '',
-      phone: '',
-      enquiryNature: '',
-      requirement: '',
-      source: ''
-    });
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        templateParams,
+        PUBLIC_KEY
+      );
+      
+      setIsSubmitting(false);
+      setSubmitted(true);
+      setFormData({
+        fullName: '',
+        organization: '',
+        designation: '',
+        email: '',
+        phone: '',
+        enquiryNature: '',
+        requirement: '',
+        source: ''
+      });
+    } catch (error) {
+      console.error('FAILED...', error);
+      setIsSubmitting(false);
+      alert("Failed to send the message. Please try again later.");
+    }
   };
 
   return (
@@ -348,7 +362,7 @@ ${formData.designation ? `*Designation:* ${formData.designation}\n` : ''}*Email:
                 </div>
                 <h3 className="font-serif text-2xl md:text-3xl font-bold text-gray-900 mb-4">Message Sent Successfully</h3>
                 <p className="text-gray-600 max-w-xl mx-auto leading-relaxed mb-6 font-light">
-                  Thank you for reaching out to Snail Integral. We have received your message and a member of our team will be in touch with you within one business day. If you need to speak with someone sooner, please call us directly on <a href="tel:+918750807676" className="text-primary hover:underline font-medium">plus 91 8750807676</a>.
+                  Thank you for reaching out to Snail Integral. We have received your message and a member of our team will be in touch with you within one business day. If you need to speak with someone sooner, please email us directly.
                 </p>
                 <button 
                   onClick={() => setSubmitted(false)}
