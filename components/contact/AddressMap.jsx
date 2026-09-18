@@ -3,9 +3,9 @@
 import { motion } from 'framer-motion';
 
 export default function AddressMap() {
-  const mapQuery = encodeURIComponent("Snail Integral Q-170141, 14th Avenue, Gaur City - 2, Noida Extension, Greater Noida");
+  const mapQuery = encodeURIComponent("Snail Integral Unit 1107 & 1108, 11th Floor, Iconic Tower, Corenthum Complex, A-41, Sector 62, Noida");
   const directionsUrl = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
-  const embedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.046554868297!2d77.42646697550346!3d28.628549375669788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cee5d53951f25%3A0xe212854297157833!2sGaur%20City%202%2C%20Greater%20Noida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1719426210000!5m2!1sen!2sin";
+  const embedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.046554868297!2d77.3670!3d28.6270!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5456e40939d%3A0x6b4ef84c7e6b72a6!2sThe%20Corenthum%2C%20Sector%2062%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1719426210000!5m2!1sen!2sin";
 
   return (
     <section className="w-full bg-[#f9fbf7] text-gray-900 py-20 px-6 md:px-8">
@@ -35,9 +35,10 @@ export default function AddressMap() {
                 <h3 className="text-xs font-semibold text-primary uppercase tracking-wider mb-2">Office Address</h3>
                 <p className="text-base text-gray-700 leading-relaxed font-light">
                   Snail Integral Private Limited<br />
-                  Q-170141, 14th Avenue, Gaur City - 2,<br />
-                  Noida Extension, Greater Noida,<br />
-                  Uttar Pradesh, India
+                  Unit 1107 & 1108, 11th Floor,<br />
+                  Iconic Tower, Corenthum Complex<br />
+                  A-41, Sector 62, Near Noida Electronic City Metro Station,<br />
+                  Noida - 201301 (UP) India
                 </p>
               </div>
 
@@ -58,7 +59,7 @@ export default function AddressMap() {
                   If you would like to visit our office for a meeting, we recommend scheduling an appointment in advance so we can ensure the right team members are available for your conversation. Walk-ins are welcome during office hours but scheduled meetings receive priority.
                 </p>
                 <p className="text-xs text-gray-400 mt-3 italic">
-                  For directions and navigation, search for Snail Integral Gaur City - 2 Noida Extension on Google Maps.
+                  For directions and navigation, search for Iconic Tower Corenthum Complex Sector 62 Noida on Google Maps.
                 </p>
               </div>
             </div>

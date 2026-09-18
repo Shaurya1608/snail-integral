@@ -87,9 +87,10 @@ export default function Footer() {
                 <svg className="w-4 h-4 text-[#5b872b] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                 <span className="leading-relaxed">
                   Snail Integral Private Limited<br />
-                  Q-170141, 14th Avenue, Gaur City - 2,<br />
-                  Noida Extension, Greater Noida,<br />
-                  Uttar Pradesh, India
+                  Unit 1107 & 1108, 11th Floor, Iconic Tower,<br />
+                  Corenthum Complex, A-41, Sector 62,<br />
+                  Near Noida Electronic City Metro Station,<br />
+                  Noida - 201301 (UP) India
                 </span>
               </div>
             </div>
