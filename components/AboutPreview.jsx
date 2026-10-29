@@ -39,11 +39,14 @@ export default function AboutPreview() {
         </div>
         
         {/* Right Side: Image Placeholder */}
-        <div className="relative h-[400px] md:h-[500px] w-full rounded-[2rem] rounded-tr-[5rem] overflow-hidden shadow-2xl group">
+        <div className="relative h-[400px] md:h-[500px] w-full rounded-[2rem] rounded-tr-[5rem] overflow-hidden shadow-2xl group bg-[#e4ecd8]">
            <Image 
-             src="/others/Who we are new photo.png" 
+             src="/others/Who we are new photo.webp" 
              alt="Snail Integral Team" 
              fill 
+             sizes="(max-width: 768px) 100vw, 50vw"
+             placeholder="blur"
+             blurDataURL="data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAADwAwCdASoUABAAPzmGuVOvKSWisAgB4CcJbACdMoACQ28Vajt+aXTAAPX24XOjl4R1356GKDZdJZccBUDoolt76PG0QT8cUXCKizsKgavPR+qfkFoCd7Mka4GHro+x+9pmeLTLkpKlvcAA"
              className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
            />
            {/* Subtle overlay to tie into brand colors */}

@@ -8,9 +8,10 @@ export default function HeroInitiatives() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image 
-          src="/LandingPage/sn3.png" 
+          src="/LandingPage/sn3.webp" 
           alt="Initiatives Background" 
           fill 
+          sizes="100vw"
           className="object-cover opacity-60"
           priority
         />

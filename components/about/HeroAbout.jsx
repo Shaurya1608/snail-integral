@@ -8,11 +8,10 @@ export default function HeroAbout() {
       {/* Background Watermark */}
       <div className="absolute inset-0 z-0 opacity-20 pointer-events-none mix-blend-multiply">
         <Image 
-          src="/LandingPage/agri_background.png" 
+          src="/LandingPage/agri_background.webp" 
           alt="Snail Integral Agriculture Background" 
           fill
           sizes="100vw"
-          quality={85}
           className="object-cover object-center"
           priority
         />

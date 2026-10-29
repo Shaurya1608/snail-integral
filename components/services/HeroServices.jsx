@@ -8,9 +8,10 @@ export default function HeroServices() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image 
-          src="/LandingPage/servics.png" 
+          src="/LandingPage/servics.webp" 
           alt="Services Background" 
           fill 
+          sizes="100vw"
           className="object-cover opacity-60"
           priority
         />

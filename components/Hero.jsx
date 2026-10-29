@@ -9,17 +9,19 @@ export default function Hero() {
     <section className="relative w-full min-h-[100dvh] overflow-hidden flex flex-col">
       {/* === Background Image === */}
       <motion.div
-        initial={{ scale: 1.1, opacity: 0 }}
+        initial={{ scale: 1.08, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.2, ease: [0.25, 0.4, 0.25, 1] }}
-        className="absolute inset-0 z-0"
+        transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
+        className="absolute inset-0 z-0 bg-[#121c10]"
       >
         <Image
-          src="/LandingPage/l-image-1.jpg"
+          src="/LandingPage/l-image-1.webp"
           alt="Snail Integral background"
           fill
           priority
-          quality={85}
+          sizes="100vw"
+          placeholder="blur"
+          blurDataURL="data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADQAwCdASoUAAsAPzmGuVOvKSWisAgB4CcJbACdACGaciI3DP+RNPAA/tSPaaPQ7CCErm4s3WXNheMIAj8rEvOz43oltTemtCg+X/aDeH+a4ELYYru7oZRpFVzYyHEaj/vICaGINfu8EQLGbAKB7AAA"
           className="object-cover object-center"
         />
       </motion.div>

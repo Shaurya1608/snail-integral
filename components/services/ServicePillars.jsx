@@ -184,7 +184,7 @@ export default function ServicePillars() {
                         {/* Single Large Service Image */}
                         <div className="block w-full lg:w-[90%] mx-auto h-[240px] sm:h-[320px] lg:h-[480px] mb-6 lg:mb-0 rounded-3xl overflow-hidden relative shadow-sm mt-4 lg:mt-10 border border-gray-150/30">
                           <Image 
-                            src={serviceImageMap[service.title] || "/LandingPage/l-image-1.jpg"} 
+                            src={serviceImageMap[service.title] || "/LandingPage/l-image-1.webp"} 
                             alt={service.title} 
                             fill 
                             sizes="(max-width: 1024px) 100vw, 33vw"

@@ -50,18 +50,18 @@ export default function LeadershipTeam() {
       bio: "Arpita manages social media communication, content planning, and digital campaign execution for the agency's clients. She brings together creativity and data-driven thinking to build digital experiences that strengthen audience engagement and brand recall. Her focus remains on creating communication that is relevant, consistent, and aligned with business goals."
     },
     {
-      name: "Rohan Bhardwaj",
-      designation: "Lead - Visual Content Producer",
-      image: "/Team Photos/Rohan n.png",
-      linkedin: null,
-      bio: "Rohan leads the agency's visual content production, from video shoots and TVCs to motion graphics, AVs, and social media creatives. He focuses on turning ideas into engaging visual stories that capture attention and strengthen brand identity. Working closely with the creative and digital teams, he ensures every piece of content, from script to final edit, stays true to the brand's message and quality standards. His eye for detail and strong grasp of storytelling help the team deliver content that is polished, consistent, and impactful across every platform."
-    },
-    {
       name: "Nisha Gupta",
       designation: "Lead - Strategic Growth & Marketing",
       image: "/Team Photos/Nisha Gupta.png",
       linkedin: null,
       bio: "Nisha drives the agency's growth strategy, focusing on market expansion, brand positioning, and marketing initiatives that attract the right clients and partnerships. She works closely with internal teams to identify new opportunities, understand market trends, and build campaigns that deliver measurable results. Her role also involves strengthening the agency's presence in the agriculture and rural sectors through thoughtful planning and strategic collaborations. Her analytical mindset and forward-looking approach help the agency grow steadily while staying aligned with client needs and industry expectations."
+    },
+    {
+      name: "Rohan Bhardwaj",
+      designation: "Lead - Visual Content Producer",
+      image: "/Team Photos/Rohan n.png",
+      linkedin: null,
+      bio: "Rohan leads the agency's visual content production, from video shoots and TVCs to motion graphics, AVs, and social media creatives. He focuses on turning ideas into engaging visual stories that capture attention and strengthen brand identity. Working closely with the creative and digital teams, he ensures every piece of content, from script to final edit, stays true to the brand's message and quality standards. His eye for detail and strong grasp of storytelling help the team deliver content that is polished, consistent, and impactful across every platform."
     },
     {
       name: "Khushboo Goswami",
